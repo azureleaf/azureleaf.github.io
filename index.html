@@ -36,7 +36,7 @@
   <body>
     <div id="app">
       <v-app>
-        <v-app-bar color="grey darken-4" dark>
+        <v-app-bar color="grey darken-4" dark app>
           <v-img
             class="mx-2"
             src="./duck.png"
@@ -143,7 +143,7 @@
             {
               name: "仙台の高齢地域可視化",
               desc:
-                "仙台の各町の高齢率をヒートマップで可視化するものです。個人的に気に入っているプロジェクトです。",
+                "仙台の各町の高齢率をヒートマップで可視化するものです。市民の一人として興味がある事柄なので、個人的に気に入っているプロジェクトです。Pandasのデータフレーム操作の便利さに感動しました。",
               demourl: "https://azureleaf.github.io/ageing-sendai/",
               githuburl: "https://github.com/azureleaf/ageing-sendai",
               frameworks: ["py", "js", "c"],
@@ -152,18 +152,18 @@
             {
               name: "学生寮管理システム",
               desc:
-                "学生寮の会計機能・当番割振機能・ファイルサーバー機能をもったWebサービス。一番本格的で実用的なプロジェクト。",
+                "学生寮の会計機能・当番割振機能・情報投稿機能をもったWebサービス。一番本格的で実用的なプロジェクト。",
               demourl: "",
               githuburl: "",
               frameworks: ["js", "php", "laravel", "vue"],
               backend: "MySQL + Eloquent",
             },
             {
-              name: "五目並べ",
+              name: "激強五目並べ",
               desc:
                 "コンピュータを相手に戦う五目並べです。COM側がめちゃくちゃ強くて、ほぼ勝てない。Web系の勉強をはじめて最初に作ったもので、思い入れがあります。",
               demourl: "",
-              githuburl: "",
+              githuburl: "https://github.com/azureleaf/gomoku",
 
               frameworks: ["js", "vue", "react"],
               backend: "-",
@@ -171,7 +171,7 @@
             {
               name: "三角形の五心描画",
               desc:
-                "三角形の重心・内心・外心・傍心・垂心を描画し、その性質を勉強できます。<canvas>を使ったインタラクションを実現する勉強に使いました。",
+                "三角形の重心・内心・外心・傍心・垂心を描画し、その性質を勉強できます。幾何学的できれい。<canvas>を使ってマウスなどとのインタラクションを実現する勉強に使いました。",
               demourl:
                 "https://azureleaf.github.io/canvas/triangle/triangle_centers.html",
               githuburl: "",
@@ -184,7 +184,7 @@
               desc:
                 "LINEでボット君を友達に追加し、彼に現在位置を投げると、近くにあるバス停を検索してくれます。Herokuで稼働中。",
               demourl: "",
-              githuburl: "",
+              githuburl: "https://github.com/azureleaf/greet_bot",
 
               frameworks: ["js", "py"],
               backend: "-",
@@ -192,7 +192,7 @@
             {
               name: "WiFiストーカー",
               desc:
-                "自分が接続中のローカルネットに対してARP-SCANをかけて、ネットワーク内のデバイスのMACアドレスを取得し、他の人のスマホやPCの接続有無をもとに在室状況を推測しようとする嫌らしいプログラムです。",
+                "自分が接続中のローカルネットをスキャンし、ネットワーク内のデバイスのMACアドレスを取得。他の人のスマホやPCの接続有無をもとに在室状況を推測しようとする、いやらしいプログラム。",
               demourl: "",
               githuburl: "",
 
@@ -200,22 +200,11 @@
               backend: "SQLite",
             },
             {
-              name: "フラクタルでパセリ描画",
-              desc:
-                "再帰表現を使って図形を描画します。<canvas>の勉強に使いました。",
-              demourl:
-                "https://azureleaf.github.io/canvas/fractal/canvastree.html",
-              githuburl: "",
-
-              frameworks: ["js"],
-              backend: "-",
-            },
-            {
               name: "病院診察状況分析&自動予約スクリプト",
               desc:
                 "近所にある予約制の病院が診察状況を公開していたので、それを分析して混雑時間を見極める。また、予約を自動化する便利なスクリプトも作成。ウェブスクレイピングとブラウザ操作オートメーションの練習台。",
               demourl: "",
-              githuburl: "",
+              githuburl: "https://github.com/azureleaf/hospital_latency",
 
               frameworks: ["py"],
               backend: "SQLite",
@@ -231,11 +220,21 @@
               backend: "-",
             },
             {
+              name: "フラクタルでパセリ描画",
+              desc:
+                "再帰表現を使って図形を描画します。<canvas>の勉強に使いました。",
+              demourl:
+                "https://azureleaf.github.io/canvas/fractal/canvastree.html",
+              githuburl: "https://github.com/azureleaf/canvas/tree/master/fractal",
+              frameworks: ["js"],
+              backend: "-",
+            },
+            {
               name: "プログラミング基礎知識",
               desc:
                 "プログラミングについての膨大な勉強メモをマークダウンにまとめたものです。特にPromiseについては結構まとまっている。",
               demourl: "",
-              githuburl: "",
+              githuburl: "https://github.com/azureleaf/study-notes",
 
               frameworks: ["js", "py"],
               backend: "-",
@@ -245,8 +244,7 @@
               desc:
                 "バックエンドの練習台。特に何かサービスの形にはなっていませんが、Expressの基本的な機能、Axios、ORM、種々のDBにさらっと触れるためのレポジトリ。",
               demourl: "",
-              githuburl: "",
-
+              githuburl: "https://github.com/azureleaf/hello-express",
               frameworks: ["js", "vue"],
               backend: "SQLite + TypeORM, SQLite + Sequelize",
             },
