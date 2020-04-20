@@ -32,6 +32,10 @@
         color: darkslategray;
       }
     </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
   </head>
   <body>
     <div id="app">
@@ -60,6 +64,24 @@
             <v-divider vertical></v-divider>
           </v-toolbar-items>
         </v-app-bar>
+        <p><router-link to="/">Go to Page 1</router-link></p>
+        <p><router-link to="/skill">Go to Page 2</router-link></p>
+        <p><router-view></router-view></p>
+
+        <v-footer color="grey darken-4" class="text-center" dark app>
+          <v-spacer></v-spacer>
+          <span>azureleaf.github.io</span>
+          <v-spacer></v-spacer>
+        </v-footer>
+      </v-app>
+    </div>
+
+    <script>
+      // Define component here
+      // Writing template with template literal (``) sucks! Awful readability, no linting
+      // Before pasting the code here, you better write the template code somewhere to ensure it works
+      var ProjectTable = Vue.component("project", {
+        template: `
         <v-content>
           <v-container>
             <v-card elevation="20" class="my-10">
@@ -88,7 +110,11 @@
                   </template>
                   <template v-slot:item.backends="{item}">
                     <span v-if="item.backends.length == 0">-</span>
-                    <p v-else v-for="backend in item.backends" class="ma-0 pa-0">
+                    <p
+                      v-else
+                      v-for="backend in item.backends"
+                      class="ma-0 pa-0"
+                    >
                       {{backend}}
                     </p>
                   </template>
@@ -129,176 +155,183 @@
                 </v-data-table>
               </v-card-text>
             </v-card>
-          </v-container>
-        </v-content>
-        <v-footer color="grey darken-4" class="text-center" dark app>
-          <v-spacer></v-spacer>
-          <span>azureleaf.github.io</span>
-          <v-spacer></v-spacer>
-        </v-footer>
-      </v-app>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-    <script>
-      new Vue({
-        el: "#app",
-        vuetify: new Vuetify(),
-        data: {
-          msg: "hello, world",
-          projects: [
-            {
-              name: "仙台高齢化地域の可視化",
-              desc:
-                "仙台の町ごとの高齢人口比率をヒートマップで表示します。市民の一人として興味がある事柄なので、個人的に気に入っているプロジェクトです。Pandasのデータフレーム操作の便利さに感動しました。",
-              demourl: "https://azureleaf.github.io/ageing-sendai/",
-              githuburl: "https://github.com/azureleaf/ageing-sendai",
-              frameworks: ["py", "js", "c"],
-              backends: [],
-            },
-            {
-              name: "学生寮管理システム",
-              desc:
-                "学生寮の会計機能・当番割振機能・情報投稿機能をもったWebサービス。一番本格的で実用的なプロジェクト。",
-              demourl: "",
-              githuburl: "",
-              frameworks: ["js", "php", "laravel", "vue"],
-              backends: ["Laravel + Eloquent + Postgres"],
-            },
-            {
-              name: "激強五目並べ",
-              desc:
-                "コンピュータを相手に戦う五目並べです。COM側がめちゃくちゃ強くて、ほぼ勝てない。私がWeb系の勉強をはじめて最初に作った作品なので、思い入れがあります。",
-              demourl: "",
-              githuburl: "https://github.com/azureleaf/gomoku",
-              frameworks: ["vue", "react"],
-              backends: [],
-            },
-            {
-              name: "三角形の五心を見てみよう",
-              desc:
-                "マウスで三角形を描くと、三角形の重心・内心・外心・傍心・垂心を自動で描画してくれます。幾何学的できれい。<canvas>を使ってマウスなどとのインタラクションを実現する勉強に使いました。",
-              demourl:
-                "https://azureleaf.github.io/canvas/triangle/triangle_centers.html",
-              githuburl:
-                "https://github.com/azureleaf/canvas/tree/master/triangle",
-              frameworks: ["js"],
-              backends: [],
-            },
-            {
-              name: "仙台バス停・地下鉄検索ボット",
-              desc:
-                "LINEのボット。彼にGPSの現在位置を投げると、近くにあるバス停を検索して返してくれます。Herokuで稼働中。",
-              demourl: "",
-              githuburl: "https://github.com/azureleaf/greet_bot",
-              frameworks: ["py"],
-              backends: ["Flask + Firebase?"],
-            },
-            {
-              name: "WiFiストーカー",
-              desc:
-                "自分が接続中のローカルネットをスキャンし、ネットワーク内のデバイスのMACアドレスを取得。他の人のスマホやPCの接続有無をもとに在室状況を推測しようとする、いやらしいプログラム。",
-              demourl: "",
-              githuburl: "",
-              frameworks: ["js", "py"],
-              backends: ["SQLite"],
-            },
-            {
-              name: "通院アシスタント",
-              desc:
-                "私の近所に予約制の病院があり、病院ウェブサイトでリアルタイムの診察状況を公開しています。このスクリプトはそこの混雑状況の把握と、病院ウェブサイト上での受診予約を自動でやってくれる優れものです。ウェブスクレイピングとブラウザ操作自動化の練習台。",
-              demourl: "",
-              githuburl: "https://github.com/azureleaf/hospital_latency",
-              frameworks: ["py"],
-              backends: ["SQLite"],
-            },
-            {
-              name: "ゲームタイトル別売上数分析",
-              desc:
-                "ウェブスクレイピングとデータ可視化ライブラリの練習台のプロジェクト。海外製のゲームタイトルが急速に伸びる中、任天堂はまだ健闘している。",
-              demourl: "",
-              githuburl: "",
-              frameworks: ["js", "py"],
-              backends: [],
-            },
-            {
-              name: "フラクタルでパセリ描画",
-              desc:
-                "再帰表現を使って図形を描画します。<canvas>の勉強に使いました。",
-              demourl:
-                "https://azureleaf.github.io/canvas/fractal/canvastree.html",
-              githuburl:
-                "https://github.com/azureleaf/canvas/tree/master/fractal",
-              frameworks: ["js"],
-              backends: [],
-            },
-            {
-              name: "プログラミング学習ノート",
-              desc:
-                "プログラミングについての膨大な勉強メモをマークダウンにまとめたものです。特にPromiseについては結構まとまっている。",
-              demourl: "",
-              githuburl: "https://github.com/azureleaf/study-notes",
-              frameworks: ["js", "py"],
-              backends: [],
-            },
-            {
-              name: "Express.js練習台",
-              desc:
-                "バックエンドの練習台。特に何かサービスの形にはなっていませんが、Expressの基本的な機能、Axios、ORM、種々のDBにさらっと触れるためのレポジトリ。",
-              demourl: "",
-              githuburl: "https://github.com/azureleaf/hello-express",
-              frameworks: ["vue"],
-              backends: [
-                "Express + TypeORM + SQLite",
-                "Express + Sequelize + SQLite",
-              ],
-            },
-          ],
-          projectHeaders: [
-            {
-              text: "Project",
-              sortable: false,
-              value: "name",
-            },
-            {
-              text: "GIF",
-              sortable: false,
-              value: "gif",
-            },
-            {
-              text: "Demo",
-              sortable: false,
-              value: "demourl",
-            },
-            {
-              text: "GitHub",
-              sortable: false,
-              value: "githuburl",
-            },
-            {
-              text: "Summary",
-              sortable: false,
-              value: "desc",
-              width: "40%",
-            },
-            {
-              text: "Framework",
-              sortable: false,
-              value: "frameworks",
-            },
-            {
-              text: "Backend",
-              sortable: false,
-              value: "backends",
-            },
-          ],
+          </v-container> </v-content
+        >`,
+        data: function () {
+          return {
+            msg: "hello, world",
+            projects: [
+              {
+                name: "仙台高齢化地域の可視化",
+                desc:
+                  "仙台の町ごとの高齢人口比率をヒートマップで表示します。市民の一人として興味がある事柄なので、個人的に気に入っているプロジェクトです。Pandasのデータフレーム操作の便利さに感動しました。",
+                demourl: "https://azureleaf.github.io/ageing-sendai/",
+                githuburl: "https://github.com/azureleaf/ageing-sendai",
+                frameworks: ["py", "js", "c"],
+                backends: [],
+              },
+              {
+                name: "学生寮管理システム",
+                desc:
+                  "学生寮の会計機能・当番割振機能・情報投稿機能をもったWebサービス。一番本格的で実用的なプロジェクト。",
+                demourl: "",
+                githuburl: "",
+                frameworks: ["js", "php", "laravel", "vue"],
+                backends: ["Laravel + Eloquent + Postgres"],
+              },
+              {
+                name: "激強五目並べ",
+                desc:
+                  "コンピュータを相手に戦う五目並べです。COM側がめちゃくちゃ強くて、ほぼ勝てない。私がWeb系の勉強をはじめて最初に作った作品なので、思い入れがあります。",
+                demourl: "",
+                githuburl: "https://github.com/azureleaf/gomoku",
+                frameworks: ["vue", "react"],
+                backends: [],
+              },
+              {
+                name: "三角形の五心を見てみよう",
+                desc:
+                  "マウスで三角形を描くと、三角形の重心・内心・外心・傍心・垂心を自動で描画してくれます。幾何学的できれい。<canvas>を使ってマウスなどとのインタラクションを実現する勉強に使いました。",
+                demourl:
+                  "https://azureleaf.github.io/canvas/triangle/triangle_centers.html",
+                githuburl:
+                  "https://github.com/azureleaf/canvas/tree/master/triangle",
+                frameworks: ["js"],
+                backends: [],
+              },
+              {
+                name: "仙台バス停・地下鉄検索ボット",
+                desc:
+                  "LINEのボット。彼にGPSの現在位置を投げると、近くにあるバス停を検索して返してくれます。Herokuで稼働中。",
+                demourl: "",
+                githuburl: "https://github.com/azureleaf/greet_bot",
+                frameworks: ["py"],
+                backends: ["Flask + Firebase?"],
+              },
+              {
+                name: "WiFiストーカー",
+                desc:
+                  "自分が接続中のローカルネットをスキャンし、ネットワーク内のデバイスのMACアドレスを取得。他の人のスマホやPCの接続有無をもとに在室状況を推測しようとする、いやらしいプログラム。",
+                demourl: "",
+                githuburl: "",
+                frameworks: ["js", "py"],
+                backends: ["SQLite"],
+              },
+              {
+                name: "通院アシスタント",
+                desc:
+                  "私の近所に予約制の病院があり、病院ウェブサイトでリアルタイムの診察状況を公開しています。このスクリプトはそこの混雑状況の把握と、病院ウェブサイト上での受診予約を自動でやってくれる優れものです。ウェブスクレイピングとブラウザ操作自動化の練習台。",
+                demourl: "",
+                githuburl: "https://github.com/azureleaf/hospital_latency",
+                frameworks: ["py"],
+                backends: ["SQLite"],
+              },
+              {
+                name: "ゲームタイトル別売上数分析",
+                desc:
+                  "ウェブスクレイピングとデータ可視化ライブラリの練習台のプロジェクト。海外製のゲームタイトルが急速に伸びる中、任天堂はまだ健闘している。",
+                demourl: "",
+                githuburl: "",
+                frameworks: ["js", "py"],
+                backends: [],
+              },
+              {
+                name: "フラクタルでパセリ描画",
+                desc:
+                  "再帰表現を使って図形を描画します。<canvas>の勉強に使いました。",
+                demourl:
+                  "https://azureleaf.github.io/canvas/fractal/canvastree.html",
+                githuburl:
+                  "https://github.com/azureleaf/canvas/tree/master/fractal",
+                frameworks: ["js"],
+                backends: [],
+              },
+              {
+                name: "プログラミング学習ノート",
+                desc:
+                  "プログラミングについての膨大な勉強メモをマークダウンにまとめたものです。特にPromiseについては結構まとまっている。",
+                demourl: "",
+                githuburl: "https://github.com/azureleaf/study-notes",
+                frameworks: ["js", "py"],
+                backends: [],
+              },
+              {
+                name: "Express.js練習台",
+                desc:
+                  "バックエンドの練習台。特に何かサービスの形にはなっていませんが、Expressの基本的な機能、Axios、ORM、種々のDBにさらっと触れるためのレポジトリ。",
+                demourl: "",
+                githuburl: "https://github.com/azureleaf/hello-express",
+                frameworks: ["vue"],
+                backends: [
+                  "Express + TypeORM + SQLite",
+                  "Express + Sequelize + SQLite",
+                ],
+              },
+            ],
+            projectHeaders: [
+              {
+                text: "Project",
+                sortable: false,
+                value: "name",
+              },
+              {
+                text: "GIF",
+                sortable: false,
+                value: "gif",
+              },
+              {
+                text: "Demo",
+                sortable: false,
+                value: "demourl",
+              },
+              {
+                text: "GitHub",
+                sortable: false,
+                value: "githuburl",
+              },
+              {
+                text: "Summary",
+                sortable: false,
+                value: "desc",
+                width: "40%",
+              },
+              {
+                text: "Framework",
+                sortable: false,
+                value: "frameworks",
+              },
+              {
+                text: "Backend",
+                sortable: false,
+                value: "backends",
+              },
+            ],
+          };
         },
         methods: {
           isUsing: function (frameworks, framework) {
             return frameworks.includes(framework);
           },
         },
+      });
+
+      var SkillTable = Vue.component("skill", {
+        template: "<p>Component One</p>",
+      });
+
+      const routes = [
+        { path: "/", component: ProjectTable },
+        { path: "/skill", component: SkillTable },
+      ];
+
+      const router = new VueRouter({
+        routes,
+      });
+
+      new Vue({
+        el: "#app",
+        router,
+        vuetify: new Vuetify(),
       });
     </script>
   </body>
