@@ -13,6 +13,10 @@
       href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css"
       rel="stylesheet"
     />
+    <link
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      rel="stylesheet"
+    />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"
@@ -23,9 +27,31 @@
       <v-app>
         <v-content>
           <v-container>Azureleaf's Projects</v-container>
+          <v-data-table :headers="projectHeaders" :items="projects" :hide-default-footer="true"
+          ></v-data-table>
           <ul>
             <li v-for="(project, index) in projects" :key="index">
               <a :href="project.url">{{ project.name }}</a>
+              <i
+                v-if="isUsing(project.frameworks, 'js')"
+                class="fab fa-js fa-lg"
+              ></i>
+              <i
+                v-if="isUsing(project.frameworks, 'php')"
+                class="fab fa-php fa-lg"
+              ></i>
+              <i
+                v-if="isUsing(project.frameworks, 'py')"
+                class="fab fa-python fa-lg"
+              ></i>
+              <i
+                v-if="isUsing(project.frameworks, 'c')"
+                class="fab fa-cutterfish fa-lg"
+              ></i>
+              <i
+                v-if="isUsing(project.frameworks, 'html')"
+                class="fab fa-html5 fa-lg"
+              ></i>
             </li>
           </ul>
         </v-content>
@@ -43,18 +69,62 @@
           projects: [
             {
               name: "仙台の高齢地域可視化",
+              desc: "仙台の各町の高齢率をヒートマップで可視化するものです。個人的に好きなプロジェクトです。",
               url: "https://azureleaf.github.io/canvas/fractal/canvastree.html",
+              frameworks: ["py", "js", "c", "html"],
+              db: "-",
             },
+            
             {
-              name: "フラクタル描画",
+              name: "フラクタルでパセリ描画",
+              desc: "再帰表現を使って図形を描画します。<canvas>の勉強に使いました。",
               url: "https://azureleaf.github.io/canvas/fractal/canvastree.html",
+              frameworks: ["js", "html"],
+              db: "-",
+
             },
             {
               name: "三角形の五心描画",
+              desc: "三角形の重心・内心・外心・傍心・垂心を描画し、その性質を勉強できます。<canvas>を使ったインタラクションを実現する勉強に使いました。",
               url:
                 "https://azureleaf.github.io/canvas/triangle/triangle_centers.html",
+              frameworks: ["js", "html"],
+              db: "-",
+
             },
           ],
+          projectHeaders: [
+            {
+              text: "プロジェクト名",
+              sortable: false,
+              value: "name",
+            },
+            {
+              text: "GitHubへのURL",
+              sortable: false,
+              value: "url",
+            },
+            {
+              text: "説明",
+              sortable: false,
+              value: "desc",
+            },
+            {
+              text: "言語",
+              sortable: false,
+              value: "frameworks",
+            },
+            {
+              text: "DB",
+              sortable: false,
+              value: "db",
+            },
+          ],
+        },
+        methods: {
+          isUsing: function (frameworks, framework) {
+            return frameworks.includes(framework);
+          },
         },
       });
     </script>
