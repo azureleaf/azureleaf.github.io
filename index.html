@@ -54,13 +54,13 @@
           <v-spacer></v-spacer>
           <v-toolbar-items id="tb-items">
             <v-divider vertical></v-divider>
-            <v-btn text href="https://github.com/azureleaf"
-              ><i class="fab fa-github fa-lg px-1"></i>My GitHub</v-btn
-            >
-            <v-divider vertical></v-divider>
             <v-btn text to="/">My Projects</v-btn>
             <v-divider vertical></v-divider>
             <v-btn text to="/skill">My Skills</v-btn>
+            <v-divider vertical></v-divider>
+            <v-btn text href="https://github.com/azureleaf"
+              ><i class="fab fa-github fa-lg px-1"></i>My GitHub</v-btn
+            >
             <v-divider vertical></v-divider>
           </v-toolbar-items>
         </v-app-bar>
@@ -168,7 +168,7 @@
                 backends: [],
               },
               {
-                name: "学生寮管理システム",
+                name: "学生寮情報管理システム",
                 desc:
                   "学生寮の会計機能・当番割振機能・情報投稿機能をもったWebサービス。一番本格的で実用的なプロジェクト。",
                 demourl: "",
@@ -188,7 +188,7 @@
               {
                 name: "三角形の五心を見てみよう",
                 desc:
-                  "マウスで三角形を描くと、三角形の重心・内心・外心・傍心・垂心を自動で描画してくれます。幾何学的できれい。<canvas>を使ってマウスなどとのインタラクションを実現する勉強に使いました。",
+                  "マウスで三角形を描くと、三角形の重心・内心・外心・傍心・垂心を自動で描画してくれます。幾何学的できれい。<canvas>を使ってマウスなどとのインタラクションを勉強しました。私の知人が作ったものを私が魔改造。",
                 demourl:
                   "https://azureleaf.github.io/canvas/triangle/triangle_centers.html",
                 githuburl:
@@ -263,6 +263,24 @@
                   "Express + TypeORM + SQLite",
                   "Express + Sequelize + SQLite",
                 ],
+              },
+              {
+                name: "ログイン機能をつくる",
+                desc:
+                  "知人のGitHubレポジトリへの私のcontribution。Axiosでの通信、非同期処理、ORMでのDBへのアクセス、Bcryptによるハッシュ化、トークンの保存などを、協力しながら一つ一つ丁寧に実装しました。",
+                demourl: "",
+                githuburl: "https://github.com/yuyu456-corder/user_login",
+                frameworks: ["vue"],
+                backends: ["Express + Sequelize + SQLite"],
+              },
+              {
+                name: "ポートフォリオサイト",
+                desc:
+                  "このサイトそのもの。単なる静的サイトなので速攻で終わると思っていたら、CDNでVue-Routerを使うのはわりと苦戦しました。それにしてもVuetifyのマテリアルデザインはきれい。Font Awesomeのアイコン充実化に寄与しているデザイナーにも頭があがらない。",
+                demourl: "https://azureleaf.github.io/",
+                githuburl: "https://github.com/azureleaf/azureleaf.github.io",
+                frameworks: ["vue"],
+                backends: [],
               },
             ],
             projectHeaders: [
