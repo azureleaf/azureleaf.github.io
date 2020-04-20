@@ -26,7 +26,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"
     />
-
+    <title>Azureleaf's Portfolio</title>
     <style>
       .iconColor {
         color: darkslategray;
@@ -81,13 +81,17 @@
                       ><i class="fas fa-external-link-alt fa-2x"></i
                     ></a>
                   </template>
-
                   <template v-slot:item.githuburl="{item}">
                     <a v-if="item.githuburl.length != 0" :href="item.githuburl">
                       <i class="fab fa-github fa-2x"></i>
                     </a>
                   </template>
-
+                  <template v-slot:item.backends="{item}">
+                    <span v-if="item.backends.length == 0">-</span>
+                    <p v-else v-for="backend in item.backends" class="ma-0 pa-0">
+                      {{backend}}
+                    </p>
+                  </template>
                   <template v-slot:item.frameworks="{item}">
                     <i
                       v-if="isUsing(item.frameworks, 'js')"
@@ -145,13 +149,13 @@
           msg: "hello, world",
           projects: [
             {
-              name: "仙台で高齢化している地域はどこ？",
+              name: "仙台高齢化地域の可視化",
               desc:
-                "仙台の各町の高齢率をヒートマップで見える化するものです。市民の一人として興味がある事柄なので、個人的に気に入っているプロジェクトです。Pandasのデータフレーム操作の便利さに感動しました。",
+                "仙台の町ごとの高齢人口比率をヒートマップで表示します。市民の一人として興味がある事柄なので、個人的に気に入っているプロジェクトです。Pandasのデータフレーム操作の便利さに感動しました。",
               demourl: "https://azureleaf.github.io/ageing-sendai/",
               githuburl: "https://github.com/azureleaf/ageing-sendai",
               frameworks: ["py", "js", "c"],
-              backend: "-",
+              backends: [],
             },
             {
               name: "学生寮管理システム",
@@ -160,7 +164,7 @@
               demourl: "",
               githuburl: "",
               frameworks: ["js", "php", "laravel", "vue"],
-              backend: "Laravel + Eloquent + Postgres",
+              backends: ["Laravel + Eloquent + Postgres"],
             },
             {
               name: "激強五目並べ",
@@ -169,7 +173,7 @@
               demourl: "",
               githuburl: "https://github.com/azureleaf/gomoku",
               frameworks: ["vue", "react"],
-              backend: "-",
+              backends: [],
             },
             {
               name: "三角形の五心を見てみよう",
@@ -177,18 +181,19 @@
                 "マウスで三角形を描くと、三角形の重心・内心・外心・傍心・垂心を自動で描画してくれます。幾何学的できれい。<canvas>を使ってマウスなどとのインタラクションを実現する勉強に使いました。",
               demourl:
                 "https://azureleaf.github.io/canvas/triangle/triangle_centers.html",
-              githuburl: "https://github.com/azureleaf/canvas/tree/master/triangle",
+              githuburl:
+                "https://github.com/azureleaf/canvas/tree/master/triangle",
               frameworks: ["js"],
-              backend: "-",
+              backends: [],
             },
             {
               name: "仙台バス停・地下鉄検索ボット",
               desc:
-                "LINEボットです。彼にGPSの現在位置を投げると、近くにあるバス停を検索して返してくれます。Herokuで稼働中。",
+                "LINEのボット。彼にGPSの現在位置を投げると、近くにあるバス停を検索して返してくれます。Herokuで稼働中。",
               demourl: "",
               githuburl: "https://github.com/azureleaf/greet_bot",
               frameworks: ["py"],
-              backend: "Flask + Firebase?",
+              backends: ["Flask + Firebase?"],
             },
             {
               name: "WiFiストーカー",
@@ -197,16 +202,16 @@
               demourl: "",
               githuburl: "",
               frameworks: ["js", "py"],
-              backend: "SQLite",
+              backends: ["SQLite"],
             },
             {
               name: "通院アシスタント",
               desc:
-                "私の近所に予約制の病院があり、病院ウェブサイトでリアルタイムの診察状況を公開しています。このスクリプトはそこの混雑状況の把握と、病院ウェブサイト上での受診予約を自動でやってくれる優れもの。ウェブスクレイピングとブラウザ操作自動化の練習台。",
+                "私の近所に予約制の病院があり、病院ウェブサイトでリアルタイムの診察状況を公開しています。このスクリプトはそこの混雑状況の把握と、病院ウェブサイト上での受診予約を自動でやってくれる優れものです。ウェブスクレイピングとブラウザ操作自動化の練習台。",
               demourl: "",
               githuburl: "https://github.com/azureleaf/hospital_latency",
               frameworks: ["py"],
-              backend: "SQLite",
+              backends: ["SQLite"],
             },
             {
               name: "ゲームタイトル別売上数分析",
@@ -215,7 +220,7 @@
               demourl: "",
               githuburl: "",
               frameworks: ["js", "py"],
-              backend: "-",
+              backends: [],
             },
             {
               name: "フラクタルでパセリ描画",
@@ -226,7 +231,7 @@
               githuburl:
                 "https://github.com/azureleaf/canvas/tree/master/fractal",
               frameworks: ["js"],
-              backend: "-",
+              backends: [],
             },
             {
               name: "プログラミング学習ノート",
@@ -235,7 +240,7 @@
               demourl: "",
               githuburl: "https://github.com/azureleaf/study-notes",
               frameworks: ["js", "py"],
-              backend: "-",
+              backends: [],
             },
             {
               name: "Express.js練習台",
@@ -243,8 +248,11 @@
                 "バックエンドの練習台。特に何かサービスの形にはなっていませんが、Expressの基本的な機能、Axios、ORM、種々のDBにさらっと触れるためのレポジトリ。",
               demourl: "",
               githuburl: "https://github.com/azureleaf/hello-express",
-              frameworks: ["js", "vue"],
-              backend: "Express + TypeORM + SQLite, Express + Sequelize + SQLite",
+              frameworks: ["vue"],
+              backends: [
+                "Express + TypeORM + SQLite",
+                "Express + Sequelize + SQLite",
+              ],
             },
           ],
           projectHeaders: [
@@ -272,6 +280,7 @@
               text: "Summary",
               sortable: false,
               value: "desc",
+              width: "40%",
             },
             {
               text: "Framework",
@@ -281,7 +290,7 @@
             {
               text: "Backend",
               sortable: false,
-              value: "backend",
+              value: "backends",
             },
           ],
         },
