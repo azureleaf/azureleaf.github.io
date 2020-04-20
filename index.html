@@ -45,15 +45,19 @@
             contain
           ></v-img>
           <v-toolbar-title style="font-family: 'Roboto Slab', sans-serif;"
-            ><span>Azureleaf's Projects</span></v-toolbar-title
+            ><span>Azureleaf's Portfolio</span></v-toolbar-title
           >
           <v-spacer></v-spacer>
           <v-toolbar-items id="tb-items">
-            <v-btn text
+            <v-divider vertical></v-divider>
+            <v-btn text href="https://github.com/azureleaf"
               ><i class="fab fa-github fa-lg px-1"></i>My GitHub</v-btn
             >
-            <v-btn text>My Projects</v-btn>
+            <v-divider vertical></v-divider>
+            <v-btn text href="https://azureleaf.github.io/">My Projects</v-btn>
+            <v-divider vertical></v-divider>
             <v-btn text>My Skills</v-btn>
+            <v-divider vertical></v-divider>
           </v-toolbar-items>
         </v-app-bar>
         <v-content>
@@ -63,7 +67,7 @@
                 >プロジェクト一覧</v-card-title
               >
               <v-card-subtitle
-                >私がここ一年ほどの間に作成したレポジトリを一部ご紹介します。いくつかのプロジェクトはデモページがありますので、以下のリンクからご覧ください。より詳しい説明は以下のGitHubのリンクからREADMEをご覧ください。</v-card-subtitle
+                >私のポートフォリオサイトへのご訪問ありがとうございます。私がここ一年ほどの間に作った作品を一部ご紹介します。いくつかのプロジェクトはデモページがありますので、以下のリンクからぜひご覧ください。より詳しい説明は、以下のGitHubのリンクからREADMEをご覧ください。</v-card-subtitle
               >
               <v-card-text>
                 <v-data-table
@@ -141,9 +145,9 @@
           msg: "hello, world",
           projects: [
             {
-              name: "仙台の高齢地域可視化",
+              name: "仙台で高齢化している地域はどこ？",
               desc:
-                "仙台の各町の高齢率をヒートマップで可視化するものです。市民の一人として興味がある事柄なので、個人的に気に入っているプロジェクトです。Pandasのデータフレーム操作の便利さに感動しました。",
+                "仙台の各町の高齢率をヒートマップで見える化するものです。市民の一人として興味がある事柄なので、個人的に気に入っているプロジェクトです。Pandasのデータフレーム操作の便利さに感動しました。",
               demourl: "https://azureleaf.github.io/ageing-sendai/",
               githuburl: "https://github.com/azureleaf/ageing-sendai",
               frameworks: ["py", "js", "c"],
@@ -156,38 +160,35 @@
               demourl: "",
               githuburl: "",
               frameworks: ["js", "php", "laravel", "vue"],
-              backend: "MySQL + Eloquent",
+              backend: "Laravel + Eloquent + Postgres",
             },
             {
               name: "激強五目並べ",
               desc:
-                "コンピュータを相手に戦う五目並べです。COM側がめちゃくちゃ強くて、ほぼ勝てない。Web系の勉強をはじめて最初に作ったもので、思い入れがあります。",
+                "コンピュータを相手に戦う五目並べです。COM側がめちゃくちゃ強くて、ほぼ勝てない。私がWeb系の勉強をはじめて最初に作った作品なので、思い入れがあります。",
               demourl: "",
               githuburl: "https://github.com/azureleaf/gomoku",
-
-              frameworks: ["js", "vue", "react"],
+              frameworks: ["vue", "react"],
               backend: "-",
             },
             {
-              name: "三角形の五心描画",
+              name: "三角形の五心を見てみよう",
               desc:
-                "三角形の重心・内心・外心・傍心・垂心を描画し、その性質を勉強できます。幾何学的できれい。<canvas>を使ってマウスなどとのインタラクションを実現する勉強に使いました。",
+                "マウスで三角形を描くと、三角形の重心・内心・外心・傍心・垂心を自動で描画してくれます。幾何学的できれい。<canvas>を使ってマウスなどとのインタラクションを実現する勉強に使いました。",
               demourl:
                 "https://azureleaf.github.io/canvas/triangle/triangle_centers.html",
-              githuburl: "",
-
+              githuburl: "https://github.com/azureleaf/canvas/tree/master/triangle",
               frameworks: ["js"],
               backend: "-",
             },
             {
-              name: "仙台バス停・地下鉄検索LINEボット",
+              name: "仙台バス停・地下鉄検索ボット",
               desc:
-                "LINEでボット君を友達に追加し、彼に現在位置を投げると、近くにあるバス停を検索してくれます。Herokuで稼働中。",
+                "LINEボットです。彼にGPSの現在位置を投げると、近くにあるバス停を検索して返してくれます。Herokuで稼働中。",
               demourl: "",
               githuburl: "https://github.com/azureleaf/greet_bot",
-
-              frameworks: ["js", "py"],
-              backend: "-",
+              frameworks: ["py"],
+              backend: "Flask + Firebase?",
             },
             {
               name: "WiFiストーカー",
@@ -195,27 +196,24 @@
                 "自分が接続中のローカルネットをスキャンし、ネットワーク内のデバイスのMACアドレスを取得。他の人のスマホやPCの接続有無をもとに在室状況を推測しようとする、いやらしいプログラム。",
               demourl: "",
               githuburl: "",
-
               frameworks: ["js", "py"],
               backend: "SQLite",
             },
             {
-              name: "病院診察状況分析&自動予約スクリプト",
+              name: "通院アシスタント",
               desc:
-                "近所にある予約制の病院が診察状況を公開していたので、それを分析して混雑時間を見極める。また、予約を自動化する便利なスクリプトも作成。ウェブスクレイピングとブラウザ操作オートメーションの練習台。",
+                "私の近所に予約制の病院があり、病院ウェブサイトでリアルタイムの診察状況を公開しています。このスクリプトはそこの混雑状況の把握と、病院ウェブサイト上での受診予約を自動でやってくれる優れもの。ウェブスクレイピングとブラウザ操作自動化の練習台。",
               demourl: "",
               githuburl: "https://github.com/azureleaf/hospital_latency",
-
               frameworks: ["py"],
               backend: "SQLite",
             },
             {
-              name: "ゲームタイトル分析",
+              name: "ゲームタイトル別売上数分析",
               desc:
                 "ウェブスクレイピングとデータ可視化ライブラリの練習台のプロジェクト。海外製のゲームタイトルが急速に伸びる中、任天堂はまだ健闘している。",
               demourl: "",
               githuburl: "",
-
               frameworks: ["js", "py"],
               backend: "-",
             },
@@ -225,17 +223,17 @@
                 "再帰表現を使って図形を描画します。<canvas>の勉強に使いました。",
               demourl:
                 "https://azureleaf.github.io/canvas/fractal/canvastree.html",
-              githuburl: "https://github.com/azureleaf/canvas/tree/master/fractal",
+              githuburl:
+                "https://github.com/azureleaf/canvas/tree/master/fractal",
               frameworks: ["js"],
               backend: "-",
             },
             {
-              name: "プログラミング基礎知識",
+              name: "プログラミング学習ノート",
               desc:
                 "プログラミングについての膨大な勉強メモをマークダウンにまとめたものです。特にPromiseについては結構まとまっている。",
               demourl: "",
               githuburl: "https://github.com/azureleaf/study-notes",
-
               frameworks: ["js", "py"],
               backend: "-",
             },
@@ -246,7 +244,7 @@
               demourl: "",
               githuburl: "https://github.com/azureleaf/hello-express",
               frameworks: ["js", "vue"],
-              backend: "SQLite + TypeORM, SQLite + Sequelize",
+              backend: "Express + TypeORM + SQLite, Express + Sequelize + SQLite",
             },
           ],
           projectHeaders: [
