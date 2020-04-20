@@ -21,39 +21,64 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"
     />
+    <style>
+      .iconColor {
+        color: darkmagenta;
+      }
+    </style>
   </head>
   <body>
     <div id="app">
       <v-app>
+        <v-app-bar color="pink darken-4" dark>
+          <v-toolbar-title><span>Azureleaf's Projects</span></v-toolbar-title>
+        </v-app-bar>
         <v-content>
-          <v-container>Azureleaf's Projects</v-container>
-          <v-data-table :headers="projectHeaders" :items="projects" :hide-default-footer="true"
-          ></v-data-table>
-          <ul>
-            <li v-for="(project, index) in projects" :key="index">
-              <a :href="project.url">{{ project.name }}</a>
-              <i
-                v-if="isUsing(project.frameworks, 'js')"
-                class="fab fa-js fa-lg"
-              ></i>
-              <i
-                v-if="isUsing(project.frameworks, 'php')"
-                class="fab fa-php fa-lg"
-              ></i>
-              <i
-                v-if="isUsing(project.frameworks, 'py')"
-                class="fab fa-python fa-lg"
-              ></i>
-              <i
-                v-if="isUsing(project.frameworks, 'c')"
-                class="fab fa-cutterfish fa-lg"
-              ></i>
-              <i
-                v-if="isUsing(project.frameworks, 'html')"
-                class="fab fa-html5 fa-lg"
-              ></i>
-            </li>
-          </ul>
+          <v-container>
+            <v-data-table
+              :headers="projectHeaders"
+              :items="projects"
+              :hide-default-footer="true"
+              :items-per-page="20"
+            ></v-data-table>
+            <ul>
+              <li v-for="(project, index) in projects" :key="index">
+                <a :href="project.url">{{ project.name }}</a>
+                <i
+                  v-if="isUsing(project.frameworks, 'js')"
+                  class="fab fa-js fa-2x iconColor"
+                ></i>
+                <i
+                  v-if="isUsing(project.frameworks, 'php')"
+                  class="fab fa-php fa-2x iconColor"
+                ></i>
+                <i
+                  v-if="isUsing(project.frameworks, 'laravel')"
+                  class="fab fa-laravel fa-2x iconColor"
+                ></i>
+                <i
+                  v-if="isUsing(project.frameworks, 'vue')"
+                  class="fab fa-vuejs fa-2x iconColor"
+                ></i>
+                <i
+                  v-if="isUsing(project.frameworks, 'react')"
+                  class="fab fa-react fa-2x iconColor"
+                ></i>
+                <i
+                  v-if="isUsing(project.frameworks, 'py')"
+                  class="fab fa-python fa-2x iconColor"
+                ></i>
+                <i
+                  v-if="isUsing(project.frameworks, 'c')"
+                  class="fab fa-cutterfish fa-2x iconColor"
+                ></i>
+                <i
+                  v-if="isUsing(project.frameworks, 'html')"
+                  class="fab fa-html5 fa-2x iconColor"
+                ></i>
+              </li>
+            </ul>
+          </v-container>
         </v-content>
       </v-app>
     </div>
@@ -69,28 +94,101 @@
           projects: [
             {
               name: "仙台の高齢地域可視化",
-              desc: "仙台の各町の高齢率をヒートマップで可視化するものです。個人的に好きなプロジェクトです。",
+              desc:
+                "仙台の各町の高齢率をヒートマップで可視化するものです。個人的に好きなプロジェクトです。",
               url: "https://azureleaf.github.io/canvas/fractal/canvastree.html",
               frameworks: ["py", "js", "c", "html"],
               db: "-",
             },
-            
             {
-              name: "フラクタルでパセリ描画",
-              desc: "再帰表現を使って図形を描画します。<canvas>の勉強に使いました。",
-              url: "https://azureleaf.github.io/canvas/fractal/canvastree.html",
-              frameworks: ["js", "html"],
-              db: "-",
-
+              name: "学生寮管理システム",
+              desc:
+                "学生寮の会計機能・当番割振機能・ファイルサーバー機能をもったWebサービス。一番本格的で実用的なプロジェクト。",
+              url: "",
+              frameworks: ["js", "php", "laravel", "vue", "html"],
+              db: "MySQL",
+            },
+            {
+              name: "五目並べ",
+              desc:
+                "コンピュータを相手に戦う五目並べです。COM側がめちゃくちゃ強くて、ほぼ勝てない。Web系の勉強をはじめて最初に作ったもので、思い入れがあります。",
+              url: "",
+              frameworks: ["js", "vue", "react", "html"],
+              db: "",
             },
             {
               name: "三角形の五心描画",
-              desc: "三角形の重心・内心・外心・傍心・垂心を描画し、その性質を勉強できます。<canvas>を使ったインタラクションを実現する勉強に使いました。",
+              desc:
+                "三角形の重心・内心・外心・傍心・垂心を描画し、その性質を勉強できます。<canvas>を使ったインタラクションを実現する勉強に使いました。",
               url:
                 "https://azureleaf.github.io/canvas/triangle/triangle_centers.html",
               frameworks: ["js", "html"],
               db: "-",
+            },
+            {
+              name: "バス停検索・地下鉄検索LINEボット",
+              desc:
+                "LINEでボットに現在位置を投げると、近くにあるバス停を検索してくれます。Herokuで稼働中。",
+              url: "",
+              frameworks: ["js", "py", "html"],
+              db: "",
+            },
+            {
+              name: "WiFiストーカー",
+              desc:
+                "自分が接続中のローカルネットに対してARP-SCANをかけて、ネットワーク内のデバイスのMACアドレスを取得し、他の人の在室状況などを追跡する嫌らしいプログラムです。",
+              url: "",
+              frameworks: ["js", "py", "html"],
+              db: "SQLite",
+            },
 
+            {
+              name: "フラクタルでパセリ描画",
+              desc:
+                "再帰表現を使って図形を描画します。<canvas>の勉強に使いました。",
+              url: "https://azureleaf.github.io/canvas/fractal/canvastree.html",
+              frameworks: ["js", "html"],
+              db: "-",
+            },
+
+            {
+              name: "病院診察状況分析",
+              desc:
+                "ウェブスクレイピングの練習台のプロジェクト。近所にある予約制の病院が診察状況を公開していたので、それを。",
+              url: "",
+              frameworks: ["js", "py", "html"],
+              db: "",
+            },
+            {
+              name: "ゲームタイトル分析",
+              desc: "",
+              url: "",
+              frameworks: ["js", "py", "html"],
+              db: "",
+            },
+            {
+              name: "プログラミング基礎知識",
+              desc:
+                "プログラミングについての膨大な勉強メモをマークダウンにまとめたものです。特にPromiseについては結構まとまっている。",
+              url: "",
+              frameworks: ["js", "py", "html"],
+              db: "",
+            },
+            {
+              name: "Express.js練習台",
+              desc:
+                "バックエンドの練習台。特に何かサービスの形にはなっていませんが、Expressの基本的な機能、Axiosによるフロントエンドとの通信、TypeORMやSequelizeなどのORMや種々のDBにさらっと触れるために作りました。",
+              url: "",
+              frameworks: ["js", "vue", "html"],
+              db: "",
+            },
+            {
+              name: "ファイルマネージャー",
+              desc:
+                "ローカルのパソコン内部のファイルを検知し、それぞれにタグ付けして管理するプログラム。ダウンロードしたPDFファイルが大量すぎて手に負えなくなってきたので。",
+              url: "",
+              frameworks: ["js", "py", "html"],
+              db: "",
             },
           ],
           projectHeaders: [
@@ -98,6 +196,11 @@
               text: "プロジェクト名",
               sortable: false,
               value: "name",
+            },
+            {
+              text: "動作アニメーション",
+              sortable: false,
+              value: "gif",
             },
             {
               text: "GitHubへのURL",
