@@ -58,16 +58,13 @@
               ><i class="fab fa-github fa-lg px-1"></i>My GitHub</v-btn
             >
             <v-divider vertical></v-divider>
-            <v-btn text href="https://azureleaf.github.io/">My Projects</v-btn>
+            <v-btn text to="/">My Projects</v-btn>
             <v-divider vertical></v-divider>
-            <v-btn text>My Skills</v-btn>
+            <v-btn text to="/skill">My Skills</v-btn>
             <v-divider vertical></v-divider>
           </v-toolbar-items>
         </v-app-bar>
-        <p><router-link to="/">Go to Page 1</router-link></p>
-        <p><router-link to="/skill">Go to Page 2</router-link></p>
         <p><router-view></router-view></p>
-
         <v-footer color="grey darken-4" class="text-center" dark app>
           <v-spacer></v-spacer>
           <span>azureleaf.github.io</span>
@@ -316,7 +313,7 @@
       });
 
       var SkillTable = Vue.component("skill", {
-        template: "<p>Component One</p>",
+        template: `<v-content><p>Component One</p><v-content>`,
       });
 
       const routes = [
