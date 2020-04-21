@@ -98,6 +98,9 @@
                           hide-default-footer
                           :items-per-page="20"
                         >
+                          <template v-slot:item.name="{item}">
+                            <b>{{item.name}}</b>
+                          </template>
                           <template v-slot:item.demourl="{item}">
                             <a v-if="item.demourl.length != 0" :href="item.demourl"
                               ><i class="fas fa-external-link-alt fa-2x"></i
@@ -189,7 +192,7 @@
                 backends: [],
               },
               {
-                name: "三角形の五心を見てみよう",
+                name: "三角形の五心",
                 desc:
                   "マウスで三角形を描くと、三角形の重心・内心・外心・傍心・垂心を自動で描画してくれます。幾何学的できれい。<canvas>を使ってマウスなどとのインタラクションを勉強しました。",
                 demourl:
@@ -211,7 +214,7 @@
               {
                 name: "WiFiストーカー",
                 desc:
-                  "自分が接続中のLANをスキャンし、ネットワーク内のデバイスのMACアドレスを取得。他の人のスマホやPCの接続有無をもとにその人の在室状況を追跡しようとする、嫌らしいプログラムです。",
+                  "LANを定期的に自動スキャンし、接続中のデバイスのMACアドレスを取得します。他の人のスマホやPCの接続有無をもとにその人の在室状況を追跡しようとする、嫌らしいプログラム。",
                 demourl: "",
                 githuburl: "https://github.com/azureleaf/lan-device-stalker",
                 frameworks: ["js", "py"],
@@ -220,16 +223,16 @@
               {
                 name: "通院アシスタント",
                 desc:
-                  "私の近所に予約制の病院があり、病院ウェブサイトでリアルタイムの診察状況を公開しています。このスクリプトはそこの混雑状況の把握と、病院ウェブサイト上での受診予約を自動でやってくれる優れものです。ウェブスクレイピングとブラウザ操作自動化の練習台。",
+                  "近所に予約制の病院があり、病院ウェブサイトでリアルタイムの診察状況を公開しています。このスクリプトはそこの混雑状況の把握と、病院ウェブサイト上での受診予約を自動でやってくれる優れものです。ウェブスクレイピングとブラウザ操作自動化の練習台。",
                 demourl: "",
                 githuburl: "https://github.com/azureleaf/hospital_latency",
                 frameworks: ["py"],
                 backends: ["SQLite"],
               },
               {
-                name: "ゲームタイトル別売上数分析",
+                name: "ゲーム売上数分析",
                 desc:
-                  "ウェブスクレイピングとデータ可視化ライブラリの練習台のプロジェクト。海外製のゲームタイトルが急速に伸びる中、任天堂はまだ健闘している。",
+                  "ウェブスクレイピングとデータ可視化の練習台。任天堂はまだ健闘している。",
                 demourl: "",
                 githuburl: "",
                 frameworks: ["js", "py"],
@@ -238,7 +241,7 @@
               {
                 name: "フラクタルでパセリ描画",
                 desc:
-                  "再帰表現を使って図形を描画します。<canvas>の勉強に使いました。",
+                  "再帰表現を使って図形を描画します。<canvas>の勉強のため作成。",
                 demourl:
                   "https://azureleaf.github.io/canvas/fractal/canvastree.html",
                 githuburl:
@@ -345,7 +348,7 @@
                         >使用経験などをご紹介しますが、なかなか長いのでざっとご覧ください。★がついているのは、特によく使っているものです。
                       </v-card-subtitle>
                     </v-card>
-                    <v-card v-for="(group, index) in groups" elevation="20" class="my-8" >
+                    <v-card v-for="(group, index) in groups" elevation="10" class="my-8" >
                       <v-app-bar flat class="white--text" :color="bgColors[index % 3]">
                       <v-card-title class="font-weight-bold" :color="bgColors[index % 3]"
                         >{{group.groupName}}</v-card-title
@@ -358,6 +361,9 @@
                           hide-default-footer
                           :items-per-page="30"
                         >
+                          <template v-slot:item.title="{item}">
+                            <b>{{item.title}}</b>
+                          </template>
                           <template v-slot:item.star="{item}">
                             <span v-if="item.star == '1'">★</span>
                           </template>
@@ -431,27 +437,22 @@
                 skills: [
                   {
                     title: "Ubuntu (18.04)",
-                    desc: "現在のメインOS。",
+                    desc:
+                      "現在のメインOS。これでAdobe製品とMS Officeが使えたら最強なんですが...",
                     star: "1",
                   },
                   {
                     title: "Windows",
                     desc:
-                      "Windowsの強制アップデート、謎のCPU使用率100%、メモリ浪費には疲れはてました。",
+                      "Windowsの強制アップデート、謎のCPU使用率100%、メモリ浪費には疲れ果てました。",
                   },
                   {
                     title: "CentOS + Nginx",
-                    desc: "研究室のウェブサイト運用で建てました。",
+                    desc: "研究室のウェブサイト運用で使用。",
                   },
                   {
                     title: "WordPress",
-                    desc:
-                      "そこまで深くはいじっていませんが、学生団体のサイトを管理していた時に使いました。",
-                  },
-                  {
-                    title: "bash",
-                    desc:
-                      "zsh, fishもいいですが、結局どこでも触れるbashを今は使っています。",
+                    desc: "学生団体のサイトを管理していた時に使用。",
                   },
                   {
                     title: "Visual Studio Code",
@@ -463,12 +464,10 @@
                     desc: "",
                   },
                   { title: "Vim", desc: "" },
-                  { title: "PyCharm", desc: "" },
                   {
                     title: "IntelliJ IDEA",
                     desc: "EclipseのUIが嫌いだったので。",
                   },
-                  { title: "Git", desc: "", star: "1" },
                   {
                     title: "GitHub / BitBucket / GitLab",
                     desc:
@@ -506,7 +505,7 @@
                   { title: "Postman", desc: "" },
                   { title: "Php cs fixer", desc: "" },
                   { title: "PHP Intelephense", desc: "" },
-                  { title: "pipenv / virtualenv", desc: "Pythonの開発環境" },
+                  { title: "pipenv / virtualenv", desc: "Pythonの仮想環境" },
                 ],
               },
               {
@@ -519,7 +518,7 @@
                   {
                     title: "React",
                     desc:
-                      "Vueより前に触りました。個人的にはVue.jsの方が好きなのですが、React Nativeの魅力は大きい。",
+                      "個人的にはVue.jsの方が好きなのですが、React Nativeの魅力は大きいです。",
                   },
                   { title: "Stylus", desc: "" },
                   { title: "Pug", desc: "" },
@@ -532,7 +531,7 @@
                 skills: [
                   { title: "Node.js", desc: "", star: "1" },
                   { title: "Express.js", desc: "", star: "1" },
-                  { title: "Bcrypt", desc: "ハッシュ化パッケージ" },
+                  { title: "Bcrypt", desc: "ハッシュ関数" },
                   { title: "Passport.js", desc: "ログイン処理" },
                   { title: "Laravel", desc: "" },
                   { title: "Flask", desc: "" },
@@ -558,16 +557,16 @@
                   { title: "Pandas / Numpy", desc: "" },
                   { title: "Scikit-learn", desc: "" },
                   {
-                    title: "Tensorflow + Keras",
+                    title: "Tensorflow / PyTorch",
                     desc:
-                      "今の所MNISTの手書き文字入力や猫画像認識のチュートリアルを動かしただけ。今後力を入れたい。",
+                      "MNISTの手書き文字入力や猫画像認識のチュートリアルを動かしました。月並みな表現ですが、AIは私が生きる時代における最重要技術だと思います。今後一番力を入れたい。",
                   },
                   { title: "BeautifulSoup", desc: "HTMLファイルの解析" },
                   { title: "Selenium", desc: "ブラウザ操作の自動化" },
                 ],
               },
               {
-                groupName: "データ可視化",
+                groupName: "可視化",
                 skills: [
                   {
                     title: "Chart.js",
@@ -576,7 +575,6 @@
                   { title: "Three.js", desc: "3DCGライブラリ。" },
                   { title: "Matplotlib", desc: "" },
                   { title: "Leaflet.js", desc: "" },
-                  { title: "", desc: "" },
                 ],
               },
             ],
