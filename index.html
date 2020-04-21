@@ -68,7 +68,7 @@
           </v-toolbar-items>
         </v-app-bar>
         <p><router-view></router-view></p>
-        <v-footer color="grey darken-4" class="text-center" dark app>
+        <v-footer color="grey darken-4" absolute="false" dark app>
           <v-spacer></v-spacer>
           <span>azureleaf.github.io</span>
           <v-spacer></v-spacer>
@@ -167,7 +167,7 @@
               {
                 name: "仙台高齢化地域の可視化",
                 desc:
-                  "仙台の町ごとの高齢人口比率をヒートマップで表示します。市民の一人として興味がある事柄なので、個人的に気に入っているプロジェクトです。Pandasのデータフレーム操作の便利さに感動しました。",
+                  "仙台の町ごとの高齢人口比率をヒートマップで表示します。一市民として興味の湧く事柄なので、個人的に気に入っているプロジェクトです。Pandasのデータフレーム操作の便利さに感動しました。",
                 demourl: "https://azureleaf.github.io/ageing-sendai/",
                 githuburl: "https://github.com/azureleaf/ageing-sendai",
                 frameworks: ["py", "js", "c"],
@@ -223,7 +223,7 @@
               {
                 name: "通院アシスタント",
                 desc:
-                  "近所に予約制の病院があり、病院ウェブサイトでリアルタイムの診察状況を公開しています。このスクリプトはそこの混雑状況の把握と、病院ウェブサイト上での受診予約を自動でやってくれる優れものです。ウェブスクレイピングとブラウザ操作自動化の練習台。",
+                  "近所に予約制の病院があり、病院ウェブサイトでリアルタイムの診察状況を公開しています。このスクリプトはそのウェブサイトから現在の混雑状況を自動取得し、また病院ウェブサイト上での受診予約まで自動でやってくれる優れものです。ウェブスクレイピングとブラウザ操作自動化の練習台。",
                 demourl: "",
                 githuburl: "https://github.com/azureleaf/hospital_latency",
                 frameworks: ["py"],
@@ -252,7 +252,7 @@
               {
                 name: "プログラミング学習ノート",
                 desc:
-                  "プログラミングについての膨大な勉強メモをマークダウンにまとめたものです。特にPromiseについては結構まとまっている。",
+                  "プログラミングについての膨大な勉強メモをマークダウンにまとめたものです。特にPromiseについては結構まとめました。",
                 demourl: "",
                 githuburl: "https://github.com/azureleaf/study-notes",
                 frameworks: ["js", "py"],
@@ -265,10 +265,7 @@
                 demourl: "",
                 githuburl: "https://github.com/azureleaf/hello-express",
                 frameworks: ["vue"],
-                backends: [
-                  "Express + TypeORM + SQLite",
-                  "Express + Sequelize + SQLite",
-                ],
+                backends: ["Express + TypeORM + SQLite"],
               },
               {
                 name: "ログイン機能をつくる",
@@ -382,17 +379,17 @@
                   {
                     title: "プログラミング",
                     desc:
-                      "触ったのは大学入学以後ですが、かなり自分の性格に合っていると思います。今後やりたいことも多いですが、勉強すべきこともとても多いことを日々実感します。",
+                      "触ったのは大学入学以後ですが、プログラミングは自分の性格に合っていると思います。今後開発で実現したいプランはたくさんあるのですが、勉強すればするほど自分の知識不足に気付かされ圧倒される今日この頃です。",
                   },
                   {
                     title: "外国語学習",
                     desc:
-                      "趣味です。英語が通常のコミュニケーションに問題ないレベルです。プログラマは英語の文献参照（特にStackOverflow）がとても多いので、趣味と実益双方に役立っています。中国語も文献を参照して理解するのは問題なくできます。",
+                      "私の趣味です。英語が通常のコミュニケーションに問題ないレベルです。プログラマは英語の文献参照（特にStackOverflow）がとても多いので、趣味と実益双方を兼ねています。中国語も文献を参照して理解するのは問題なくできます。",
                   },
                   {
                     title: "散歩",
                     desc:
-                      "町やら山やら毎日歩いています。一日１・２万歩程度が多いですが、最大で一日45km（仙台中心から秋保温泉まで往復）歩きました。お気に入りの行先は蕃山と太白山。",
+                      "仙台周辺の町やら山やら毎日歩いています。一日１万歩程度が多いですが、最大で一日45km（仙台中心から秋保温泉まで往復）歩きました。お気に入りの行先は蕃山と太白山。",
                   },
                   {
                     title: "犬",
