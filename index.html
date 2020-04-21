@@ -345,10 +345,12 @@
                         >私が使ったことがあるツールなどをご紹介しますが、長いのでざっとご覧ください。★がついているのは、特によく使っているものです。
                       </v-card-subtitle>
                     </v-card>
-                    <v-card v-for="group in groups" elevation="20" class="my-3">
-                      <v-card-title class="font-weight-bold"
+                    <v-card v-for="(group, index) in groups" elevation="20" class="my-8" >
+                      <v-app-bar flat class="white--text" :color="bgColors[index % 3]">
+                      <v-card-title class="font-weight-bold" :color="bgColors[index % 3]"
                         >{{group.groupName}}</v-card-title
                       >
+                      </v-app-bar>
                       <v-card-text>
                         <v-data-table
                           :headers="skillHeaders"
@@ -579,7 +581,7 @@
                 skills: [
                   {
                     title: "HTML5 Canvas / SVG",
-                    desc: "思っていたよりずっと高機能だった",
+                    desc: "",
                   },
                   { title: "MS Excel / LibreOffice Calc", desc: "" },
                   {
@@ -612,6 +614,7 @@
                 value: "desc",
               },
             ],
+            bgColors: ["red darken-4", "green darken-4", "blue darken-4"],
           };
         },
       });
