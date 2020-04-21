@@ -29,7 +29,7 @@
     <title>Azureleaf's Portfolio</title>
     <style>
       .iconColor {
-        color: darkslategray;
+        color: #333333;
       }
     </style>
 
@@ -100,6 +100,9 @@
                         >
                           <template v-slot:item.name="{item}">
                             <b>{{item.name}}</b>
+                          </template>
+                          <template v-slot:item.desc="{item}">
+                            <p class="my-3">{{item.desc}}</p>
                           </template>
                           <template v-slot:item.demourl="{item}">
                             <a v-if="item.demourl.length != 0" :href="item.demourl"
@@ -205,7 +208,7 @@
               {
                 name: "仙台バス停・地下鉄検索ボット",
                 desc:
-                  "LINEのボット。彼にGPSの現在位置を投げると、近くにあるバス停を検索して返してくれます。Herokuで稼働中。",
+                  "LINEのボット。彼にGPSの現在位置を投げると、一番近くにあるバス停と地下鉄の駅を検索して返してくれます。Herokuで稼働中。本当はバス発車時刻も提示してほしかったが、仙台市交通局がそのデータを公開していなかった。",
                 demourl: "",
                 githuburl: "https://github.com/azureleaf/greet_bot",
                 frameworks: ["py"],
@@ -246,7 +249,7 @@
                   "https://azureleaf.github.io/canvas/fractal/canvastree.html",
                 githuburl:
                   "https://github.com/azureleaf/canvas/tree/master/fractal",
-                frameworks: ["vue"],
+                frameworks: ["js"],
                 backends: [],
               },
               {
