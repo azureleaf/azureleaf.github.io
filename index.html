@@ -85,11 +85,12 @@
                 <v-content>
                   <v-container>
                     <v-card elevation="20" class="my-10">
-                      <v-card-title class="font-weight-bold"
+                      <v-card-title class="display-1 mx-4 py-8"
                         >プロジェクト一覧</v-card-title
                       >
-                      <v-card-subtitle
-                        >ポートフォリオサイトへのご訪問ありがとうございます。私がここ一年ほどの間に作った作品を一部ご紹介します。いくつかのプロジェクトはデモページがありますので、以下のリンクからぜひご覧ください。より詳しい説明は、以下のGitHubのリンクからREADMEをご覧ください。</v-card-subtitle
+                      <v-card-subtitle class="ml-4 subtitle-1"
+                        >ポートフォリオサイトへのご訪問ありがとうございます！私のここ一年分の作品を一部ご紹介します。<br>
+                        各プロジェクトのデモページと、プロジェクトを詳細に解説したGitHubのREADMEへのリンク先も貼りましたので、ぜひご覧ください。</v-card-subtitle
                       >
                       <v-card-text>
                         <v-data-table
@@ -102,7 +103,7 @@
                             <b>{{item.name}}</b>
                           </template>
                           <template v-slot:item.desc="{item}">
-                            <p class="my-3">{{item.desc}}</p>
+                            <p class="my-3"><span v-html="item.desc"></span></p>
                           </template>
                           <template v-slot:item.demourl="{item}">
                             <a v-if="item.demourl.length != 0" :href="item.demourl"
@@ -197,7 +198,7 @@
               {
                 name: "三角形の五心",
                 desc:
-                  "マウスで三角形を描くと、三角形の重心・内心・外心・傍心・垂心を自動で描画してくれます。幾何学的できれい。<canvas>を使ってマウスなどとのインタラクションを勉強しました。",
+                  "マウスで三角形を描くと、三角形の重心・内心・外心・傍心・垂心を自動で描画してくれます。幾何学的できれい。Canvasを使ってマウスなどとのインタラクションを勉強しました。",
                 demourl:
                   "https://azureleaf.github.io/canvas/triangle/triangle_centers.html",
                 githuburl:
@@ -233,6 +234,15 @@
                 backends: ["SQLite"],
               },
               {
+                name: "日本の大都市で気候が一番良いのはどこだ？",
+                desc:
+                  "地理データの可視化シリーズ。日本７大都市の気温・降水量・日照を比較し、仙台がベストだということを証明したい。",
+                demourl: "",
+                githuburl: "https://github.com/azureleaf/japan-city-climate",
+                frameworks: ["js", "py"],
+                backends: [],
+              },
+              {
                 name: "ゲーム売上数分析",
                 desc:
                   "ウェブスクレイピングとデータ可視化の練習台。任天堂はまだ健闘している。",
@@ -244,7 +254,7 @@
               {
                 name: "フラクタルでパセリ描画",
                 desc:
-                  "再帰表現を使って図形を描画します。<canvas>の勉強のため作成。",
+                  "再帰表現を使って図形を描画します。HTML Canvasの勉強のため作成。",
                 demourl:
                   "https://azureleaf.github.io/canvas/fractal/canvastree.html",
                 githuburl:
@@ -255,7 +265,7 @@
               {
                 name: "プログラミング学習ノート",
                 desc:
-                  "プログラミングについての膨大な勉強メモをマークダウンにまとめたものです。特にPromiseについては結構まとめました。",
+                  "プログラミングについての膨大な勉強メモをマークダウンにまとめたものです。特に<a href='https://github.com/azureleaf/study-notes/blob/master/js/promise.md'>Promiseについて</a>は結構まとめました。",
                 demourl: "",
                 githuburl: "https://github.com/azureleaf/study-notes",
                 frameworks: ["js", "py"],
@@ -341,11 +351,11 @@
                 <v-content>
                   <v-container>
                     <v-card elevation="20" class="mt-10">
-                      <v-card-title class="font-weight-bold"
+                      <v-card-title class="display-1 mx-4 py-8"
                         >スキル</v-card-title
                       >
-                      <v-card-subtitle
-                        >使用経験などをご紹介しますが、なかなか長いのでざっとご覧ください。★がついているのは、特によく使っているものです。
+                      <v-card-subtitle class="ml-4 subtitle-1"
+                        >使用経験などをご紹介します。なかなか長いのでざっとご覧ください。★がついているのは、特によく使っているものです。
                       </v-card-subtitle>
                     </v-card>
                     <v-card v-for="(group, index) in groups" elevation="10" class="my-8" >
@@ -382,12 +392,12 @@
                   {
                     title: "プログラミング",
                     desc:
-                      "触ったのは大学入学以後ですが、プログラミングは自分の性格に合っていると思います。今後開発で実現したいプランはたくさんあるのですが、勉強すればするほど自分の知識不足に気付かされ圧倒される今日この頃です。",
+                      "プログラミングに触ったのは大学入学以後ですが、自分の性格によく合っていると思います。今後開発したいプランはたくさんあるのですが、勉強すればするほど自分の知識不足に圧倒されます。",
                   },
                   {
                     title: "外国語学習",
                     desc:
-                      "私の趣味です。英語が通常のコミュニケーションに問題ないレベルです。プログラマは英語の文献参照（特にStackOverflow）がとても多いので、趣味と実益双方を兼ねています。中国語も文献を参照して理解するのは問題なくできます。",
+                      "私の趣味です。英語は通常のコミュニケーションに問題ないレベル、中国語は文献参照をできる程度です。プログラマは英語の文献参照（特にStackOverflow）がとても多いので、趣味と実益双方を兼ねています。",
                   },
                   {
                     title: "散歩",
@@ -397,7 +407,7 @@
                   {
                     title: "犬",
                     desc:
-                      "完全に犬派です。今飼ってみたい犬種は、和犬なら甲斐犬、洋犬ならボーダーコリーかオーストラリアン・シェパード。当面はアパート暮らしになりそうなので飼えないのが悲しいです。",
+                      "完全なる犬派です。今飼いたい犬種は和犬なら甲斐犬、洋犬ならボーダーコリーかオーストラリアン・シェパード。当面はアパート暮らしになりそうなので飼えないのが悲しいです。",
                   },
                 ],
               },
@@ -485,7 +495,7 @@
                     desc:
                       "他の人のパソコンを使ってコーディングしていた頃に、お借りした環境を汚さないために使っていました。DockerとKubernetesは今の所そこまで勉強できていませんが、今後かなり本格的に勉強したいです。",
                   },
-                  { title: "VirtualBox", desc: "" },
+                  { title: "VirtualBox + Vagrant", desc: "" },
                   {
                     title: "Wireshark",
                     desc:
@@ -500,9 +510,9 @@
                   { title: "Prettier", desc: "", star: "1" },
                   { title: "ESLint / TSLint", desc: "", star: "1" },
                   { title: "Vetur", desc: "" },
-                  { title: "Cypress", desc: "" },
-                  { title: "Jest", desc: "" },
-                  { title: "Postman", desc: "" },
+                  { title: "Cypress", desc: "Integration test" },
+                  { title: "Jest", desc: "Unit test" },
+                  { title: "Postman", desc: "API test" },
                   { title: "Php cs fixer", desc: "" },
                   { title: "PHP Intelephense", desc: "" },
                   { title: "pipenv / virtualenv", desc: "Pythonの仮想環境" },
@@ -511,14 +521,22 @@
               {
                 groupName: "フロントエンド",
                 skills: [
-                  { title: "Vue.js", desc: "", star: "1" },
+                  {
+                    title: "Vue.js",
+                    desc: "初心者にとってやさしすぎる",
+                    star: "1",
+                  },
                   { title: "Vue-Router", desc: "" },
                   { title: "Vuex", desc: "" },
-                  { title: "Vuetify", desc: "" },
+                  {
+                    title: "Vuetify",
+                    desc:
+                      "このポートフォリオサイト自体もVuetifyでできています。マテリアルデザインはきれい。",
+                  },
                   {
                     title: "React",
                     desc:
-                      "個人的にはVue.jsの方が好きなのですが、React Nativeの魅力は大きいです。",
+                      "個人的にはVue.jsの方が好きなのですが、React Nativeの魅力はかなり大きい。",
                   },
                   { title: "Stylus", desc: "" },
                   { title: "Pug", desc: "" },
