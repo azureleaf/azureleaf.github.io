@@ -89,7 +89,7 @@
                         >プロジェクト一覧</v-card-title
                       >
                       <v-card-subtitle
-                        >私のポートフォリオサイトへのご訪問ありがとうございます。私がここ一年ほどの間に作った作品を一部ご紹介します。いくつかのプロジェクトはデモページがありますので、以下のリンクからぜひご覧ください。より詳しい説明は、以下のGitHubのリンクからREADMEをご覧ください。</v-card-subtitle
+                        >ポートフォリオサイトへのご訪問ありがとうございます。私がここ一年ほどの間に作った作品を一部ご紹介します。いくつかのプロジェクトはデモページがありますので、以下のリンクからぜひご覧ください。より詳しい説明は、以下のGitHubのリンクからREADMEをご覧ください。</v-card-subtitle
                       >
                       <v-card-text>
                         <v-data-table
@@ -342,7 +342,7 @@
                         >スキル</v-card-title
                       >
                       <v-card-subtitle
-                        >私が使ったことがあるツールなどをご紹介しますが、長いのでざっとご覧ください。★がついているのは、特によく使っているものです。
+                        >使用経験などをご紹介しますが、なかなか長いのでざっとご覧ください。★がついているのは、特によく使っているものです。
                       </v-card-subtitle>
                     </v-card>
                     <v-card v-for="(group, index) in groups" elevation="20" class="my-8" >
@@ -494,16 +494,9 @@
                   },
                 ],
               },
+
               {
-                groupName: "パッケージ管理",
-                skills: [
-                  { title: "npm", desc: "", star: "1" },
-                  { title: "pip3", desc: "" },
-                  { title: "composer", desc: "" },
-                ],
-              },
-              {
-                groupName: "コーディング内容関係",
+                groupName: "コード品質",
                 skills: [
                   { title: "Prettier", desc: "", star: "1" },
                   { title: "ESLint / TSLint", desc: "", star: "1" },
@@ -514,10 +507,6 @@
                   { title: "Php cs fixer", desc: "" },
                   { title: "PHP Intelephense", desc: "" },
                   { title: "pipenv / virtualenv", desc: "Pythonの開発環境" },
-                  {
-                    title: "Fira Code",
-                    desc: "お気に入りのコーディングフォント",
-                  },
                 ],
               },
               {
@@ -535,7 +524,7 @@
                   { title: "Stylus", desc: "" },
                   { title: "Pug", desc: "" },
                   { title: "Axios", desc: "" },
-                  { title: "Font Awesome", desc: "ロゴコレクション。" },
+                  { title: "socket.io", desc: "" },
                 ],
               },
               {
@@ -544,24 +533,23 @@
                   { title: "Node.js", desc: "", star: "1" },
                   { title: "Express.js", desc: "", star: "1" },
                   { title: "Bcrypt", desc: "ハッシュ化パッケージ" },
+                  { title: "Passport.js", desc: "ログイン処理" },
                   { title: "Laravel", desc: "" },
                   { title: "Flask", desc: "" },
                   { title: "TypeORM", desc: "" },
-                  { title: "Sequelize", desc: "" },
-                  { title: "Eloquent", desc: "" },
-                  { title: "SQLite", desc: "" },
-                  { title: "MySQL", desc: "" },
-                  { title: "PostgreSQL", desc: "" },
-                  { title: "MongoDB", desc: "" },
-                  { title: "Firebase", desc: "便利。" },
+                  { title: "Sequelize ORM", desc: "" },
+                  { title: "Eloquent ORM", desc: "" },
                   { title: "Heroku", desc: "" },
                 ],
               },
               {
-                groupName: "ウェブスクレイピング関係",
+                groupName: "DB",
                 skills: [
-                  { title: "BeautifulSoup", desc: "HTMLファイルの解析" },
-                  { title: "Selenium", desc: "ブラウザ操作の自動化" },
+                  { title: "SQLite", desc: "" },
+                  { title: "MySQL", desc: "" },
+                  { title: "PostgreSQL", desc: "" },
+                  { title: "MongoDB", desc: "" },
+                  { title: "Firebase", desc: "" },
                 ],
               },
               {
@@ -574,19 +562,16 @@
                     desc:
                       "今の所MNISTの手書き文字入力や猫画像認識のチュートリアルを動かしただけ。今後力を入れたい。",
                   },
+                  { title: "BeautifulSoup", desc: "HTMLファイルの解析" },
+                  { title: "Selenium", desc: "ブラウザ操作の自動化" },
                 ],
               },
               {
                 groupName: "データ可視化",
                 skills: [
                   {
-                    title: "HTML5 Canvas / SVG",
-                    desc: "",
-                  },
-                  { title: "MS Excel / LibreOffice Calc", desc: "" },
-                  {
                     title: "Chart.js",
-                    desc: "図表描画のライブラリ。シンプルだし、軽いので便利",
+                    desc: "図表描画。シンプルで軽い。",
                   },
                   { title: "Three.js", desc: "3DCGライブラリ。" },
                   { title: "Matplotlib", desc: "" },
@@ -609,7 +594,7 @@
                 width: "30%",
               },
               {
-                text: "Description",
+                text: "Comment",
                 sortable: false,
                 value: "desc",
               },
