@@ -334,7 +334,76 @@
       });
 
       var SkillTable = Vue.component("skill", {
-        template: `<v-content><p>Component One</p><v-content>`,
+        template: `
+          <v-content>
+            <v-container>
+              <v-card elevation="20" class="my-10">
+                <v-card-title class="font-weight-bold"
+                  >スキル</v-card-title
+                >
+                <v-card-subtitle
+                  >私がもつスキル全般をご説明します。
+                </v-card-subtitle>
+                <v-card-text>
+                  <v-data-table
+                    :headers="projectHeaders"
+                    :items="projects"
+                    hide-default-footer
+                    :items-per-page="20"
+                  >
+                  </v-data-table>
+                </v-card-text>
+              </v-card>
+            </v-container>
+          </v-content>
+        `,
+        data: function () {
+          return {
+            skilltypes:[
+              {name: "Python", content: "woah"},
+              {name: "ツール類", content: "woah"},
+              {name: "コミュニケーション", content: "woah"},
+            ],
+            skillHeaders: [
+              {
+                text: "Project",
+                sortable: false,
+                value: "name",
+              },
+              {
+                text: "GIF",
+                sortable: false,
+                value: "gif",
+              },
+              {
+                text: "Demo",
+                sortable: false,
+                value: "demourl",
+              },
+              {
+                text: "GitHub",
+                sortable: false,
+                value: "githuburl",
+              },
+              {
+                text: "Summary",
+                sortable: false,
+                value: "desc",
+                width: "40%",
+              },
+              {
+                text: "Framework",
+                sortable: false,
+                value: "frameworks",
+              },
+              {
+                text: "Backend",
+                sortable: false,
+                value: "backends",
+              },
+            ],
+          }
+        },
       });
 
       var SlideShow = Vue.component("slide", {
