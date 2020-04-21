@@ -54,6 +54,9 @@
           <v-spacer></v-spacer>
           <v-toolbar-items id="tb-items">
             <v-divider vertical></v-divider>
+            <v-btn text to="/slide">Slideshow</v-btn>
+            <v-divider vertical></v-divider>
+            <v-divider vertical></v-divider>
             <v-btn text to="/">My Projects</v-btn>
             <v-divider vertical></v-divider>
             <v-btn text to="/skill">My Skills</v-btn>
@@ -188,7 +191,7 @@
               {
                 name: "三角形の五心を見てみよう",
                 desc:
-                  "マウスで三角形を描くと、三角形の重心・内心・外心・傍心・垂心を自動で描画してくれます。幾何学的できれい。<canvas>を使ってマウスなどとのインタラクションを勉強しました。私の知人が作ったものを私が魔改造。",
+                  "マウスで三角形を描くと、三角形の重心・内心・外心・傍心・垂心を自動で描画してくれます。幾何学的できれい。<canvas>を使ってマウスなどとのインタラクションを勉強しました。",
                 demourl:
                   "https://azureleaf.github.io/canvas/triangle/triangle_centers.html",
                 githuburl:
@@ -240,7 +243,7 @@
                   "https://azureleaf.github.io/canvas/fractal/canvastree.html",
                 githuburl:
                   "https://github.com/azureleaf/canvas/tree/master/fractal",
-                frameworks: ["js"],
+                frameworks: ["vue"],
                 backends: [],
               },
               {
@@ -334,9 +337,14 @@
         template: `<v-content><p>Component One</p><v-content>`,
       });
 
+      var SlideShow = Vue.component("slide", {
+        template: `<v-content><p>Slideshow here</p><v-content>`,
+      });
+
       const routes = [
         { path: "/", component: ProjectTable },
         { path: "/skill", component: SkillTable },
+        { path: "/slide", component: SlideShow },
       ];
 
       const router = new VueRouter({
