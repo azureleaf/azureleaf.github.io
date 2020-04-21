@@ -82,81 +82,81 @@
       // Before pasting the code here, you better write the template code somewhere to ensure it works
       var ProjectTable = Vue.component("project", {
         template: `
-          <v-content>
-            <v-container>
-              <v-card elevation="20" class="my-10">
-                <v-card-title class="font-weight-bold"
-                  >プロジェクト一覧</v-card-title
-                >
-                <v-card-subtitle
-                  >私のポートフォリオサイトへのご訪問ありがとうございます。私がここ一年ほどの間に作った作品を一部ご紹介します。いくつかのプロジェクトはデモページがありますので、以下のリンクからぜひご覧ください。より詳しい説明は、以下のGitHubのリンクからREADMEをご覧ください。</v-card-subtitle
-                >
-                <v-card-text>
-                  <v-data-table
-                    :headers="projectHeaders"
-                    :items="projects"
-                    hide-default-footer
-                    :items-per-page="20"
-                  >
-                    <template v-slot:item.demourl="{item}">
-                      <a v-if="item.demourl.length != 0" :href="item.demourl"
-                        ><i class="fas fa-external-link-alt fa-2x"></i
-                      ></a>
-                    </template>
-                    <template v-slot:item.githuburl="{item}">
-                      <a v-if="item.githuburl.length != 0" :href="item.githuburl">
-                        <i class="fab fa-github fa-2x"></i>
-                      </a>
-                    </template>
-                    <template v-slot:item.backends="{item}">
-                      <span v-if="item.backends.length == 0">-</span>
-                      <p
-                        v-else
-                        v-for="backend in item.backends"
-                        class="ma-0 pa-0"
+                <v-content>
+                  <v-container>
+                    <v-card elevation="20" class="my-10">
+                      <v-card-title class="font-weight-bold"
+                        >プロジェクト一覧</v-card-title
                       >
-                        {{backend}}
-                      </p>
-                    </template>
-                    <template v-slot:item.frameworks="{item}">
-                      <i
-                        v-if="isUsing(item.frameworks, 'js')"
-                        class="fab fa-js fa-2x iconColor"
-                      ></i>
-                      <i
-                        v-if="isUsing(item.frameworks, 'php')"
-                        class="fab fa-php fa-2x iconColor"
-                      ></i>
-                      <i
-                        v-if="isUsing(item.frameworks, 'laravel')"
-                        class="fab fa-laravel fa-2x iconColor"
-                      ></i>
-                      <i
-                        v-if="isUsing(item.frameworks, 'vue')"
-                        class="fab fa-vuejs fa-2x iconColor"
-                      ></i>
-                      <i
-                        v-if="isUsing(item.frameworks, 'react')"
-                        class="fab fa-react fa-2x iconColor"
-                      ></i>
-                      <i
-                        v-if="isUsing(item.frameworks, 'py')"
-                        class="fab fa-python fa-2x iconColor"
-                      ></i>
-                      <i
-                        v-if="isUsing(item.frameworks, 'c')"
-                        class="fab fa-cuttlefish fa-2x iconColor"
-                      ></i>
-                      <i
-                        v-if="isUsing(item.frameworks, 'html')"
-                        class="fab fa-html5 fa-2x iconColor"
-                      ></i>
-                    </template>
-                  </v-data-table>
-                </v-card-text>
-              </v-card>
-            </v-container> </v-content
-          >`,
+                      <v-card-subtitle
+                        >私のポートフォリオサイトへのご訪問ありがとうございます。私がここ一年ほどの間に作った作品を一部ご紹介します。いくつかのプロジェクトはデモページがありますので、以下のリンクからぜひご覧ください。より詳しい説明は、以下のGitHubのリンクからREADMEをご覧ください。</v-card-subtitle
+                      >
+                      <v-card-text>
+                        <v-data-table
+                          :headers="projectHeaders"
+                          :items="projects"
+                          hide-default-footer
+                          :items-per-page="20"
+                        >
+                          <template v-slot:item.demourl="{item}">
+                            <a v-if="item.demourl.length != 0" :href="item.demourl"
+                              ><i class="fas fa-external-link-alt fa-2x"></i
+                            ></a>
+                          </template>
+                          <template v-slot:item.githuburl="{item}">
+                            <a v-if="item.githuburl.length != 0" :href="item.githuburl">
+                              <i class="fab fa-github fa-2x"></i>
+                            </a>
+                          </template>
+                          <template v-slot:item.backends="{item}">
+                            <span v-if="item.backends.length == 0">-</span>
+                            <p
+                              v-else
+                              v-for="backend in item.backends"
+                              class="ma-0 pa-0"
+                            >
+                              {{backend}}
+                            </p>
+                          </template>
+                          <template v-slot:item.frameworks="{item}">
+                            <i
+                              v-if="isUsing(item.frameworks, 'js')"
+                              class="fab fa-js fa-2x iconColor"
+                            ></i>
+                            <i
+                              v-if="isUsing(item.frameworks, 'php')"
+                              class="fab fa-php fa-2x iconColor"
+                            ></i>
+                            <i
+                              v-if="isUsing(item.frameworks, 'laravel')"
+                              class="fab fa-laravel fa-2x iconColor"
+                            ></i>
+                            <i
+                              v-if="isUsing(item.frameworks, 'vue')"
+                              class="fab fa-vuejs fa-2x iconColor"
+                            ></i>
+                            <i
+                              v-if="isUsing(item.frameworks, 'react')"
+                              class="fab fa-react fa-2x iconColor"
+                            ></i>
+                            <i
+                              v-if="isUsing(item.frameworks, 'py')"
+                              class="fab fa-python fa-2x iconColor"
+                            ></i>
+                            <i
+                              v-if="isUsing(item.frameworks, 'c')"
+                              class="fab fa-cuttlefish fa-2x iconColor"
+                            ></i>
+                            <i
+                              v-if="isUsing(item.frameworks, 'html')"
+                              class="fab fa-html5 fa-2x iconColor"
+                            ></i>
+                          </template>
+                        </v-data-table>
+                      </v-card-text>
+                    </v-card>
+                  </v-container> </v-content
+                >`,
         data: function () {
           return {
             msg: "hello, world",
@@ -211,9 +211,9 @@
               {
                 name: "WiFiストーカー",
                 desc:
-                  "自分が接続中のローカルネットをスキャンし、ネットワーク内のデバイスのMACアドレスを取得。他の人のスマホやPCの接続有無をもとに在室状況を推測しようとする、いやらしいプログラム。",
+                  "自分が接続中のLANをスキャンし、ネットワーク内のデバイスのMACアドレスを取得。他の人のスマホやPCの接続有無をもとにその人の在室状況を追跡しようとする、嫌らしいプログラムです。",
                 demourl: "",
-                githuburl: "",
+                githuburl: "https://github.com/azureleaf/lan-device-stalker",
                 frameworks: ["js", "py"],
                 backends: ["SQLite"],
               },
@@ -293,9 +293,9 @@
                 value: "name",
               },
               {
-                text: "GIF",
+                text: "Video",
                 sortable: false,
-                value: "gif",
+                value: "video",
               },
               {
                 text: "Demo",
@@ -335,89 +335,256 @@
 
       var SkillTable = Vue.component("skill", {
         template: `
-          <v-content>
-            <v-container>
-              <v-card elevation="20" class="my-10">
-                <v-card-title class="font-weight-bold"
-                  >スキル</v-card-title
-                >
-                <v-card-subtitle
-                  >私がもつスキル全般をご説明します。
-                </v-card-subtitle>
-                <v-card-text>
-                  <v-data-table
-                    :headers="projectHeaders"
-                    :items="projects"
-                    hide-default-footer
-                    :items-per-page="20"
-                  >
-                  </v-data-table>
-                </v-card-text>
-              </v-card>
-            </v-container>
-          </v-content>
-        `,
+                <v-content>
+                  <v-container>
+                    <v-card elevation="20" class="mt-10">
+                      <v-card-title class="font-weight-bold"
+                        >スキル</v-card-title
+                      >
+                      <v-card-subtitle
+                        >私が使ったことがあるツールなどをご紹介しますが、長いのでざっとご覧ください。★がついているのは、特によく使っているものです。
+                      </v-card-subtitle>
+                    </v-card>
+                    <v-card v-for="group in groups" elevation="20" class="my-3">
+                      <v-card-title class="font-weight-bold"
+                        >{{group.groupName}}</v-card-title
+                      >
+                      <v-card-text>
+                        <v-data-table
+                          :headers="skillHeaders"
+                          :items="group.skills"
+                          hide-default-footer
+                          :items-per-page="30"
+                        >
+                          <template v-slot:item.star="{item}">
+                            <span v-if="item.star == '1'">★</span>
+                          </template>
+                        </v-data-table>
+                      </v-card-text>
+                    </v-card>
+                  </v-container>
+                </v-content>
+              `,
         data: function () {
           return {
-            skilltypes:[
-              {name: "Python", content: "woah"},
-              {name: "ツール類", content: "woah"},
-              {name: "コミュニケーション", content: "woah"},
+            groups: [
+              {
+                groupName: "言語",
+                skills: [
+                  {
+                    title: "JavaScript",
+                    desc:
+                      "Promiseとasync/awaitの理解が独学の中での一つの関門でした。",
+                    star: "1",
+                  },
+                  { title: "TypeScript", desc: "" },
+                  {
+                    title: "Python",
+                    desc: "一番使っているのはJSですが、一番好きなのはPython。",
+                  },
+                  { title: "PHP", desc: "" },
+                  {
+                    title: "C / C++",
+                    desc: "Cは制御関係で、C++はOpenCVを使う際に使いました。",
+                  },
+                  {
+                    title: "Java",
+                    desc:
+                      "その昔ImageJという画像処理ソフトのプラグインを改良するのに使いました。",
+                  },
+                ],
+              },
+              {
+                groupName: "開発ツール",
+                skills: [
+                  { title: "Ubuntu (18.04)", desc: "現在のメインOS。" },
+                  {
+                    title: "Windows",
+                    desc:
+                      "Windowsの強制アップデート、謎のCPU使用率100%、メモリ浪費には疲れはてました。",
+                  },
+                  {
+                    title: "CentOS + Nginx",
+                    desc: "研究室のウェブサイト運用で建てました。",
+                  },
+                  {
+                    title: "WordPress",
+                    desc:
+                      "そこまで深くはいじっていませんが、学生団体のサイトを管理していた時に使いました。",
+                  },
+                  {
+                    title: "Visual Studio Code",
+                    desc: "使いまくっています。",
+                    star: "1",
+                  },
+                  {
+                    title: "Visual Studio",
+                    desc:
+                      "最後に使ったのは数年前ですが、とにかく重かった思い出",
+                  },
+                  { title: "Vim", desc: "" },
+                  { title: "PyCharm", desc: "" },
+                  { title: "IntelliJ IDEA", desc: "" },
+                  { title: "Git", desc: "" },
+                  {
+                    title: "GitHub / BitBucket / GitLab",
+                    desc:
+                      "GitLabでは他のプログラミング勉強仲間と協業しました。",
+                  },
+                  { title: "Trello", desc: "" },
+                  {
+                    title: "Slack / Chatwork / LINE",
+                    desc: "LINEはボットを作りました。",
+                  },
+                  { title: "Zoom", desc: "" },
+                  {
+                    title: "Docker",
+                    desc:
+                      "他の人のパソコンを使ってコーディングしていた頃に、お借りした環境を汚さないために使っていました。DockerとKubernetesは今の所そこまで勉強できていませんが、今後かなり本格的に勉強したいです。",
+                  },
+                  { title: "VirtualBox", desc: "" },
+                  {
+                    title: "Wireshark",
+                    desc:
+                      "共用ネットワークで野良DHCPサーバが立ってトラブった時に使いました。",
+                  },
+                ],
+              },
+              {
+                groupName: "パッケージ管理",
+                skills: [
+                  { title: "npm", desc: "" },
+                  { title: "pip3", desc: "" },
+                  { title: "composer", desc: "" },
+                ],
+              },
+              {
+                groupName: "コーディング内容関係",
+                skills: [
+                  { title: "Prettier", desc: "" },
+                  { title: "ESLint / TSLint", desc: "" },
+                  { title: "Vetur", desc: "" },
+                  { title: "Php cs fixer", desc: "" },
+                  { title: "PHP Intelephense", desc: "" },
+                  { title: "pipenv / virtualenv", desc: "Pythonの開発環境" },
+                  {
+                    title: "Fira Code",
+                    desc: "お気に入りのコーディングフォント",
+                  },
+                ],
+              },
+              {
+                groupName: "フロントエンド",
+                skills: [
+                  { title: "Vue.js", desc: "" },
+                  { title: "Vue-Router", desc: "" },
+                  { title: "Vuex", desc: "" },
+                  { title: "Vuetify", desc: "" },
+                  { title: "Axios", desc: "" },
+                  { title: "Jinja 2 template engine", desc: "" },
+                  { title: "Font Awesome", desc: "ロゴコレクション。" },
+                ],
+              },
+              {
+                groupName: "バックエンド",
+                skills: [
+                  { title: "Node.js", desc: "" },
+                  { title: "Express.js", desc: "" },
+                  { title: "Laravel", desc: "" },
+                  { title: "TypeORM", desc: "" },
+                  { title: "Sequelize", desc: "" },
+                  { title: "Eloquent", desc: "" },
+                  { title: "SQLite", desc: "" },
+                  { title: "MySQL", desc: "" },
+                  { title: "PostgreSQL", desc: "" },
+                  { title: "MongoDB", desc: "" },
+                  { title: "", desc: "" },
+                ],
+              },
+              {
+                groupName: "ウェブスクレイピング関係",
+                skills: [
+                  { title: "BeautifulSoup", desc: "HTMLああ" },
+                  { title: "Selenium", desc: "自動化ああ" },
+                ],
+              },
+              {
+                groupName: "データ処理",
+                skills: [{ title: "Pandas / Numpy", desc: "HTMLああ" }],
+                skills: [{ title: "Scikit-learn", desc: "" }],
+                skills: [
+                  {
+                    title: "Tensorflow + Keras",
+                    desc:
+                      "今の所MNISTの手書き文字入力や猫画像認識のチュートリアルを動かしただけ。今後力を入れたい。",
+                  },
+                ],
+              },
+              {
+                groupName: "データ可視化",
+                skills: [
+                  {
+                    title: "HTML5 Canvas / SVG",
+                    desc: "思っていたよりずっと高機能だった",
+                  },
+                  { title: "MS Excel / LibreOffice Calc", desc: "" },
+                  {
+                    title: "Chart.js",
+                    desc: "図表描画のライブラリ。シンプルだし、軽いので便利",
+                  },
+                  { title: "Three.js", desc: "3DCGライブラリ。" },
+                  { title: "Matplotlib", desc: "" },
+                  { title: "Leaflet.js", desc: "" },
+                  { title: "", desc: "" },
+                ],
+              },
+              {
+                groupName: "趣味とか",
+                skills: [
+                  { title: "散歩", desc: "HTMLああ" },
+                  {
+                    title: "犬",
+                    desc:
+                      "今飼ってみたい犬種は、和犬なら甲斐犬、洋犬ならボーダーコリーかオーストラリアン・シェパードです。とはいえ、雑種でもなんでもかわいければよいですが。",
+                  },
+                ],
+              },
             ],
             skillHeaders: [
               {
-                text: "Project",
+                text: "",
                 sortable: false,
-                value: "name",
+                value: "star",
+                width: "10",
               },
               {
-                text: "GIF",
+                text: "Title",
                 sortable: false,
-                value: "gif",
+                value: "title",
+                width: "30%",
               },
               {
-                text: "Demo",
-                sortable: false,
-                value: "demourl",
-              },
-              {
-                text: "GitHub",
-                sortable: false,
-                value: "githuburl",
-              },
-              {
-                text: "Summary",
+                text: "Description",
                 sortable: false,
                 value: "desc",
-                width: "40%",
-              },
-              {
-                text: "Framework",
-                sortable: false,
-                value: "frameworks",
-              },
-              {
-                text: "Backend",
-                sortable: false,
-                value: "backends",
               },
             ],
-          }
+          };
         },
       });
 
       var SlideShow = Vue.component("slide", {
         template: `
-          <v-carousel>
-            <v-carousel-item
-              v-for="(item,i) in items"
-              :key="i"
-              :src="item.src"
-              reverse-transition="fade-transition"
-              transition="fade-transition"
-            ></v-carousel-item>
-          </v-carousel>
-          `,
+                <v-carousel>
+                  <v-carousel-item
+                    v-for="(item,i) in items"
+                    :key="i"
+                    :src="item.src"
+                    reverse-transition="fade-transition"
+                    transition="fade-transition"
+                  ></v-carousel-item>
+                </v-carousel>
+                `,
         data: function () {
           return {
             items: [
