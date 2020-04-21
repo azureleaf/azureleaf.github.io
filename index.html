@@ -369,23 +369,53 @@
           return {
             groups: [
               {
+                groupName: "私",
+                skills: [
+                  {
+                    title: "プログラミング",
+                    desc:
+                      "触ったのは大学入学以後ですが、かなり自分の性格に合っていると思います。今後やりたいことも多いが、勉強すべきことも多い。",
+                  },
+                  {
+                    title: "外国語学習",
+                    desc:
+                      "趣味です。英語が通常のコミュニケーションに問題ないレベルです。プログラマは英語の文献参照がとても多い（特にStackOverflow）ので、趣味と実益双方に役立っています。中国語も文献を参照して理解するのは問題なくできます。",
+                  },
+                  {
+                    title: "散歩",
+                    desc:
+                      "町やら山やら毎日歩いています。一日１・２万歩程度が多いですが、最大で一日45km（仙台中心から秋保温泉まで往復）歩きました。お気に入りの行先は蕃山と太白山。",
+                  },
+                  {
+                    title: "犬",
+                    desc:
+                      "完全に犬派です。今飼ってみたい犬種は、和犬なら甲斐犬、洋犬ならボーダーコリーかオーストラリアン・シェパード。当面はアパート暮らしになりそうなので飼えないのが悲しいです。",
+                  },
+                ],
+              },
+              {
                 groupName: "言語",
                 skills: [
                   {
-                    title: "JavaScript",
+                    title: "JavaScript / TypeScript",
                     desc:
-                      "Promiseとasync/awaitの理解が独学の中での一つの関門でした。",
+                      "Promiseとasync/awaitの理解が独学の中での一つの関門でした。TypeScriptはあまり使い込んでいませんが、今後大いに使いたい。",
                     star: "1",
                   },
-                  { title: "TypeScript", desc: "" },
                   {
                     title: "Python",
                     desc: "一番使っているのはJSですが、一番好きなのはPython。",
+                    star: "1",
                   },
-                  { title: "PHP", desc: "" },
+                  {
+                    title: "PHP",
+                    desc:
+                      "まだ触り始めです。PHPの変数名に「＄」をつけるのに未だに慣れない。",
+                  },
                   {
                     title: "C / C++",
-                    desc: "Cは制御関係で、C++はOpenCVを使う際に使いました。",
+                    desc:
+                      "Cは制御関係で、C++はOpenCVを使う際に使いました。とにかく速いので、最近は巨大CSVの編集などに使います。",
                   },
                   {
                     title: "Java",
@@ -397,7 +427,11 @@
               {
                 groupName: "開発ツール",
                 skills: [
-                  { title: "Ubuntu (18.04)", desc: "現在のメインOS。" },
+                  {
+                    title: "Ubuntu (18.04)",
+                    desc: "現在のメインOS。",
+                    star: "1",
+                  },
                   {
                     title: "Windows",
                     desc:
@@ -424,8 +458,12 @@
                   },
                   { title: "Vim", desc: "" },
                   { title: "PyCharm", desc: "" },
-                  { title: "IntelliJ IDEA", desc: "" },
-                  { title: "Git", desc: "" },
+                  {
+                    title: "IntelliJ IDEA",
+                    desc:
+                      "EclipseのUIが嫌いだったので。JetBrainsのUIは悪くないです。",
+                  },
+                  { title: "Git", desc: "", star: "1" },
                   {
                     title: "GitHub / BitBucket / GitLab",
                     desc:
@@ -435,6 +473,7 @@
                   {
                     title: "Slack / Chatwork / LINE",
                     desc: "LINEはボットを作りました。",
+                    star: "1",
                   },
                   { title: "Zoom", desc: "" },
                   {
@@ -453,7 +492,7 @@
               {
                 groupName: "パッケージ管理",
                 skills: [
-                  { title: "npm", desc: "" },
+                  { title: "npm", desc: "", star: "1" },
                   { title: "pip3", desc: "" },
                   { title: "composer", desc: "" },
                 ],
@@ -461,9 +500,12 @@
               {
                 groupName: "コーディング内容関係",
                 skills: [
-                  { title: "Prettier", desc: "" },
-                  { title: "ESLint / TSLint", desc: "" },
+                  { title: "Prettier", desc: "", star: "1" },
+                  { title: "ESLint / TSLint", desc: "", star: "1" },
                   { title: "Vetur", desc: "" },
+                  { title: "Cypress", desc: "" },
+                  { title: "Jest", desc: "" },
+                  { title: "Postman", desc: "" },
                   { title: "Php cs fixer", desc: "" },
                   { title: "PHP Intelephense", desc: "" },
                   { title: "pipenv / virtualenv", desc: "Pythonの開発環境" },
@@ -476,20 +518,23 @@
               {
                 groupName: "フロントエンド",
                 skills: [
-                  { title: "Vue.js", desc: "" },
+                  { title: "Vue.js", desc: "", star: "1" },
                   { title: "Vue-Router", desc: "" },
                   { title: "Vuex", desc: "" },
                   { title: "Vuetify", desc: "" },
+                  { title: "React", desc: "最初に触りました。" },
+                  { title: "Stylus", desc: "" },
+                  { title: "Pug", desc: "" },
                   { title: "Axios", desc: "" },
-                  { title: "Jinja 2 template engine", desc: "" },
                   { title: "Font Awesome", desc: "ロゴコレクション。" },
                 ],
               },
               {
                 groupName: "バックエンド",
                 skills: [
-                  { title: "Node.js", desc: "" },
-                  { title: "Express.js", desc: "" },
+                  { title: "Node.js", desc: "", star: "1" },
+                  { title: "Express.js", desc: "", star: "1" },
+                  { title: "Bcrypt", desc: "ハッシュ化パッケージ" },
                   { title: "Laravel", desc: "" },
                   { title: "TypeORM", desc: "" },
                   { title: "Sequelize", desc: "" },
@@ -498,19 +543,20 @@
                   { title: "MySQL", desc: "" },
                   { title: "PostgreSQL", desc: "" },
                   { title: "MongoDB", desc: "" },
-                  { title: "", desc: "" },
+                  { title: "Firebase", desc: "便利。" },
+                  { title: "Heroku", desc: "" },
                 ],
               },
               {
                 groupName: "ウェブスクレイピング関係",
                 skills: [
-                  { title: "BeautifulSoup", desc: "HTMLああ" },
-                  { title: "Selenium", desc: "自動化ああ" },
+                  { title: "BeautifulSoup", desc: "HTMLファイルの解析" },
+                  { title: "Selenium", desc: "ブラウザ操作の自動化" },
                 ],
               },
               {
                 groupName: "データ処理",
-                skills: [{ title: "Pandas / Numpy", desc: "HTMLああ" }],
+                skills: [{ title: "Pandas / Numpy", desc: "" }],
                 skills: [{ title: "Scikit-learn", desc: "" }],
                 skills: [
                   {
@@ -536,17 +582,6 @@
                   { title: "Matplotlib", desc: "" },
                   { title: "Leaflet.js", desc: "" },
                   { title: "", desc: "" },
-                ],
-              },
-              {
-                groupName: "趣味とか",
-                skills: [
-                  { title: "散歩", desc: "HTMLああ" },
-                  {
-                    title: "犬",
-                    desc:
-                      "今飼ってみたい犬種は、和犬なら甲斐犬、洋犬ならボーダーコリーかオーストラリアン・シェパードです。とはいえ、雑種でもなんでもかわいければよいですが。",
-                  },
                 ],
               },
             ],
