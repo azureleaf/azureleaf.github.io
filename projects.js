@@ -147,7 +147,7 @@ var ProjectTable = Vue.component("project", {
         {
           name: "通院アシスタント",
           desc:
-            "近所に予約制の病院があり、病院ウェブサイトでリアルタイムの診察状況を公開しています。このスクリプトはそのウェブサイトから現在の混雑状況を自動取得し、また病院ウェブサイト上での受診予約まで自動でやってくれる優れものです。ウェブスクレイピングとブラウザ操作自動化の練習台。",
+            "近所にある某病院は予約制で、病院ウェブサイトでリアルタイムの診察状況を公開しています。このスクリプトはそのウェブサイトから現在の混雑状況を自動取得し、また病院ウェブサイト上での受診予約まで自動でやってくれる優れものです。ウェブスクレイピングとブラウザ操作自動化の練習台。",
           demourl: "",
           githuburl: "https://github.com/azureleaf/hospital_latency",
           frameworks: ["py", "vue", "js"],
@@ -222,11 +222,6 @@ var ProjectTable = Vue.component("project", {
           text: "Project",
           sortable: false,
           value: "name",
-        },
-        {
-          text: "Video",
-          sortable: false,
-          value: "video",
         },
         {
           text: "Demo",
