@@ -89,7 +89,7 @@
                         >プロジェクト一覧</v-card-title
                       >
                       <v-card-subtitle class="ml-4 subtitle-1"
-                        >ポートフォリオサイトへのご訪問ありがとうございます！私のここ一年分の作品を一部ご紹介します。<br>
+                        >ポートフォリオサイトへのご訪問ありがとうございます！ここ一年ほどの私の作品を一部ご紹介します。<br>
                         各プロジェクトのデモページと、プロジェクトを詳細に解説したGitHubのREADMEへのリンク先も貼りましたので、ぜひご覧ください。</v-card-subtitle
                       >
                       <v-card-text>
@@ -202,7 +202,7 @@
                 demourl:
                   "https://azureleaf.github.io/canvas/triangle/triangle_centers.html",
                 githuburl:
-                  "https://github.com/azureleaf/canvas/tree/master/triangle",
+                  "https://github.com/azureleaf/canvas/",
                 frameworks: ["js"],
                 backends: [],
               },
@@ -213,7 +213,7 @@
                 demourl: "",
                 githuburl: "https://github.com/azureleaf/greet_bot",
                 frameworks: ["py"],
-                backends: ["Flask + Firebase?"],
+                backends: ["Flask + Firebase"],
               },
               {
                 name: "WiFiストーカー",
@@ -230,8 +230,8 @@
                   "近所に予約制の病院があり、病院ウェブサイトでリアルタイムの診察状況を公開しています。このスクリプトはそのウェブサイトから現在の混雑状況を自動取得し、また病院ウェブサイト上での受診予約まで自動でやってくれる優れものです。ウェブスクレイピングとブラウザ操作自動化の練習台。",
                 demourl: "",
                 githuburl: "https://github.com/azureleaf/hospital_latency",
-                frameworks: ["py"],
-                backends: ["SQLite"],
+                frameworks: ["py", "vue", "js"],
+                backends: ["Express.js + TypeORM + MySQL"],
               },
               {
                 name: "日本の大都市で気候が一番良いのはどこだ？",
@@ -258,7 +258,7 @@
                 demourl:
                   "https://azureleaf.github.io/canvas/fractal/canvastree.html",
                 githuburl:
-                  "https://github.com/azureleaf/canvas/tree/master/fractal",
+                  "https://github.com/azureleaf/canvas/",
                 frameworks: ["js"],
                 backends: [],
               },
@@ -355,7 +355,7 @@
                         >スキル</v-card-title
                       >
                       <v-card-subtitle class="ml-4 subtitle-1"
-                        >使用経験などをご紹介します。なかなか長いのでざっとご覧ください。★がついているのは、特によく使っているものです。
+                        >私が今までに使ったツールです。なかなか長いのでざっとご覧ください。★がついているのは、特によく使っているものです。
                       </v-card-subtitle>
                     </v-card>
                     <v-card v-for="(group, index) in groups" elevation="10" class="my-8" >
@@ -374,6 +374,9 @@
                           <template v-slot:item.title="{item}">
                             <b>{{item.title}}</b>
                           </template>
+                          <template v-slot:item.desc="{item}">
+                            <p class="my-3">{{item.desc}}</p>
+                          </template>
                           <template v-slot:item.star="{item}">
                             <span v-if="item.star == '1'">★</span>
                           </template>
@@ -387,27 +390,32 @@
           return {
             groups: [
               {
-                groupName: "私",
+                groupName: "私について",
                 skills: [
                   {
                     title: "プログラミング",
                     desc:
-                      "プログラミングに触ったのは大学入学以後ですが、自分の性格によく合っていると思います。今後開発したいプランはたくさんあるのですが、勉強すればするほど自分の知識不足に圧倒されます。",
+                      "始めたのは大学入学後ですが、プログラミングは自分の性によく合っていると感じます。今後Web開発したいもののプランはいくつもありますが、そのために勉強すべきことも本当に多いと最近実感します。",
                   },
                   {
-                    title: "外国語学習",
+                    title: "語学",
                     desc:
-                      "私の趣味です。英語は通常のコミュニケーションに問題ないレベル、中国語は文献参照をできる程度です。プログラマは英語の文献参照（特にStackOverflow）がとても多いので、趣味と実益双方を兼ねています。",
+                      "私の趣味です。英語は口頭のコミュニケーションに問題ないレベルで、また中国語資料でも情報収集できます。プログラマは英文の資料（特にStackOverflow）がとても多いので、趣味と実益双方を兼ねています。",
                   },
                   {
-                    title: "散歩",
+                    title: "性格",
                     desc:
-                      "仙台周辺の町やら山やら毎日歩いています。一日１万歩程度が多いですが、最大で一日45km（仙台中心から秋保温泉まで往復）歩きました。お気に入りの行先は蕃山と太白山。",
+                      "抽象的な話ですが、ひとつの物事に没頭して作業を続けられる性格です。これは多くのプログラマに共通するでしょうか。ただし何事もやりすぎは逆効果ですので、他人とのコミュニケーションを通じてこの性格を上手く制御し活かすべきものだと思います。「陽キャじゃないけど説明力はとても高い」が私に対するある人の評。",
                   },
                   {
-                    title: "犬",
+                    title: "健康",
                     desc:
-                      "完全なる犬派です。今飼いたい犬種は和犬なら甲斐犬、洋犬ならボーダーコリーかオーストラリアン・シェパード。当面はアパート暮らしになりそうなので飼えないのが悲しいです。",
+                      "仙台周辺の町やら山やら毎日歩いており、体力はある方です。生活の中で運動や気分転換の習慣があることは精神衛生上も役立っています。一日１万から２万歩程度が多いですが、最大で一日45km（秋保温泉まで往復）歩きました。お気に入りの行先は愛子の蕃山。",
+                  },
+                  {
+                    title: "犬派",
+                    desc:
+                      "スキルと無関係な話ですが私は犬がとても好きで、今飼いたい犬種は和犬なら甲斐犬、洋犬ならボーダーコリーかオーストラリアン・シェパードです。",
                   },
                 ],
               },
@@ -607,7 +615,7 @@
                 text: "Title",
                 sortable: false,
                 value: "title",
-                width: "30%",
+                width: "25%",
               },
               {
                 text: "Comment",
