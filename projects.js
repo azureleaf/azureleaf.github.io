@@ -88,10 +88,10 @@ var ProjectTable = Vue.component("project", {
               <v-card-title :id="project.identifier">
                 {{project.name}}
                 <a v-if="project.demourl.length != 0" :href="project.demourl">
-                  <i class="fas fa-external-link-alt fa-lg pl-6"></i> Demo
+                  <i class="fas fa-external-link-alt fa-lg pl-7 pr-1"></i>デモページ
                 </a>
                 <a v-if="project.githuburl.length != 0" :href="project.githuburl">
-                  <i class="fab fa-github fa-lg pl-6"></i> Source
+                  <i class="fab fa-github fa-lg pl-7 pr-1"></i>詳細解説とソース
                 </a>
               </v-card-title>
               <v-card-text>
@@ -99,7 +99,12 @@ var ProjectTable = Vue.component("project", {
                   <v-card-title>機能</v-card-title>
                   <v-card-text>
                     <ul>
-                      <li v-for="(func, index) in project.funcs" :key="index">{{func}}</li>
+                      <li
+                        v-for="(func, index) in project.funcs"
+                        :key="index"
+                        class="comfy_list">
+                        {{func}}
+                      </li>
                     </ul>
                     <img :src="project.funcImg" class="mt-4"/>
                   </v-card-text>
@@ -108,7 +113,12 @@ var ProjectTable = Vue.component("project", {
                   <v-card-title>技術面</v-card-title>
                   <v-card-text>
                     <ul>
-                      <li v-for="(tech, index) in project.techs" :key="index">{{tech}}</li>
+                      <li
+                        v-for="(tech, index) in project.techs"
+                        :key="index"
+                        v-html="tech"
+                        class="comfy_list">
+                      </li>
                     </ul>
                   </v-card-text>
                 </v-card>
@@ -116,7 +126,11 @@ var ProjectTable = Vue.component("project", {
                   <v-card-title>収穫</v-card-title>
                   <v-card-text>
                     <ul>
-                      <li v-for="(achv, index) in project.achvs" :key="index">{{achv}}</li>
+                      <li
+                        v-for="(achv, index) in project.achvs"
+                        :key="index" v-html="achv"
+                        class="comfy_list">
+                      </li>
                     </ul>
                   </v-card-text>
                 </v-card>
@@ -140,17 +154,20 @@ var ProjectTable = Vue.component("project", {
           funcs: [
             "地図上でインタラクティブに高齢化地域を操作できます。",
             "高齢化率で色分けしているので一目瞭然です。",
-            "クリックすることで詳細情報がポップアップで表示できます"
+            "クリックすることで詳細情報がポップアップで表示できます",
           ],
           funcImg: "img/ageing_heatmap_screenshot.jpg",
           techs: [
-            "Leaflet.jsにより、地図タイルのレイヤを設置しています。",
-            "データ処理はPythonのPandasで主に行いましたが、一部C言語なども使いました。",
-            "仙台市や国が公開したファイルは「五歳くぎり・町ごと・男女別年齢人口分布のデータ」「町ごとの緯度経度のデータ」なので、これを",
-            "複数の字（あざ）を大字（おおあざ）にまとめる、細かな表記の違い（４丁目と四丁目、など）を統一する、などのきめ細かな処理が必要でした。",
+            "<u>Leaflet.js</u>により、地図タイルのレイヤを設置しています。",
+            "データ処理はPythonの<u>Pandas</u>で主に行いましたが、一部C言語なども使いました。",
+            "<u>カラーマッピング</u>（どの値をどの色に対応させれば見やすいのか？）の有名な計算方法も検討しました。",
+            "仙台市や国が公開した「五歳くぎり・町ごと・男女別年齢人口分布のデータ」「町ごとの緯度経度のデータ」など<u>複数の表をうまくTABLE JOINし合成する</u>必要があります。",
+            "複数の字（あざ）を、それが属する大字（おおあざ）にまとめたり、不要な行や列を判定して除去するコーディング処理。",
+            "細かな表記のゆれ（４丁目と四丁目、など）を統一するコーディング処理。",
+            "統計（年少人口・生産年齢人口・老年人口の人数、人口比、高齢化率、従属人口比率、老年化指数、男女比）を集計するコーディング処理。",
           ],
           achvs: [
-            "地図を使った可視化の勉強になりました。見た目が色鮮やかでインタラクティブなUIは、やはり使っていて楽しいものです。",
+            "地図を使った可視化の勉強になりました。<u>見た目が色鮮やかでインタラクティブなUI</u>は、やはり使っていて楽しいものです。",
             "データ分析前にきちんとデータの整合性や形式を確認しておくことの大切さが痛いほど身にしみました",
           ],
         },
