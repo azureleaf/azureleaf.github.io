@@ -85,8 +85,42 @@ var ProjectTable = Vue.component("project", {
                 </v-card-text>
             </v-card>
             <v-card v-for="(project, index) in projects" elevation="10" class="my-8" >
-              <v-card-title :id="project.identifier">{{project.name}}</v-card-title>
-
+              <v-card-title :id="project.identifier">
+                {{project.name}}
+                <a v-if="project.demourl.length != 0" :href="project.demourl">
+                  <i class="fas fa-external-link-alt fa-lg pl-6"></i> Demo
+                </a>
+                <a v-if="project.githuburl.length != 0" :href="project.githuburl">
+                  <i class="fab fa-github fa-lg pl-6"></i> Source
+                </a>
+              </v-card-title>
+              <v-card-text>
+                <v-card outlined class="my-2">
+                  <v-card-title>機能</v-card-title>
+                  <v-card-text>
+                    <ul>
+                      <li v-for="(func, index) in project.funcs" :key="index">{{func}}</li>
+                    </ul>
+                    <img :src="project.funcImg" class="mt-4"/>
+                  </v-card-text>
+                </v-card>
+                <v-card outlined class="my-2">
+                  <v-card-title>技術面</v-card-title>
+                  <v-card-text>
+                    <ul>
+                      <li v-for="(tech, index) in project.techs" :key="index">{{tech}}</li>
+                    </ul>
+                  </v-card-text>
+                </v-card>
+                <v-card outlined>
+                  <v-card-title>収穫</v-card-title>
+                  <v-card-text>
+                    <ul>
+                      <li v-for="(achv, index) in project.achvs" :key="index">{{achv}}</li>
+                    </ul>
+                  </v-card-text>
+                </v-card>
+              </v-card-text>
             </v-card>
           </v-container>
         </v-content>`,
@@ -98,11 +132,27 @@ var ProjectTable = Vue.component("project", {
           name: "仙台高齢化地域の可視化",
           identifier: "ageing",
           desc:
-            "仙台の町ごとの高齢人口比率をヒートマップで表示します。一市民として興味の湧く事柄なので、個人的に気に入っているプロジェクトです。",
+            "仙台の町ごとの高齢人口比率をヒートマップで表示します。一市民として興味のある内容なので、個人的に気に入っているプロジェクトです。",
           demourl: "https://azureleaf.github.io/ageing-sendai/",
           githuburl: "https://github.com/azureleaf/ageing-sendai",
           frameworks: ["py", "js", "c"],
           backends: [],
+          funcs: [
+            "地図上でインタラクティブに高齢化地域を操作できます。",
+            "高齢化率で色分けしているので一目瞭然です。",
+            "クリックすることで詳細情報がポップアップで表示できます"
+          ],
+          funcImg: "img/ageing_heatmap_screenshot.jpg",
+          techs: [
+            "Leaflet.jsにより、地図タイルのレイヤを設置しています。",
+            "データ処理はPythonのPandasで主に行いましたが、一部C言語なども使いました。",
+            "仙台市や国が公開したファイルは「五歳くぎり・町ごと・男女別年齢人口分布のデータ」「町ごとの緯度経度のデータ」なので、これを",
+            "複数の字（あざ）を大字（おおあざ）にまとめる、細かな表記の違い（４丁目と四丁目、など）を統一する、などのきめ細かな処理が必要でした。",
+          ],
+          achvs: [
+            "地図を使った可視化の勉強になりました。見た目が色鮮やかでインタラクティブなUIは、やはり使っていて楽しいものです。",
+            "データ分析前にきちんとデータの整合性や形式を確認しておくことの大切さが痛いほど身にしみました",
+          ],
         },
         {
           name: "学生寮運営システム",
@@ -166,7 +216,7 @@ var ProjectTable = Vue.component("project", {
           backends: ["Express + TypeORM + MySQL"],
         },
         {
-          name: "日本の大都市で気候が一番良いのはどこだ？",
+          name: "日本の大都市で気候が一番良いのはどこ？",
           identifier: "climate",
           desc:
             "日本７大都市の気温・降水量・日照を比較して、仙台がベストだということを証明したいのです。",
