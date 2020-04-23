@@ -3,10 +3,10 @@ var SkillTable = Vue.component("skill", {
     <v-content>
       <v-container>
         <v-card elevation="20" class="mt-10">
-          <v-card-title class="display-1 mx-4 py-8"
+          <v-card-title class="display-1 pb-8"
             >スキル</v-card-title
           >
-          <v-card-subtitle class="ml-4 subtitle-1"
+          <v-card-subtitle class="subtitle-1"
             >私が今までに使ったツールです。下線を引いたものは、特によく使っているものです。
           </v-card-subtitle>
         </v-card>
@@ -48,7 +48,7 @@ var SkillTable = Vue.component("skill", {
             {
               title: "プログラミング",
               desc:
-                "始めたのは大学入学後ですが、プログラミングは自分の性分によく合っていると感じます。今後Web開発したいもののプランはいくつもありますが、そのために勉強すべきことも本当に多いと最近実感します。",
+                "始めたのは大学入学後ですが、プログラミングは自分の性分によく合っていると感じます。今後Web開発したいもののプランはいくつもありますが、そのために勉強すべきことも本当に多いとつくづく実感させられます。",
             },
             {
               title: "語学",
@@ -137,7 +137,7 @@ var SkillTable = Vue.component("skill", {
               desc: "Docker / VirtualBox + Vagrant / <u>pipenv</u> / virtualenv",
             },
             {
-              title: "コードフォーマット（VS-Code）",
+              title: "コードフォーマット（VS Code）",
               desc:
                 "<u>Prettier</u> / <u>Vetur</u> / <u>ESLint</u> / TSLint / <u>Autopep8</u> / <u>Flake8</u> / php cs fixer / PHP Intelephense",
             },
@@ -209,7 +209,7 @@ var SkillTable = Vue.component("skill", {
           text: "Name",
           sortable: false,
           value: "title",
-          width: "25%",
+          width: "20%",
         },
         {
           text: "Content",

@@ -5,11 +5,11 @@ var ProjectTable = Vue.component("project", {
   template: `
         <v-content>
             <v-container>
-            <v-card elevation="10" class="mt-10 px-4">
-              <v-card-title class="display-1 py-8">プロジェクト一覧</v-card-title>
+            <v-card elevation="10" class="mt-10">
+              <v-card-title class="display-1 pb-8">プロジェクト一覧</v-card-title>
                 <v-card-subtitle class="subtitle-1">
-                ポートフォリオサイトへのご訪問ありがとうございます！ここ一年ほどの私の作品を一部ご紹介します。<br>
-                各プロジェクトのデモページと、プロジェクトを詳細に解説したGitHubのREADMEへのリンク先も貼りましたので、ぜひご覧ください。
+                ポートフォリオサイトへのご訪問ありがとうございます。ここ一年くらいの私の作品の一部をご説明します。<br>
+                各プロジェクトのデモページをぜひご覧ください。プロジェクトの詳細な解説は、それぞれのGitHubのリンク先に書いてあります。
               </v-card-subtitle>            
             </v-card>
             <v-card elevation="10" class="my-8">
@@ -98,17 +98,17 @@ var ProjectTable = Vue.component("project", {
           name: "仙台高齢化地域の可視化",
           identifier: "ageing",
           desc:
-            "仙台の町ごとの高齢人口比率をヒートマップで表示します。一市民として興味の湧く事柄なので、個人的に気に入っているプロジェクトです。Pandasのデータフレーム操作の便利さに感動しました。",
+            "仙台の町ごとの高齢人口比率をヒートマップで表示します。一市民として興味の湧く事柄なので、個人的に気に入っているプロジェクトです。",
           demourl: "https://azureleaf.github.io/ageing-sendai/",
           githuburl: "https://github.com/azureleaf/ageing-sendai",
           frameworks: ["py", "js", "c"],
           backends: [],
         },
         {
-          name: "学生寮情報管理システム",
+          name: "学生寮運営システム",
           identifier: "dorm",
           desc:
-            "学生寮の会計機能・当番割振機能・情報投稿機能をもったWebサービス。一番本格的で実用的なプロジェクト。",
+            "ログイン機能・会計処理機能・当番割振機能をもったWebサービス。一番本格的で実用的なプロジェクト。",
           demourl: "",
           githuburl: "",
           frameworks: ["js", "php", "laravel", "vue"],
@@ -116,22 +116,12 @@ var ProjectTable = Vue.component("project", {
         },
         {
           name: "激強五目並べ",
-          identifier: "gomoku_vue",
+          identifier: "gomoku",
           desc:
-            "コンピュータを相手に戦う五目並べです。COM側がめちゃくちゃ強くて、ほぼ勝てない。",
+            "コンピュータを相手に戦う五目並べです。敵側がめちゃくちゃ強くて、ほぼ勝てない。<a href='https://github.com/azureleaf/gomoku'>React版もあります。</a>私がWeb系の勉強をはじめた直後にはじめたものなので、思い入れがあります。",
           demourl: "",
           githuburl: "",
-          frameworks: ["vue"],
-          backends: [],
-        },
-        {
-          name: "激強五目並べ（React版）",
-          identifier: "gomoku_react",
-          desc:
-            "上記の五目並べのReact版です。私がWeb系の勉強をはじめて最初に作ったものなので、思い入れがあります。",
-          demourl: "",
-          githuburl: "https://github.com/azureleaf/gomoku",
-          frameworks: ["react"],
+          frameworks: ["vue", "react"],
           backends: [],
         },
         {
@@ -169,17 +159,17 @@ var ProjectTable = Vue.component("project", {
           name: "通院アシスタント",
           identifier: "hospital",
           desc:
-            "近所にある某病院は予約制で、病院ウェブサイトでリアルタイムの診察状況を公開しています。このスクリプトはそのウェブサイトから現在の混雑状況を自動取得し、また病院ウェブサイト上での受診予約まで自動でやってくれる優れものです。ウェブスクレイピングとブラウザ操作自動化の練習台。",
+            "近所にある某病院のウェブサイトを自動でウェブスクレイピングして今の混雑状況を分析し、またオンラインでの受診予約まで自動でやってくれる優れものです。",
           demourl: "",
           githuburl: "https://github.com/azureleaf/hospital_latency",
           frameworks: ["py", "vue", "js"],
-          backends: [],
+          backends: ["Express + TypeORM + MySQL"],
         },
         {
           name: "日本の大都市で気候が一番良いのはどこだ？",
           identifier: "climate",
           desc:
-            "地理データの可視化シリーズ。日本７大都市の気温・降水量・日照を比較し、仙台がベストだということを証明したい。",
+            "日本７大都市の気温・降水量・日照を比較して、仙台がベストだということを証明したいのです。",
           demourl: "",
           githuburl: "https://github.com/azureleaf/japan-city-climate",
           frameworks: ["js", "py"],
@@ -192,13 +182,13 @@ var ProjectTable = Vue.component("project", {
           demourl: "",
           githuburl: "",
           frameworks: ["js", "vue"],
-          backends: ["Express + TypeORM + Posgtres"],
+          backends: ["Firebase"],
         },
         {
           name: "フラクタルでパセリ描画",
           identifier: "fractal",
           desc:
-            "再帰表現を使って図形を描画します。HTML Canvasの勉強のため作成。",
+            "関数の再帰を利用することで、複雑な図形をとても簡単に描画できます。",
           demourl: "https://azureleaf.github.io/canvas/fractal/canvastree.html",
           githuburl: "https://github.com/azureleaf/canvas/",
           frameworks: ["js"],
@@ -215,20 +205,10 @@ var ProjectTable = Vue.component("project", {
           backends: [],
         },
         {
-          name: "Express.js練習台",
-          identifier: "express",
-          desc:
-            "バックエンドの練習台。特に何かサービスの形にはなっていませんが、Expressの基本的な機能、Axios、ORM、種々のDBにさらっと触れるためのレポジトリ。",
-          demourl: "",
-          githuburl: "https://github.com/azureleaf/hello-express",
-          frameworks: ["vue"],
-          backends: ["Express + TypeORM + SQLite"],
-        },
-        {
           name: "ログイン機能をつくる",
           identifier: "user_login",
           desc:
-            "知人のGitHubレポジトリへの私のcontribution。Axiosでの通信、非同期処理、ORMでのDBへのアクセス、Bcryptによるハッシュ化、トークンの保存などを、協力しながら一つ一つ丁寧に実装しました。",
+            "勉強仲間との共同作業のレポジトリ。Axiosでの通信、非同期処理、ORMでのDBへのアクセス、Bcryptによるハッシュ化、トークンの保存、Cypressでの自動テストなどを、一つ一つ丁寧に実装しました。",
           demourl: "",
           githuburl: "https://github.com/yuyu456-corder/user_login",
           frameworks: ["vue"],
@@ -238,7 +218,7 @@ var ProjectTable = Vue.component("project", {
           name: "ポートフォリオサイト",
           identifier: "portfolio",
           desc:
-            "このサイトそのもの。単なる静的サイトなので速攻で終わると思っていたら、CDNでVue-Routerを使うのはわりと苦戦しました。それにしてもVuetifyのマテリアルデザインはきれい。Font Awesomeのアイコン充実化に寄与しているデザイナーにも頭があがらない。",
+            "このサイトそのもの。単なる静的サイトなのでVuetifyを使い速攻で終わると思っていたら、CDNでVue-Routerを使うのはわりと苦戦しました。",
           demourl: "https://azureleaf.github.io/",
           githuburl: "https://github.com/azureleaf/azureleaf.github.io",
           frameworks: ["vue"],
