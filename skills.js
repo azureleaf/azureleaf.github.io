@@ -12,9 +12,9 @@ var SkillTable = Vue.component("skill", {
         </v-card>
         <v-card v-for="(group, index) in groups" elevation="10" class="my-8" >
           <v-app-bar flat class="white--text" :color="bgColors[index % 3]">
-          <v-card-title class="font-weight-bold" :color="bgColors[index % 3]"
-            >{{group.groupName}}</v-card-title
-          >
+            <v-card-title class="font-weight-bold"
+              >{{group.groupName}}</v-card-title
+            >
           </v-app-bar>
           <v-card-subtitle>
             {{ group.groupComment}}

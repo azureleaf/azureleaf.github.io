@@ -84,15 +84,21 @@ var ProjectTable = Vue.component("project", {
                 </v-card-text>
             </v-card>
             <v-card v-for="(project, index) in projects" elevation="10" class="my-8" >
-              <v-card-title :id="project.identifier">
-                {{project.name}}
-                <a v-if="project.demourl.length != 0" :href="project.demourl">
-                  <i class="fas fa-external-link-alt fa-lg pl-7 pr-1"></i>デモページ
-                </a>
-                <a v-if="project.githuburl.length != 0" :href="project.githuburl">
-                  <i class="fab fa-github fa-lg pl-7 pr-1"></i>コードと詳細解説
-                </a>
-              </v-card-title>
+              <v-toolbar flat class="white--text" :color="bgColors[index % 3]">
+                <v-card-title :id="project.identifier">
+                  <v-toolbar-title class="font-weight-bold">
+                    {{project.name}}
+                  </v-toolbar-title>
+                  <v-toolbar-items>
+                    <a v-if="project.demourl.length != 0" :href="project.demourl" class="whiteText">
+                      <i class="fas fa-external-link-alt fa-lg pl-10 pr-1"></i>Demo
+                    </a>
+                    <a v-if="project.githuburl.length != 0" :href="project.githuburl" class="whiteText">
+                      <i class="fab fa-github fa-lg pl-6 pr-1"></i>GitHub
+                    </a>
+                  </v-toolbar-items>
+                </v-card-title>
+              </v-toolbar>
               <v-card-text>
                 <v-card outlined class="my-2">
                   <v-card-title>機能</v-card-title>
@@ -363,6 +369,7 @@ var ProjectTable = Vue.component("project", {
           value: "backends",
         },
       ],
+      bgColors: ["red darken-4", "green darken-4", "blue darken-4"],
     };
   },
   methods: {
