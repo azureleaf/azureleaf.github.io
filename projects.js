@@ -84,22 +84,21 @@ var ProjectTable = Vue.component("project", {
                 </v-card-text>
             </v-card>
             <v-card v-for="(project, index) in projects" elevation="10" class="my-8" >
-              <v-toolbar flat class="white--text" :color="bgColors[index % 3]">
-                <v-card-title :id="project.identifier">
-                  <v-toolbar-title class="font-weight-bold">
+              <v-toolbar flat class="white--text" :color="bgColors[index % 3]" :id="project.identifier">
+                <v-toolbar-title>
+                  <span class="font-weight-bold">
                     {{project.name}}
-                  </v-toolbar-title>
-                  <v-toolbar-items>
-                    <a v-if="project.demourl.length != 0" :href="project.demourl" class="whiteText">
-                      <i class="fas fa-external-link-alt fa-lg pl-10 pr-1"></i>Demo
-                    </a>
-                    <a v-if="project.githuburl.length != 0" :href="project.githuburl" class="whiteText">
-                      <i class="fab fa-github fa-lg pl-6 pr-1"></i>GitHub
-                    </a>
-                  </v-toolbar-items>
-                </v-card-title>
+                  </span>
+                </v-toolbar-title>
               </v-toolbar>
               <v-card-text>
+                <div class="subtitle-1 pl-2 py-2">
+                  <a v-if="project.demourl.length != 0" :href="project.demourl" class="pr-6">
+                    <i class="fas fa-external-link-alt fa-lg pr-1"></i>デモページ</a>
+                  <a v-if="project.githuburl.length != 0" :href="project.githuburl" class="">
+                    <i class="fab fa-github fa-lg pr-1"></i>GitHubページ
+                  </a>
+                </div>
                 <v-card outlined class="my-2">
                   <v-card-title>機能</v-card-title>
                   <v-card-text>
@@ -115,7 +114,7 @@ var ProjectTable = Vue.component("project", {
                   </v-card-text>
                 </v-card>
                 <v-card outlined class="my-2">
-                  <v-card-title>技術面</v-card-title>
+                  <v-card-title>技術ポイント</v-card-title>
                   <v-card-text>
                     <ul>
                       <li
@@ -128,7 +127,7 @@ var ProjectTable = Vue.component("project", {
                   </v-card-text>
                 </v-card>
                 <v-card outlined>
-                  <v-card-title>あらたな収穫</v-card-title>
+                  <v-card-title>収穫</v-card-title>
                   <v-card-text>
                     <ul>
                       <li
@@ -180,32 +179,48 @@ var ProjectTable = Vue.component("project", {
           name: "学生寮運営システム",
           identifier: "dorm",
           desc:
-            "ログイン機能・会計処理機能・当番割振機能をもったWebサービス。一番本格的で実用的なプロジェクト。",
+            "学生寮での業務効率化ツール。ログイン機能・会計処理機能・当番割振機能をもっており、一番本格的で実用的なプロジェクトです。",
           demourl: "",
           githuburl: "",
           frameworks: ["js", "php", "laravel", "vue"],
           backends: ["Laravel + Eloquent + Postgres"],
+          funcs: [],
+          funcImg: "",
+          techs: [],
+          achvs: [],
         },
         {
           name: "激強五目並べ",
           identifier: "gomoku",
           desc:
-            "コンピュータを相手に戦う五目並べです。敵側がめちゃくちゃ強くて、ほぼ勝てない。<a href='https://github.com/azureleaf/gomoku'>React版もあります。</a>私がWeb系の勉強をはじめて最初につくったものなので、思い入れがあります。",
+            "コンピュータを相手に戦う五目並べです。敵側がめちゃくちゃ強くて、ほぼ勝てない。<a href='https://github.com/azureleaf/gomoku'>React版もあります</a>。Web系の勉強で最初につくったものなので、思い入れが深いです。",
           demourl: "",
           githuburl: "",
           frameworks: ["vue", "react"],
           backends: [],
+          funcs: [],
+          funcImg: "",
+          techs: [],
+          achvs: [],
         },
         {
           name: "三角形の五心",
           identifier: "triangle",
           desc:
-            "マウスで三角形を描くと、三角形の重心・内心・外心・傍心・垂心を自動で描画してくれます。幾何学的できれい。Canvasを使ってマウスなどとのインタラクションを勉強しました。",
+            "マウスで三角形を描くと、三角形の重心・内心・外心・傍心・垂心を自動で描画してくれます。EdTech（IT技術による教育の効率化）を意識したツールです。",
           demourl:
             "https://azureleaf.github.io/canvas/triangle/triangle_centers.html",
           githuburl: "https://github.com/azureleaf/canvas/",
           frameworks: ["js"],
           backends: [],
+          funcs: [],
+          funcImg: "",
+          techs: [],
+          achvs: [
+            "Canvasを使ったマウスクリックなどのイベント処理を勉強しました。",
+            "<u>JSDoc</u>などのコーディングフォーマット",
+            ".map()やオブジェクト指向を使った、可読性の高いコードの書き方を勉強する機会となりました。"
+          ],
         },
         {
           name: "仙台バス停・地下鉄検索ボット",
@@ -215,7 +230,7 @@ var ProjectTable = Vue.component("project", {
           demourl: "",
           githuburl: "https://github.com/azureleaf/greet_bot",
           frameworks: ["py"],
-          backends: ["Flask"],
+          backends: ["Flask + Firebase"],
           funcs: [
             "スマホのLINEアプリ上でこのボットをともだちに登録し、現在位置を投げると反応します。",
             "「現在地から一番近いバス停の一覧」「現在地から一番近い仙台市営地下鉄の駅と、そこからの直近の発車時刻」を教えてくれます。",
@@ -247,6 +262,10 @@ var ProjectTable = Vue.component("project", {
           githuburl: "https://github.com/azureleaf/lan-device-stalker",
           frameworks: ["js", "py"],
           backends: ["SQLite"],
+          funcs: [],
+          funcImg: "",
+          techs: [],
+          achvs: [],
         },
         {
           name: "通院アシスタント",
@@ -257,26 +276,40 @@ var ProjectTable = Vue.component("project", {
           githuburl: "https://github.com/azureleaf/hospital_latency",
           frameworks: ["py", "vue", "js"],
           backends: ["Express + TypeORM + MySQL"],
+          funcs: [],
+          funcImg: "",
+          techs: [],
+          achvs: [],
         },
         {
-          name: "仙台の気候は本当に良いのか？",
+          name: "仙台の気候は本当によいのか？",
           identifier: "climate",
           desc:
-            "日本７大都市の気温・降水量・日照を比較して、仙台がベストだということを証明したいのです。また、仙台が年々暑くなってきているのかも確かめたい。",
+            "日本７大都市の気候を比較して、仙台がベストだと証明したいのです。さらに仙台が年々暑くなってきているのか確かめたい。",
           demourl: "",
           githuburl: "https://github.com/azureleaf/japan-city-climate",
           frameworks: ["js", "py"],
           backends: [],
+          funcs: [],
+          funcImg: "",
+          techs: [],
+          achvs: [],
         },
         {
           name: "迅速テキスト会議",
           identifier: "chat",
           desc:
-            "ローカルネットワークで。今その場。スマホでQR。会議。ログイン不要。投票機能。socket.io",
+            "同一の LAN / WiFi に接続している人間がその場でテキストチャットや投票できるWebサービス。参加者側のインストール不要、ログイン不要、外部サーバ不要なので迅速。",
           demourl: "",
           githuburl: "",
-          frameworks: ["js", "vue"],
-          backends: ["Firebase"],
+          frameworks: ["py", "vue"],
+          backends: ["Flask"],
+          funcs: [
+            "QRコードを読み取ってローカルホストアドレスにアクセスしやすい。",
+          ],
+          funcImg: "",
+          techs: [],
+          achvs: [],
         },
         {
           name: "フラクタルでジェネラティブアート",
@@ -287,6 +320,10 @@ var ProjectTable = Vue.component("project", {
           githuburl: "https://github.com/azureleaf/canvas/",
           frameworks: ["js"],
           backends: [],
+          funcs: [],
+          funcImg: "",
+          techs: [],
+          achvs: [],
         },
         {
           name: "プログラミング学習ノート",
@@ -297,6 +334,10 @@ var ProjectTable = Vue.component("project", {
           githuburl: "https://github.com/azureleaf/study-notes",
           frameworks: ["js", "py"],
           backends: [],
+          funcs: [],
+          funcImg: "",
+          techs: [],
+          achvs: [],
         },
         {
           name: "ログイン機能を自作する",
@@ -307,6 +348,10 @@ var ProjectTable = Vue.component("project", {
           githuburl: "https://github.com/yuyu456-corder/user_login",
           frameworks: ["vue"],
           backends: ["Express + Sequelize + SQLite"],
+          funcs: [],
+          funcImg: "",
+          techs: [],
+          achvs: [],
         },
         {
           name: "ポートフォリオサイト",

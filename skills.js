@@ -52,7 +52,7 @@ var SkillTable = Vue.component("skill", {
             {
               title: "語学",
               desc:
-                "私の趣味です。英語は日常会話には問題なく、また中国語資料でも情報収集できます。プログラマの世界はStackOverflowをはじめ英文だらけなので、趣味と実益双方を兼ねています。",
+                "外国語学習は私の趣味で、英語の日常会話には問題ありません。プログラマの世界はStackOverflowをはじめ英文だらけなので、趣味と実益双方を兼ねています。中国語の資料でも情報収集できます。中国のIT開発者コミュニティを覗くと技術レベルの高さと活発さにはいつも感動を覚えます。",
             },
             {
               title: "性格",
@@ -62,12 +62,12 @@ var SkillTable = Vue.component("skill", {
             {
               title: "コミュニケーション能力",
               desc:
-                "世の中にはコミュ力の非常に高い人間がいて圧倒されます。私は理系としては平均くらいでしょうか。とはいえ、プログラミングを勉強する人たちに私から声をかけて数人で毎週勉強会をやったり、仙台のIT関係の勉強会にあちこち首を突っ込むくらいの行動力はあり、通常の社会生活には問題ありません。「陽キャじゃないけど説明力がとても高い」とは私に対するある人の評。",
+                "世の中にはコミュ力の非常に高い人間がいて驚かされます。私は理系としては平均くらいでしょうか。プログラミングを勉強する人たちに私から声をかけて数人で毎週勉強会をやったり、仙台のIT関係の勉強会にあちこち首を突っ込むくらいの行動力はあります。「陽キャじゃないけど説明力がとても高い」とは私に対するある人の評。",
             },
             {
               title: "体力",
               desc:
-                "仙台周辺の町やら山やら毎日歩いており、タフな方だと思います。生活の中で運動習慣があることは精神衛生上も役立っています。通常は一日１万歩程度ですが、最長だと秋保温泉まで一日45km歩きました。お気に入りの行先は愛子の蕃山。",
+                "仙台周辺の町中やら山やらを毎日歩いており、タフな方だと思います。誰しも毎日いろいろなストレスを抱えるでしょうが、運動習慣は私の精神衛生上本当に役立っています。通常は一日１万歩程度ですが、最長だと秋保温泉まで一日45km歩きました。お気に入りの行先は愛子の蕃山。",
             },
             {
               title: "犬派",
@@ -78,6 +78,7 @@ var SkillTable = Vue.component("skill", {
         },
         {
           groupName: "言語",
+          groupComment: "多数の言語をそこそこ使えるよりも、少数の言語に精通することのほうがずっと有意義だと最近思います。",
           skills: [
             {
               title: "<u>JavaScript</u> / TypeScript",
@@ -90,7 +91,7 @@ var SkillTable = Vue.component("skill", {
             },
             {
               title: "PHP",
-              desc: "Laravelはよくまとまっており、とても良いものだと思います。",
+              desc: "Laravelはよくまとまっており、とても良いフレームワークだと思います。",
             },
             {
               title: "C / C++",
@@ -112,7 +113,7 @@ var SkillTable = Vue.component("skill", {
         {
           groupName: "開発ツール",
           groupComment:
-            "この中で今後特に力を入れたいのは、DockerとKubernetesです。",
+            "環境構築の作業にはたびたび泣かされました。なので今後はDockerとKubernetesを使いこなせるようになりたい。",
           skills: [
             {
               title: "OS",
@@ -155,7 +156,7 @@ var SkillTable = Vue.component("skill", {
             {
               title: "Vue",
               desc:
-                "<u>Vue.js</u> / <u>Vue-Router</u> / <u>Vuex</u> / <u>Vuetify</u>（このポートフォリオサイトでもマテリアルデザインのため使っています。）",
+                "<u>Vue.js</u> / <u>Vue-Router</u> / <u>Vuex</u> / <u>Vuetify</u>（このポートフォリオサイトでも採用）",
             },
             { title: "React", desc: "React" },
             { title: "HTML / CSS", desc: "Pug / Stylus / Bootstrap" },
@@ -164,7 +165,7 @@ var SkillTable = Vue.component("skill", {
 
         {
           groupName: "バックエンド",
-          groupComment: "Expressを主に触っていましたが、結局どのフレームワークもORMも思想は似ているため違いはあまりないように感じます。",
+          groupComment: "Expressを主に触っていましたが、結局どのフレームワーク・ORMも基本の思想は共通しており、あまり違いはない気がします。",
           skills: [
             {
               title: "Webフレームワーク",
@@ -180,13 +181,13 @@ var SkillTable = Vue.component("skill", {
               desc:
                 "<u>axios</u> / bcrypt / Passport.js / socket.io / Babel / gulp / Webpack",
             },
-            { title: "その他", desc: "Heroku" },
+            { title: "その他", desc: "Heroku / LINE API / OpenWeather API" },
           ],
         },
         {
           groupName: "データ処理",
           groupComment:
-            "機械学習はMNISTの手書き文字入力や猫の画像分類のチュートリアルを動かした程度なのですが、AIは私が生きる世代の最重要技術だと思いますので、今後一番力を入れたい。",
+            "機械学習はMNISTの手書き文字入力や猫の画像分類のチュートリアルを動かした程度なのですが、AIは私が生きる世代の最重要技術だと思います。今後一番力を入れたい。",
           skills: [
             { title: "行列処理", desc: "<u>Pandas</u> / <u>Numpy</u>" },
             {
