@@ -35,7 +35,7 @@
         color: #aa0000;
         font-weight: bold;
       }
-      li.comfy_list{
+      li.comfy_list {
         margin-top: 10px;
       }
     </style>
@@ -49,15 +49,17 @@
   <body>
     <div id="app">
       <v-app>
-        <v-app-bar color="grey darken-4" dark app>
-          <v-img
-            class="mx-2"
-            src="./duck.png"
-            max-height="50"
-            max-width="50"
-            contain
-          ></v-img>
-          <v-toolbar-title style="font-family: 'Roboto Slab', sans-serif;"
+        <v-app-bar color="pink darken-4" dark app>
+          <v-avatar>
+            <v-img
+              class="mx-2"
+              src="./img/rubber_ducky_material.png"
+              max-height="50"
+              max-width="50"
+              contain
+            ></v-img>
+          </v-avatar>
+          <v-toolbar-title style="font-family: 'Roboto Slab', sans-serif;" class="pl-3"
             ><span>Azureleaf's Portfolio</span></v-toolbar-title
           >
           <v-spacer></v-spacer>
@@ -74,7 +76,7 @@
           </v-toolbar-items>
         </v-app-bar>
         <p><router-view></router-view></p>
-        <v-footer color="grey darken-4" absolute="false" dark app>
+        <v-footer color="pink darken-4" absolute="false" dark app>
           <v-spacer></v-spacer>
           <span>azureleaf.github.io</span>
           <v-spacer></v-spacer>
