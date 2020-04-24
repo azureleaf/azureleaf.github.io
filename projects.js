@@ -3,148 +3,153 @@
 // Before pasting the code here, you better write the template code somewhere to ensure it works
 var ProjectTable = Vue.component("project", {
   template: `
-        <v-content>
-            <v-container>
-            <v-card elevation="10" class="mt-10">
-              <v-card-title class="display-1 pb-8">プロジェクト一覧</v-card-title>
-                <v-card-subtitle class="subtitle-1">
-                ポートフォリオサイトにご訪問いただきありがとうございます！最近の私の作品を一部ご説明します。各プロジェクトのデモページもぜひご覧ください。
-              </v-card-subtitle>            
-            </v-card>
-            <v-card elevation="10" class="my-8">
-              <v-card-title class="headline">目次</v-card-title>
+    <v-content>
+        <v-container>
+        <v-card elevation="10" class="mt-10">
+          <v-card-title class="display-1 pb-8">プロジェクト一覧</v-card-title>
+            <v-card-subtitle class="subtitle-1">
+            ポートフォリオサイトにご訪問いただきありがとうございます！最近の私の作品を一部ご説明します。各プロジェクトのデモページもぜひご覧ください。
+          </v-card-subtitle>            
+        </v-card>
+        <v-card elevation="10" class="my-8">
+          <v-card-title class="headline">目次</v-card-title>
+          <v-card-text>
+            <v-data-table
+                :headers="projectHeaders"
+                :items="projects"
+                hide-default-footer
+                :items-per-page="20"
+            >
+              <template v-slot:item.projIndex="{item}">
+                {{ projectIds.indexOf(item.identifier) + 1 }}
+              </template>
+              <template v-slot:item.name="{item}">
+              <b><router-link :to="addSharp(item.identifier)">{{item.name}}</router-link></b>
+              </template>
+              <template v-slot:item.desc="{item}">
+              <p class="my-3"><span v-html="item.desc"></span></p>
+              </template>
+              <template v-slot:item.demourl="{item}">
+              <a v-if="item.demourl.length != 0" :href="item.demourl"
+                  ><i class="fas fa-external-link-alt fa-2x"></i
+              ></a>
+              </template>
+              <template v-slot:item.githuburl="{item}">
+              <a v-if="item.githuburl.length != 0" :href="item.githuburl">
+                <i class="fab fa-github fa-2x"></i>
+              </a>
+              </template>
+              <template v-slot:item.backends="{item}">
+              <span v-if="item.backends.length == 0">-</span>
+              <p
+                  v-else
+                  v-for="backend in item.backends"
+                  class="ma-0 pa-0"
+              >
+                {{backend}}
+              </p>
+              </template>
+              <template v-slot:item.frameworks="{item}">
+                <i
+                    v-if="isUsing(item.frameworks, 'js')"
+                    class="fab fa-js fa-2x iconColor"
+                ></i>
+                <i
+                    v-if="isUsing(item.frameworks, 'php')"
+                    class="fab fa-php fa-2x iconColor"
+                ></i>
+                <i
+                    v-if="isUsing(item.frameworks, 'laravel')"
+                    class="fab fa-laravel fa-2x iconColor"
+                ></i>
+                <i
+                    v-if="isUsing(item.frameworks, 'vue')"
+                    class="fab fa-vuejs fa-2x iconColor"
+                ></i>
+                <i
+                    v-if="isUsing(item.frameworks, 'react')"
+                    class="fab fa-react fa-2x iconColor"
+                ></i>
+                <i
+                    v-if="isUsing(item.frameworks, 'py')"
+                    class="fab fa-python fa-2x iconColor"
+                ></i>
+                <i
+                    v-if="isUsing(item.frameworks, 'c')"
+                    class="fab fa-cuttlefish fa-2x iconColor"
+                ></i>
+                <i
+                    v-if="isUsing(item.frameworks, 'html')"
+                    class="fab fa-html5 fa-2x iconColor"
+                ></i>
+              </template>
+            </v-data-table>
+            </v-card-text>
+        </v-card>
+        <v-card v-for="(project, index) in projects" :key="index" elevation="10" class="my-8" >
+          <v-toolbar flat class="white--text" :color="bgColors[index % 3]" :id="project.identifier">
+            <v-toolbar-title>
+              <span class="font-weight-bold">
+                {{index + 1}}. {{project.name}}
+              </span>
+            </v-toolbar-title>
+          </v-toolbar>
+          <v-card-text>
+            <div class="subtitle-1 pl-2 py-2">
+              <a v-if="project.demourl.length != 0" :href="project.demourl" class="pr-6">
+                <i class="fas fa-external-link-alt fa-lg pr-1"></i>デモページ</a>
+              <a v-if="project.githuburl.length != 0" :href="project.githuburl" class="">
+                <i class="fab fa-github fa-lg pr-1"></i>GitHubページ
+              </a>
+            </div>
+            <v-card outlined class="my-2">
+              <v-card-title>機能</v-card-title>
               <v-card-text>
-                <v-data-table
-                    :headers="projectHeaders"
-                    :items="projects"
-                    hide-default-footer
-                    :items-per-page="20"
-                >
-                    <template v-slot:item.name="{item}">
-                    <b><router-link :to="addSharp(item.identifier)">{{item.name}}</router-link></b>
-                    </template>
-                    <template v-slot:item.desc="{item}">
-                    <p class="my-3"><span v-html="item.desc"></span></p>
-                    </template>
-                    <template v-slot:item.demourl="{item}">
-                    <a v-if="item.demourl.length != 0" :href="item.demourl"
-                        ><i class="fas fa-external-link-alt fa-2x"></i
-                    ></a>
-                    </template>
-                    <template v-slot:item.githuburl="{item}">
-                    <a v-if="item.githuburl.length != 0" :href="item.githuburl">
-                        <i class="fab fa-github fa-2x"></i>
-                    </a>
-                    </template>
-                    <template v-slot:item.backends="{item}">
-                    <span v-if="item.backends.length == 0">-</span>
-                    <p
-                        v-else
-                        v-for="backend in item.backends"
-                        class="ma-0 pa-0"
-                    >
-                        {{backend}}
-                    </p>
-                    </template>
-                    <template v-slot:item.frameworks="{item}">
-                    <i
-                        v-if="isUsing(item.frameworks, 'js')"
-                        class="fab fa-js fa-2x iconColor"
-                    ></i>
-                    <i
-                        v-if="isUsing(item.frameworks, 'php')"
-                        class="fab fa-php fa-2x iconColor"
-                    ></i>
-                    <i
-                        v-if="isUsing(item.frameworks, 'laravel')"
-                        class="fab fa-laravel fa-2x iconColor"
-                    ></i>
-                    <i
-                        v-if="isUsing(item.frameworks, 'vue')"
-                        class="fab fa-vuejs fa-2x iconColor"
-                    ></i>
-                    <i
-                        v-if="isUsing(item.frameworks, 'react')"
-                        class="fab fa-react fa-2x iconColor"
-                    ></i>
-                    <i
-                        v-if="isUsing(item.frameworks, 'py')"
-                        class="fab fa-python fa-2x iconColor"
-                    ></i>
-                    <i
-                        v-if="isUsing(item.frameworks, 'c')"
-                        class="fab fa-cuttlefish fa-2x iconColor"
-                    ></i>
-                    <i
-                        v-if="isUsing(item.frameworks, 'html')"
-                        class="fab fa-html5 fa-2x iconColor"
-                    ></i>
-                    </template>
-                </v-data-table>
-                </v-card-text>
-            </v-card>
-            <v-card v-for="(project, index) in projects" elevation="10" class="my-8" >
-              <v-toolbar flat class="white--text" :color="bgColors[index % 3]" :id="project.identifier">
-                <v-toolbar-title>
-                  <span class="font-weight-bold">
-                    {{project.name}}
-                  </span>
-                </v-toolbar-title>
-              </v-toolbar>
-              <v-card-text>
-                <div class="subtitle-1 pl-2 py-2">
-                  <a v-if="project.demourl.length != 0" :href="project.demourl" class="pr-6">
-                    <i class="fas fa-external-link-alt fa-lg pr-1"></i>デモページ</a>
-                  <a v-if="project.githuburl.length != 0" :href="project.githuburl" class="">
-                    <i class="fab fa-github fa-lg pr-1"></i>GitHubページ
-                  </a>
-                </div>
-                <v-card outlined class="my-2">
-                  <v-card-title>機能</v-card-title>
-                  <v-card-text>
-                    <ul>
-                      <li
-                        v-for="(func, index) in project.funcs"
-                        :key="index"
-                        class="comfy_list">
-                        {{func}}
-                      </li>
-                    </ul>
-                    <img :src="project.funcImg" class="mt-4"/>
-                  </v-card-text>
-                </v-card>
-                <v-card outlined class="my-2">
-                  <v-card-title>技術ポイント</v-card-title>
-                  <v-card-text>
-                    <ul>
-                      <li
-                        v-for="(tech, index) in project.techs"
-                        :key="index"
-                        v-html="tech"
-                        class="comfy_list">
-                      </li>
-                    </ul>
-                  </v-card-text>
-                </v-card>
-                <v-card outlined>
-                  <v-card-title>収穫</v-card-title>
-                  <v-card-text>
-                    <ul>
-                      <li
-                        v-for="(achv, index) in project.achvs"
-                        :key="index" v-html="achv"
-                        class="comfy_list">
-                      </li>
-                    </ul>
-                  </v-card-text>
-                </v-card>
+                <ul>
+                  <li
+                    v-for="(func, index) in project.funcs"
+                    :key="index"
+                    class="comfy_list">
+                    {{func}}
+                  </li>
+                </ul>
+                <img :src="project.funcImg" class="mt-4"/>
               </v-card-text>
             </v-card>
-          </v-container>
-        </v-content>`,
+            <v-card outlined class="my-2">
+              <v-card-title>技術ポイント</v-card-title>
+              <v-card-text>
+                <ul>
+                  <li
+                    v-for="(tech, index) in project.techs"
+                    :key="index"
+                    v-html="tech"
+                    class="comfy_list">
+                  </li>
+                </ul>
+              </v-card-text>
+            </v-card>
+            <v-card outlined>
+              <v-card-title>収穫</v-card-title>
+              <v-card-text>
+                <ul>
+                  <li
+                    v-for="(achv, index) in project.achvs"
+                    :key="index" v-html="achv"
+                    class="comfy_list">
+                  </li>
+                </ul>
+              </v-card-text>
+            </v-card>
+          </v-card-text>
+        </v-card>
+      </v-container>
+    </v-content>`,
   data: function () {
     return {
-      msg: "hello, world",
+      // List of all the project id strings
+      // Will be set on mounted
+      projectIds: [],
       projects: [
         {
           name: "仙台高齢化ビジュアライゼーション",
@@ -219,7 +224,7 @@ var ProjectTable = Vue.component("project", {
           achvs: [
             "Canvasを使ったマウスクリックなどのイベント処理を勉強しました。",
             "<u>JSDoc</u>などのコーディングフォーマット",
-            ".map()やオブジェクト指向を使った、可読性の高いコードの書き方を勉強する機会となりました。"
+            ".map()やオブジェクト指向を使った、可読性の高いコードの書き方を勉強する機会となりました。",
           ],
         },
         {
@@ -383,6 +388,11 @@ var ProjectTable = Vue.component("project", {
       ],
       projectHeaders: [
         {
+          text: "#",
+          sortable: false,
+          value: "projIndex",
+        },
+        {
           text: "ページ内リンク",
           sortable: false,
           value: "name",
@@ -424,5 +434,10 @@ var ProjectTable = Vue.component("project", {
     addSharp: function (str) {
       return "#" + str;
     },
+  },
+  created: function () {
+    this.projects.map((project) => {
+      this.projectIds.push(project.identifier);
+    });
   },
 });

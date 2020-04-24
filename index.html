@@ -85,7 +85,7 @@
           </v-toolbar-items>
         </v-app-bar>
         <p><router-view></router-view></p>
-        <v-footer color="grey darken-4" absolute="false" dark app>
+        <v-footer color="grey darken-4" :absolute="false" dark app>
           <v-spacer></v-spacer>
           <span>azureleaf.github.io</span>
           <v-spacer></v-spacer>
@@ -96,6 +96,7 @@
     <script src="skills.js"></script>
 
     <script>
+
       const routes = [
         { path: "/", component: ProjectTable },
         { path: "/skill", component: SkillTable },

@@ -10,7 +10,7 @@ var SkillTable = Vue.component("skill", {
             >私が今までに使ったツールです。下線を引いたものは、特によく使っているものです。
           </v-card-subtitle>
         </v-card>
-        <v-card v-for="(group, index) in groups" elevation="10" class="my-8" >
+        <v-card v-for="(group, index) in groups" :key="index" elevation="10" class="my-8" >
           <v-app-bar flat class="white--text" :color="bgColors[index % 3]">
             <v-card-title class="font-weight-bold"
               >{{group.groupName}}</v-card-title
