@@ -3,7 +3,7 @@ var SkillTable = Vue.component("skill", {
     <v-content>
       <v-container>
         <v-card elevation="20" class="mt-10">
-          <v-card-title class="display-1 pb-8"
+          <v-card-title class="headline font-weight-bold pb-8"
             >スキル</v-card-title
           >
           <v-card-subtitle class="subtitle-1"
@@ -11,10 +11,10 @@ var SkillTable = Vue.component("skill", {
           </v-card-subtitle>
         </v-card>
         <v-card v-for="(group, index) in groups" :key="index" elevation="10" class="my-8" >
-          <v-app-bar flat class="white--text" :color="bgColors[index % 3]">
-            <v-card-title class="font-weight-bold"
-              >{{group.groupName}}</v-card-title
-            >
+          <v-app-bar flat class="white--text font-weight-bold" :color="bgColors[index % 3]">
+            <v-toolbar-title>
+              {{group.groupName}}
+            </v-toolbar-title>
           </v-app-bar>
           <v-card-subtitle>
             {{ group.groupComment}}
@@ -78,12 +78,12 @@ var SkillTable = Vue.component("skill", {
         },
         {
           groupName: "言語",
-          groupComment: "多数の言語をそこそこ使えるよりも、少数の言語に精通することのほうがずっと有意義だと最近思います。",
+          groupComment:
+            "多くの言語をそれなりに使えるよりも、少数の言語に精通することのほうが有意義だと最近思います。",
           skills: [
             {
               title: "<u>JavaScript</u> / TypeScript",
-              desc:
-                "今後TSに積極的に移行したいです。",
+              desc: "今後TSに積極的に移行したいです。",
             },
             {
               title: "<u>Python</u>",
@@ -91,7 +91,8 @@ var SkillTable = Vue.component("skill", {
             },
             {
               title: "PHP",
-              desc: "Laravelはよくまとまっており、とても良いフレームワークだと思います。",
+              desc:
+                "Laravelはよくまとまっており、とても良いフレームワークだと思います。",
             },
             {
               title: "C / C++",
@@ -106,7 +107,7 @@ var SkillTable = Vue.component("skill", {
             {
               title: "VBA",
               desc:
-                "エクセルのマクロで使いましたが、遅いし行数制限はあるしでイマイチだった思い出。",
+                "エクセルのマクロで使いましたが、遅いし、行数制限はあるしでイマイチだった思い出。",
             },
           ],
         },
@@ -117,7 +118,8 @@ var SkillTable = Vue.component("skill", {
           skills: [
             {
               title: "OS",
-              desc: "<u>Ubuntu Bionic</u> / Windows / CentOS + Nginx（大学研究室のサーバ運用で使いました）",
+              desc:
+                "<u>Ubuntu Bionic</u> / Windows / CentOS + Nginx（大学研究室のサーバ運用で使いました）",
             },
             {
               title: "Editor",
@@ -134,7 +136,8 @@ var SkillTable = Vue.component("skill", {
             },
             {
               title: "仮想環境系",
-              desc: "Docker / VirtualBox + Vagrant / <u>pipenv</u> / virtualenv",
+              desc:
+                "Docker / VirtualBox + Vagrant / <u>pipenv</u> / virtualenv",
             },
             {
               title: "コードフォーマット（VS Code）",
@@ -165,7 +168,8 @@ var SkillTable = Vue.component("skill", {
 
         {
           groupName: "バックエンド",
-          groupComment: "Expressを主に触っていましたが、結局どのフレームワーク・ORMも基本の思想は共通しており、あまり違いはない気がします。",
+          groupComment:
+            "Expressを主に触っていましたが、結局どのフレームワーク・ORMも基本の思想は共通しており、あまり違いはない気がします。",
           skills: [
             {
               title: "Webフレームワーク",
@@ -218,7 +222,7 @@ var SkillTable = Vue.component("skill", {
           value: "desc",
         },
       ],
-      bgColors: ["red darken-4", "green darken-4", "blue darken-4"],
+      bgColors: ["pink darken-4", "green darken-4", "blue darken-4"],
     };
   },
 });

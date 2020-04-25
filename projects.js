@@ -6,9 +6,9 @@ var ProjectTable = Vue.component("project", {
     <v-content>
         <v-container>
         <v-card elevation="10" class="mt-10">
-          <v-card-title class="display-1 pb-8">プロジェクト一覧</v-card-title>
+          <v-card-title class="headline font-weight-bold pb-8">プロジェクト一覧</v-card-title>
             <v-card-subtitle class="subtitle-1">
-            ポートフォリオサイトにご訪問いただきありがとうございます！最近の私の作品を一部ご説明します。各プロジェクトのデモページもぜひご覧ください。
+            ポートフォリオサイトへのご訪問ありがとうございます！<br>最近の私の制作物をご紹介いたします。デモページもぜひご覧ください。
           </v-card-subtitle>            
         </v-card>
         <v-card elevation="10" class="my-8">
@@ -24,7 +24,7 @@ var ProjectTable = Vue.component("project", {
                 {{ projectIds.indexOf(item.identifier) + 1 }}
               </template>
               <template v-slot:item.name="{item}">
-              <b><router-link :to="addSharp(item.identifier)">{{item.name}}</router-link></b>
+                <b><router-link :to="addSharp(item.identifier)">{{item.name}}</router-link></b><br>
               </template>
               <template v-slot:item.desc="{item}">
               <p class="my-3"><span v-html="item.desc"></span></p>
@@ -82,26 +82,44 @@ var ProjectTable = Vue.component("project", {
                     v-if="isUsing(item.frameworks, 'html')"
                     class="fab fa-html5 fa-2x iconColor"
                 ></i>
+                <i
+                v-if="isUsing(item.frameworks, 'md')"
+                  class="fab fa-markdown fa-2x iconColor"
+                ></i>
               </template>
             </v-data-table>
             </v-card-text>
         </v-card>
         <v-card v-for="(project, index) in projects" :key="index" elevation="10" class="my-8" >
-          <v-toolbar flat class="white--text" :color="bgColors[index % 3]" :id="project.identifier">
+          <v-toolbar flat class="white--text" :color="bgColors[index % 3]" :id="project.identifier" dark>
             <v-toolbar-title>
               <span class="font-weight-bold">
                 {{index + 1}}. {{project.name}}
               </span>
             </v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-btn
+              v-if="project.demourl.length != 0"
+              outlined
+              large
+              tile
+              :href="project.demourl"
+              class="px-6 mr-3 font-weight-bold subtitle-1"
+            >
+              <i class="fas fa-external-link-alt fa-lg pr-1"></i>デモを開く</v-btn
+            >
+            <v-btn
+              v-if="project.githuburl.length != 0"
+              outlined
+              large
+              tile
+              :href="project.githuburl"
+              class="px-3 font-weight-bold subtitle-1"
+            >
+              <i class="fab fa-github fa-lg pr-2"></i>GitHubを開く
+            </v-btn>
           </v-toolbar>
           <v-card-text>
-            <div class="subtitle-1 pl-2 py-2">
-              <a v-if="project.demourl.length != 0" :href="project.demourl" class="pr-6">
-                <i class="fas fa-external-link-alt fa-lg pr-1"></i>デモページ</a>
-              <a v-if="project.githuburl.length != 0" :href="project.githuburl" class="">
-                <i class="fab fa-github fa-lg pr-1"></i>GitHubページ
-              </a>
-            </div>
             <v-card outlined class="my-2">
               <v-card-title>機能</v-card-title>
               <v-card-text>
@@ -154,7 +172,7 @@ var ProjectTable = Vue.component("project", {
       projectIds: [],
       projects: [
         {
-          name: "仙台高齢化ビジュアライゼーション",
+          name: "仙台高齢化地域の可視化",
           identifier: "ageing",
           desc:
             "仙台の町ごとの高齢人口比率を地図上にヒートマップで表現します。私も一住民として興味のある内容なので、おもしろかったです。<u>データ処理とデータ可視化</u>の練習台。",
@@ -172,16 +190,16 @@ var ProjectTable = Vue.component("project", {
             "<u>Leaflet.js</u>で、OpenStreetMapの地図上に描画します。",
             "Pythonの<u>Pandas</u>やC言語でデータを加工します。",
             "<u>カラーマッピング</u>（どの値をどの色に対応させれば見やすいのか？）の有名な計算手段をいくつか検討しました。",
-            "「年齢人口分布データ」「町ごとの緯度経度データ」など<u>複数の表をうまくJOINできるようデータを整形</u>しました。",
+            "「町別の年齢人口分布統計のExcelファイル」「町別の緯度経度情報のExcelファイル」など<u>複数の表をうまくJOINできるようデータを整形</u>しました。",
             "「重複データを発見して取り除く」「４丁目と四丁目の表記のゆれを統一する」「データ区分ごとの集計」などは全てコーディングで処理します。",
           ],
           achvs: [
             "地図を使った可視化の勉強になりました。<u>色鮮やかでインタラクティブなUI</u>は、やはりインパクトがあります。",
-            "<u>分析前の生データの質がどれほど重要か</u>、痛いほど身にしみました。苦労してデータ処理したのに、後からデータの不備が判明しそこまでの苦労が水の泡、が何度もありました。",
+            "<u>分析前の生データの質がどれほど重要か</u>、痛いほど身にしみました。苦労してデータ処理したのに、後から元データの不備が判明しそこまでの苦労が水の泡…という悲劇が何度もありました。",
           ],
         },
         {
-          name: "学生寮運営システム",
+          name: "寮運営システム",
           identifier: "dorm",
           desc:
             "学生寮の<u>業務自動化ツール</u>。ログイン機能・会計処理機能・当番割振機能をもっており、最も実用的なプロジェクトです。",
@@ -228,17 +246,17 @@ var ProjectTable = Vue.component("project", {
           ],
         },
         {
-          name: "仙台バス停・地下鉄検索ボット",
+          name: "仙台地下鉄検索Bot",
           identifier: "line",
           desc:
-            "<u>Heroku上で動くLINEボット</u>です。彼にGPSの現在位置を投げると、一番近くにあるバス停と地下鉄の駅を検索して返してくれます。",
+            "<u>Heroku上で動くLINEボット</u>です。彼にGPSの現在位置を投げると、近くにあるバス停と地下鉄の駅を検索して返してくれます。",
           demourl: "",
           githuburl: "https://github.com/azureleaf/greet_bot",
           frameworks: ["py"],
-          backends: ["Flask + Firebase"],
+          backends: ["Flask + SQLite"],
           funcs: [
             "スマホのLINEアプリ上でこのボットをともだちに登録し、現在位置を投げると反応します。",
-            "「現在地から一番近いバス停の一覧」「現在地から一番近い仙台市営地下鉄の駅と、そこからの直近の発車時刻」を教えてくれます。",
+            "「現在地から一番近いバス停の一覧」「現在地から一番近い地下鉄駅と発車時刻」を教えてくれます。",
             "<u>OpenWeather API</u>から取得した仙台の天気を教えてくれます。",
           ],
           funcImg: "",
@@ -247,7 +265,7 @@ var ProjectTable = Vue.component("project", {
             "バス停と地下鉄駅の緯度経度情報は、国交省ウェブサイトから入手してデータ整形。",
             "地下鉄時刻表は、<u>仙台市交通局ウェブサイトからウェブスクレイピング。</u>",
             "<u>球面三角法</u>で緯度経度差分からメートル距離を算出。",
-            "市営バスの時刻表データはまとまった形で公開されていないため、このボットでは「バスがいつ発車するのか」はわかりません。<u>情報の入手困難が、データ分析のネックになるんですね、結局・・・</u>",
+            "市営バスの時刻表データが手に入らないので、このBotでは「バスがいつ発車するのか」がわかりません。<u>結局は情報の入手難度が、データ分析のネックになるという・・・</u>",
           ],
           achvs: [
             "<u>LINE Messaging API</u>や<u>Heroku</u>の使い方を学びました。",
@@ -259,7 +277,7 @@ var ProjectTable = Vue.component("project", {
           name: "WiFiストーカー",
           identifier: "stalker",
           desc:
-            "LANを自動スキャンし、接続中デバイスのMACアドレスから人々の在室状況を追跡する、いやらしいプログラムです。<u>ネットワーク技術</u>を理解する助けとして作成。",
+            "LANを自動スキャンし、接続中デバイスのMACアドレスから人々の在室状況を追跡する、いやらしいプログラムです。<u>ネットワーク技術</u>を勉強する助けとして作成。",
           demourl: "",
           githuburl: "https://github.com/azureleaf/lan-device-stalker",
           frameworks: ["js", "py"],
@@ -277,45 +295,54 @@ var ProjectTable = Vue.component("project", {
           demourl: "",
           githuburl: "https://github.com/azureleaf/hospital_latency",
           frameworks: ["py", "vue", "js"],
-          backends: ["Express + TypeORM + MySQL"],
+          backends: ["Firebase"],
           funcs: [],
           funcImg: "",
           techs: [],
-          achvs: ["この病院は大人気のため、予約を取るのが先着順の凄まじい競争になっていました。自動化はまあズルですけど、とても楽になりました。"],
+          achvs: [
+            "この病院は人気のため、予約を取るのが先着順の凄まじい競争になっていました。自動化はまあズルですけど、とても楽になりました。",
+          ],
         },
         {
-          name: "仙台の気候は本当によいのか？",
+          name: "仙台の気候は住みやすい？",
           identifier: "climate",
           desc:
-            "日本７大都市の気候を比較して、仙台がベストだと証明したいのです。さらに仙台が年々暑くなってきているのか確かめたい。<u>データ可視化と統計分析</u>の練習台。",
-          demourl: "",
+            "日本７大都市の気候データを比較します。仙台が年々暑くなってきているのかも確かめたい。<u>データ可視化と統計分析（時系列解析）</u>の練習台。",
+          demourl: "https://azureleaf.github.io/japan-city-climate/",
           githuburl: "https://github.com/azureleaf/japan-city-climate",
           frameworks: ["js", "py"],
           backends: [],
-          funcs: [],
-          funcImg: "",
-          techs: [],
-          achvs: [],
-        },
-        {
-          name: "迅速テキスト会議",
-          identifier: "chat",
-          desc:
-            "同じ WiFi に接続しているデバイス同士がその場でテキストチャットできるツール。インストール不要、ログイン不要、外部サーバ不要で迅速です。<u>socket.ioによるリアルタイム通信</u>を試したかった。",
-          demourl: "",
-          githuburl: "",
-          frameworks: ["py", "vue"],
-          backends: ["Flask"],
           funcs: [
-            "QRコードを読み取ってローカルホストアドレスにアクセスしやすい。",
-            "ホスト側になるスマホでは、Termuxを使ってPythonを走らせる必要があります。",
+            "各都市の真夏日、降水量、平均気温その他の基本的な気候統計を可視化します。",
+            "ユーザーの重視する属性（暑いのが好き？寒いのは平気？など）によって、各都市のオススメ度を計算し推薦します。",
+            "仙台で温暖化が進行しているといえるのか、統計的に判断できるか解説ページを提供します。",
           ],
           funcImg: "",
+          techs: [
+            "ダウンロードしてきたデータはそのままでは利用できないので、不要な列の削除や列名の変更などをPythonで自動処理しました。",
+            "ややマジメな話ですが、時系列解析について詳しくご説明します。",
+          ],
+          achvs: [
+            "<u>Chart.js</u>によるグラフ描写ができるようになりました。",
+            "時系列解析を学校で習った時はあやふやな理解だったのが、実際に作業することで実感がわきました。",
+          ],
+        },
+        {
+          name: "チヤツトワーク",
+          identifier: "chat",
+          desc:
+            "<u>socket.ioによるリアルタイム通信</u>を勉強するために、既存のチャットツールを模倣したツールを作ってみました。",
+          demourl: "",
+          githuburl: "",
+          frameworks: ["js", "vue"],
+          backends: ["Express + TypeORM + MySQL"],
+          funcs: [""],
+          funcImg: "",
           techs: [],
           achvs: [],
         },
         {
-          name: "フラクタルでジェネラティブアート",
+          name: "ジェネラティブアート",
           identifier: "fractal",
           desc:
             "<u>再帰関数</u>を利用することで、複雑な図形を短いコードで描画できます。絵心がない私ですが、このような幾何学図形の美しさはわかる気がします。",
@@ -329,13 +356,13 @@ var ProjectTable = Vue.component("project", {
           achvs: [],
         },
         {
-          name: "プログラミング学習ノート",
+          name: "IT学習ノート",
           identifier: "notes",
           desc:
             "プログラミングの膨大な勉強メモをまとめたものです。<u>学習モチベーションを保ち、マークダウン記法に慣れる</u>のが主眼でした。",
           demourl: "",
           githuburl: "https://github.com/azureleaf/study-notes",
-          frameworks: ["js", "py"],
+          frameworks: ["md"],
           backends: [],
           funcs: [
             "特に<a href='https://github.com/azureleaf/study-notes/blob/master/js/promise.md'>Promiseについて</a>は結構まとめました。",
@@ -368,8 +395,9 @@ var ProjectTable = Vue.component("project", {
           frameworks: ["vue"],
           backends: [],
           funcs: [
+            "私のプロジェクトを見てくださる方に対して、その<u>コードの背景にある私の考え方や人間性まで伝わるよう表現を工夫しました。</u>",
             "マテリアルデザインにより、シンプルでありながら見やすく統一感があります。",
-            "アイコンを多用し、単調な感じを減らしています。",
+            "画像やアイコンを多用することで、文字だらけで単調な感じを減らせた...と信じています。",
           ],
           funcImg: "",
           techs: [
@@ -377,11 +405,12 @@ var ProjectTable = Vue.component("project", {
             "<u>Font Awesome</u>のアイコンセット。",
             "動画の編集圧縮に<u>ffmpeg</u>を多用。",
             "GitHubの静的ページではNode.jsを動かせないため、<u>CDN (Contents Delivery Network)</u>によりVueを導入。",
-            "Vueは本来は複雑にコンパイルされるライブラリなので、これをCDNから使う場合は制約が多く結構苦労しました。",
+            "<u>Webpack</u>を使用することで、CDNのページでありつつも効率的にコーディングできるようにしました。"
+            // "Vueは本来は複雑にコンパイルされるライブラリなので、これをCDNから使う場合は制約が多く結構苦労しました。",
           ],
           achvs: [
             "<u>CDNによるVue / Vue Router / Vuetify</u>の書き方がわかりました。Nuxtを使えばもっと楽だった気もします。",
-            "GitHubのページのホスティング機能を理解しました。",
+            "GitHubでの個人ページのホスティング機能を理解しました。",
             "<u>Vue Routerでのスクロール位置の制御</u>がわかりました。",
           ],
         },
@@ -402,11 +431,11 @@ var ProjectTable = Vue.component("project", {
           sortable: false,
           value: "demourl",
         },
-        {
-          text: "GitHub",
-          sortable: false,
-          value: "githuburl",
-        },
+        // {
+        //   text: "GitHub",
+        //   sortable: false,
+        //   value: "githuburl",
+        // },
         {
           text: "概要",
           sortable: false,
@@ -424,7 +453,7 @@ var ProjectTable = Vue.component("project", {
           value: "backends",
         },
       ],
-      bgColors: ["red darken-4", "green darken-4", "blue darken-4"],
+      bgColors: ["pink darken-4", "green darken-4", "blue darken-4"],
     };
   },
   methods: {
