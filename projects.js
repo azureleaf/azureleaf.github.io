@@ -8,7 +8,8 @@ var ProjectTable = Vue.component("project", {
         <v-card elevation="10" class="mt-10">
           <v-card-title class="headline font-weight-bold pb-8">プロジェクト一覧</v-card-title>
             <v-card-subtitle class="subtitle-1">
-            ポートフォリオサイトへのご訪問ありがとうございます！<br>最近の私の制作物をご紹介いたします。デモページもぜひご覧ください。
+            ポートフォリオサイトへのご訪問ありがとうございます！最近の私の制作物をご紹介いたします。<br>
+            デモページもぜひご覧ください。各プロジェクトのGitHubページでは、ここよりも更に詳しく説明しています。
           </v-card-subtitle>            
         </v-card>
         <v-card elevation="10" class="my-8">
@@ -175,7 +176,7 @@ var ProjectTable = Vue.component("project", {
           name: "仙台高齢化地域の可視化",
           identifier: "ageing",
           desc:
-            "仙台の町ごとの高齢人口比率を地図上にヒートマップで表現します。私も一住民として興味のある内容なので、おもしろかったです。<u>データ処理とデータ可視化</u>の練習台。",
+            "町ごとの高齢人口比率を、地図の上にヒートマップで描画します。私も一住民として興味がある内容なのでおもしろかったです。<u>Pythonでのデータ処理と可視化</u>の練習台。",
           demourl: "https://azureleaf.github.io/ageing-sendai/",
           githuburl: "https://github.com/azureleaf/ageing-sendai",
           frameworks: ["py", "js", "c"],
@@ -189,13 +190,14 @@ var ProjectTable = Vue.component("project", {
           techs: [
             "<u>Leaflet.js</u>で、OpenStreetMapの地図上に描画します。",
             "Pythonの<u>Pandas</u>やC言語でデータを加工します。",
-            "<u>カラーマッピング</u>（どの値をどの色に対応させれば見やすいのか？）の有名な計算手段をいくつか検討しました。",
+            "<u>カラーマッピング</u>（どの値をどの色に対応させれば見やすいのか？）の有名な計算手段を<a href='https://azureleaf.github.io/ageing-sendai/colormap.html'>いくつか検討しました</a>。",
             "「町別の年齢人口分布統計のExcelファイル」「町別の緯度経度情報のExcelファイル」など<u>複数の表をうまくJOINできるようデータを整形</u>しました。",
             "「重複データを発見して取り除く」「４丁目と四丁目の表記のゆれを統一する」「データ区分ごとの集計」などは全てコーディングで処理します。",
+            "以下に詳しいデータ分析を述べます",
           ],
           achvs: [
             "地図を使った可視化の勉強になりました。<u>色鮮やかでインタラクティブなUI</u>は、やはりインパクトがあります。",
-            "<u>分析前の生データの質がどれほど重要か</u>、痛いほど身にしみました。苦労してデータ処理したのに、後から元データの不備が判明しそこまでの苦労が水の泡…という悲劇が何度もありました。",
+            "<u>分析前の生データの質がどれほど重要か</u>、痛いほど身にしみました。「苦労してデータ処理したのに、後から元データの不備が判明してそこまでの苦労が水の泡だ...」という悲劇が何度もありました。",
           ],
         },
         {
@@ -216,7 +218,7 @@ var ProjectTable = Vue.component("project", {
           name: "激強五目並べ",
           identifier: "gomoku",
           desc:
-            "コンピュータを相手に戦う五目並べです。強すぎてほぼ勝てません。<a href='https://github.com/azureleaf/gomoku'>React版もあります</a>。Web系の勉強で最初につくったものなので、思い入れが深いです。<u>Vueのイベント処理</u>の練習台。",
+            "コンピュータを相手に戦う五目並べです。強すぎてほぼ勝てません。<a href='https://github.com/azureleaf/gomoku'>React版もあります</a>。私が最初につくったプログラムなので思い入れが深いです。<u>Vueのイベント処理</u>の練習台。",
           demourl: "",
           githuburl: "",
           frameworks: ["vue", "react"],
@@ -230,7 +232,7 @@ var ProjectTable = Vue.component("project", {
           name: "三角形の五心",
           identifier: "triangle",
           desc:
-            "ユーザがマウスで三角形を描くと、三角形の重心などを補助線とともにきれいに自動描画します。<u>EdTech（ITによる教育の効率化）</u>を意識したツールです。",
+            "マウスで三角形を描くと、三角形の重心などを補助線付きで自動描画します。<u>EdTech（ITによる教育の効率化）</u>を意識したツールです。",
           demourl:
             "https://azureleaf.github.io/canvas/triangle/triangle_centers.html",
           githuburl: "https://github.com/azureleaf/canvas/",
@@ -240,16 +242,16 @@ var ProjectTable = Vue.component("project", {
           funcImg: "",
           techs: [],
           achvs: [
-            "Canvasを使ったマウスクリックなどのイベント処理を勉強しました。",
+            "<u>HTML Canvas</u>でのクリックイベント処理、<u>Bootstrap</u>によるレイアウトがわかりました。",
             "<u>JSDoc</u>などコーディングフォーマットを知りました。",
-            "配列の.map()やオブジェクト指向を使った、可読性の高いコードの書き方に慣れました。",
+            ".forEach()やオブジェクト指向を使って可読性を向上させることを勉強しました。",
           ],
         },
         {
           name: "仙台地下鉄検索Bot",
           identifier: "line",
           desc:
-            "<u>Heroku上で動くLINEボット</u>です。彼にGPSの現在位置を投げると、近くにあるバス停と地下鉄の駅を検索して返してくれます。",
+            "<u>Heroku上で動くLINEボット</u>。GPSの現在位置を投げると、近くにある地下鉄駅とバス停の情報を返してくれます。",
           demourl: "",
           githuburl: "https://github.com/azureleaf/greet_bot",
           frameworks: ["py"],
@@ -277,7 +279,7 @@ var ProjectTable = Vue.component("project", {
           name: "WiFiストーカー",
           identifier: "stalker",
           desc:
-            "LANを自動スキャンし、接続中デバイスのMACアドレスから人々の在室状況を追跡する、いやらしいプログラムです。<u>ネットワーク技術</u>を勉強する助けとして作成。",
+            "LANを自動スキャンし、接続中デバイスのMACアドレスから各個人を追跡する、いやらしいプログラムです。<u>ネットワーク</u>を勉強する助けとして作成。",
           demourl: "",
           githuburl: "https://github.com/azureleaf/lan-device-stalker",
           frameworks: ["js", "py"],
@@ -291,29 +293,29 @@ var ProjectTable = Vue.component("project", {
           name: "通院アシスタント",
           identifier: "hospital",
           desc:
-            "私のかかりつけ病院のウェブサイトに自動アクセスしてリアルタイムの混雑状況を取得し、受診のオンライン予約まで自動でやってくれます。<u>ウェブスクレイピングとブラウザ操作自動化</u>の題材。",
+            "私のかかりつけ病院のウェブサイトに自動アクセスしてリアルタイムの混雑状況を取得し、受診のオンライン予約まで自動でやってくれます。<u>ウェブスクレイピング</u>の題材。",
           demourl: "",
           githuburl: "https://github.com/azureleaf/hospital_latency",
           frameworks: ["py", "vue", "js"],
-          backends: ["Firebase"],
+          backends: ["Express + TypeORM + MySQL"],
           funcs: [],
           funcImg: "",
-          techs: [],
+          techs: ["Socket.ioによるリアルタイム情報更新", "Node.jsからPythonを実行"],
           achvs: [
-            "この病院は人気のため、予約を取るのが先着順の凄まじい競争になっていました。自動化はまあズルですけど、とても楽になりました。",
+            "この病院は人気が高く、予約を取るのが先着順の凄まじい競争になっていました。自動化でとても楽になりました。",
           ],
         },
         {
-          name: "仙台の気候は住みやすい？",
+          name: "仙台の気候は住みやすいのか？",
           identifier: "climate",
           desc:
-            "日本７大都市の気候データを比較します。仙台が年々暑くなってきているのかも確かめたい。<u>データ可視化と統計分析（時系列解析）</u>の練習台。",
+            "日本７大都市の気候を比較します。仙台が年々暑くなっているのかも検証したい。<u>データ可視化と時系列解析</u>の練習台。",
           demourl: "https://azureleaf.github.io/japan-city-climate/",
           githuburl: "https://github.com/azureleaf/japan-city-climate",
           frameworks: ["js", "py"],
           backends: [],
           funcs: [
-            "各都市の真夏日、降水量、平均気温その他の基本的な気候統計を可視化します。",
+            "各都市の真夏日、降水量、平均気温など基本的な気候統計を可視化します。",
             "ユーザーの重視する属性（暑いのが好き？寒いのは平気？など）によって、各都市のオススメ度を計算し推薦します。",
             "仙台で温暖化が進行しているといえるのか、統計的に判断できるか解説ページを提供します。",
           ],
@@ -327,25 +329,25 @@ var ProjectTable = Vue.component("project", {
             "時系列解析を学校で習った時はあやふやな理解だったのが、実際に作業することで実感がわきました。",
           ],
         },
+        // {
+        //   name: "チヤツトワーク",
+        //   identifier: "chat",
+        //   desc:
+        //     "<u>socket.ioによるリアルタイム通信</u>を勉強するために、既存のチャットツールを模倣したツールを作ってみました。",
+        //   demourl: "",
+        //   githuburl: "",
+        //   frameworks: ["js", "vue"],
+        //   backends: ["Firebase"],
+        //   funcs: [""],
+        //   funcImg: "",
+        //   techs: [],
+        //   achvs: [],
+        // },
         {
-          name: "チヤツトワーク",
-          identifier: "chat",
-          desc:
-            "<u>socket.ioによるリアルタイム通信</u>を勉強するために、既存のチャットツールを模倣したツールを作ってみました。",
-          demourl: "",
-          githuburl: "",
-          frameworks: ["js", "vue"],
-          backends: ["Express + TypeORM + MySQL"],
-          funcs: [""],
-          funcImg: "",
-          techs: [],
-          achvs: [],
-        },
-        {
-          name: "ジェネラティブアート",
+          name: "フラクタルを描こう！",
           identifier: "fractal",
           desc:
-            "<u>再帰関数</u>を利用することで、複雑な図形を短いコードで描画できます。絵心がない私ですが、このような幾何学図形の美しさはわかる気がします。",
+            "<u>HTML Canvasに再帰関数を使う</u>ことで、きれいで複雑な図形を描画します。このような芸術手法を「ジェネラティブ・アート」というそうです。",
           demourl: "https://azureleaf.github.io/canvas/fractal/canvastree.html",
           githuburl: "https://github.com/azureleaf/canvas/",
           frameworks: ["js"],
@@ -355,22 +357,22 @@ var ProjectTable = Vue.component("project", {
           techs: [],
           achvs: [],
         },
-        {
-          name: "IT学習ノート",
-          identifier: "notes",
-          desc:
-            "プログラミングの膨大な勉強メモをまとめたものです。<u>学習モチベーションを保ち、マークダウン記法に慣れる</u>のが主眼でした。",
-          demourl: "",
-          githuburl: "https://github.com/azureleaf/study-notes",
-          frameworks: ["md"],
-          backends: [],
-          funcs: [
-            "特に<a href='https://github.com/azureleaf/study-notes/blob/master/js/promise.md'>Promiseについて</a>は結構まとめました。",
-          ],
-          funcImg: "",
-          techs: [],
-          achvs: [],
-        },
+        // {
+        //   name: "IT学習ノート",
+        //   identifier: "notes",
+        //   desc:
+        //     "プログラミングの膨大な勉強メモをまとめたものです。<u>学習モチベーションを保ち、マークダウン記法に慣れる</u>のが主眼でした。",
+        //   demourl: "",
+        //   githuburl: "https://github.com/azureleaf/study-notes",
+        //   frameworks: ["md"],
+        //   backends: [],
+        //   funcs: [
+        //     "特に<a href='https://github.com/azureleaf/study-notes/blob/master/js/promise.md'>Promiseについて</a>は結構まとめました。",
+        //   ],
+        //   funcImg: "",
+        //   techs: [],
+        //   achvs: [],
+        // },
         // {
         //   name: "ログイン機能を自作する",
         //   identifier: "user_login",
@@ -389,29 +391,28 @@ var ProjectTable = Vue.component("project", {
           name: "ポートフォリオサイト",
           identifier: "portfolio",
           desc:
-            "このサイトそのもの。<u>VuetifyとCDN</u>でスタイリッシュなVueのサイトをNode.jsなしで実現しました。",
+            "このサイトそのもの。<u>マテリアルデザイン・CDN・Webpack</u>によるVue.jsのサイトをNode.jsなしで実現しました。",
           demourl: "",
           githuburl: "https://github.com/azureleaf/azureleaf.github.io",
           frameworks: ["vue"],
           backends: [],
           funcs: [
-            "私のプロジェクトを見てくださる方に対して、その<u>コードの背景にある私の考え方や人間性まで伝わるよう表現を工夫しました。</u>",
-            "マテリアルデザインにより、シンプルでありながら見やすく統一感があります。",
-            "画像やアイコンを多用することで、文字だらけで単調な感じを減らせた...と信じています。",
+            "私のプロジェクトを見てくださる方に対して、その<u>コードの背景にある私の発想まで伝わるよう表現を工夫しました。</u>",
+            "マテリアルデザインやアイコンを使うことで、シンプルでありながら見やすく統一感があります。",
+            "<u>SPA（Single Page Application）</u>により、通信回数が少なく表示が高速です。（もともと少ないですが）",
           ],
           funcImg: "",
           techs: [
-            "<u>Vuetify</u>によるマテリアルデザイン。",
-            "<u>Font Awesome</u>のアイコンセット。",
-            "動画の編集圧縮に<u>ffmpeg</u>を多用。",
+            "<u>Vuetify</u>によるマテリアルデザインと、<u>Font Awesome</u>のアイコンセット。",
+            "私はLinuxユーザーですので、動画の編集圧縮に<u>ffmpeg</u>を多用しました。",
             "GitHubの静的ページではNode.jsを動かせないため、<u>CDN (Contents Delivery Network)</u>によりVueを導入。",
-            "<u>Webpack</u>を使用することで、CDNのページでありつつも効率的にコーディングできるようにしました。"
+            "<u>Webpack</u>を使用することで、CDNのページでありつつも効率的にコーディングできるようにしました。",
             // "Vueは本来は複雑にコンパイルされるライブラリなので、これをCDNから使う場合は制約が多く結構苦労しました。",
           ],
           achvs: [
             "<u>CDNによるVue / Vue Router / Vuetify</u>の書き方がわかりました。Nuxtを使えばもっと楽だった気もします。",
-            "GitHubでの個人ページのホスティング機能を理解しました。",
             "<u>Vue Routerでのスクロール位置の制御</u>がわかりました。",
+            "GitHubでの個人ページのホスティング機能を理解しました。",
           ],
         },
       ],
@@ -427,7 +428,7 @@ var ProjectTable = Vue.component("project", {
           value: "name",
         },
         {
-          text: "Demo",
+          text: "デモ",
           sortable: false,
           value: "demourl",
         },
