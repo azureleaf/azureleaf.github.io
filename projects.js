@@ -300,7 +300,10 @@ var ProjectTable = Vue.component("project", {
           backends: ["Express + TypeORM + MySQL"],
           funcs: [],
           funcImg: "",
-          techs: ["Socket.ioによるリアルタイム情報更新", "Node.jsからPythonを実行"],
+          techs: [
+            "Socket.ioによるリアルタイム情報更新",
+            "Node.jsからPythonを実行",
+          ],
           achvs: [
             "この病院は人気が高く、予約を取るのが先着順の凄まじい競争になっていました。自動化でとても楽になりました。",
           ],
@@ -357,22 +360,36 @@ var ProjectTable = Vue.component("project", {
           techs: [],
           achvs: [],
         },
-        // {
-        //   name: "IT学習ノート",
-        //   identifier: "notes",
-        //   desc:
-        //     "プログラミングの膨大な勉強メモをまとめたものです。<u>学習モチベーションを保ち、マークダウン記法に慣れる</u>のが主眼でした。",
-        //   demourl: "",
-        //   githuburl: "https://github.com/azureleaf/study-notes",
-        //   frameworks: ["md"],
-        //   backends: [],
-        //   funcs: [
-        //     "特に<a href='https://github.com/azureleaf/study-notes/blob/master/js/promise.md'>Promiseについて</a>は結構まとめました。",
-        //   ],
-        //   funcImg: "",
-        //   techs: [],
-        //   achvs: [],
-        // },
+        {
+          name: "ファイルマネージャー",
+          identifier: "filemanager",
+          desc:
+            "パソコン内に文書ファイルが大量にあり収拾がつかないので、それらをタグ付けなどで整理するツール。<u>フレームワーク抜きの純粋なPHPに慣れる</u>ために作成しました。",
+          demourl: "",
+          githuburl: "",
+          frameworks: ["php", "js"],
+          backends: [],
+          funcs: [],
+          funcImg: "",
+          techs: [],
+          achvs: [],
+        },
+        {
+          name: "IT学習ノート",
+          identifier: "notes",
+          desc:
+            "プログラミングの膨大な勉強メモをまとめたものです。<u>学習モチベーションを保ち、マークダウン記法に慣れる</u>のが主眼でした。",
+          demourl: "",
+          githuburl: "https://github.com/azureleaf/study-notes",
+          frameworks: ["md"],
+          backends: [],
+          funcs: [
+            "特に<a href='https://github.com/azureleaf/study-notes/blob/master/js/promise.md'>Promiseについて</a>は結構まとめました。",
+          ],
+          funcImg: "",
+          techs: [],
+          achvs: [],
+        },
         // {
         //   name: "ログイン機能を自作する",
         //   identifier: "user_login",
