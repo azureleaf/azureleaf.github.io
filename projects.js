@@ -299,7 +299,7 @@ var ProjectTable = Vue.component("project", {
           demourl: "",
           githuburl: "https://github.com/azureleaf/hospital_latency",
           frameworks: ["py", "vue", "js"],
-          backends: ["Express + TypeORM + MySQL"],
+          backends: ["Express + TypeORM + MySQL + Firebase"],
           funcs: [],
           funcImg: "",
           techs: [
@@ -473,7 +473,7 @@ var ProjectTable = Vue.component("project", {
           value: "backends",
         },
       ],
-      bgColors: ["pink darken-4", "green darken-4", "blue darken-4"],
+      bgColors: ["red darken-4", "green darken-4", "blue darken-4"],
     };
   },
   methods: {

@@ -222,7 +222,7 @@ var SkillTable = Vue.component("skill", {
           value: "desc",
         },
       ],
-      bgColors: ["pink darken-4", "green darken-4", "blue darken-4"],
+      bgColors: ["red darken-4", "green darken-4", "blue darken-4"],
     };
   },
 });
