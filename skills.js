@@ -47,12 +47,12 @@ var SkillTable = Vue.component("skill", {
             {
               title: "プログラミング",
               desc:
-                "始めたのは大学入学後ですが、プログラミングは自分の性分によく合っていると感じます。今後Web開発したいもののプランはいくつもありますが、勉強すべきことも本当に多い。",
+                "始めたのは大学入学後ですが、プログラミングは自分の性分によく合っていると感じます。今後の開発プランはいくつもありますが、勉強すべきことも本当に多いとつくづく実感させられます。",
             },
             {
               title: "外国語学習",
               desc:
-                "語学は私の一番の趣味で、英語の日常会話には問題ありません。プログラマの世界はStackOverflowをはじめ英文だらけなので、趣味と実益双方を兼ねています。中国語の資料でも情報収集できます。中国のIT開発者コミュニティを覗くと、彼らの技術レベルの高さと活発さに圧倒されます。",
+                "語学は私の一番の趣味で、英語の日常会話には問題ありません。プログラマの世界はStackOverflowをはじめ英文だらけなので、趣味と実益双方を兼ねています。中国語の資料でも情報収集できます。",
             },
             {
               title: "性格",
@@ -62,12 +62,12 @@ var SkillTable = Vue.component("skill", {
             {
               title: "コミュニケーション能力",
               desc:
-                "世の中にはコミュ力の非常に高い人間がいて驚かされます。私は理系としては平均くらいでしょうか。プログラミングを勉強する人たちに私から声をかけて毎週勉強会をやったり、仙台のIT勉強会にあちこち首を突っ込むくらいの行動力はあります。「陽キャじゃないけど説明力が高い」とは私に対するある人の評。",
+                "世の中にはコミュ力の非常に高い人間がいて圧倒されます。とはいえ私もプログラミングを勉強する人たちに私から声をかけて毎週勉強会をやったり、仙台のIT勉強会にあちこち首を突っ込むくらいの行動力はあります。「陽キャじゃないけど説明力が高い」とは私に対するある人の評。",
             },
             {
               title: "体力",
               desc:
-                "仙台周辺の町中やら山やらを毎日歩いており、タフな方だと思います。誰しも毎日ストレスを抱えますが、散歩の習慣は私が精神上の活力を維持するのに相当役立っています。普段は一日１万歩程度ですが、最長だと秋保温泉まで一日50km歩きました。お気に入りの行先は愛子の蕃山。",
+                "仙台周辺の市街地や山を毎日歩いており、タフな方だと思います。散歩の習慣は私の精神衛生上かなり役立っています。普段は一日１万歩程度、最長だと秋保温泉まで一日45km歩きました。愛子の蕃山がお気に入りです。",
             },
             {
               title: "犬派",
@@ -78,12 +78,10 @@ var SkillTable = Vue.component("skill", {
         },
         {
           groupName: "言語",
-          groupComment:
-            "多くの言語をそれなりに使えるよりも、少数の言語に精通することのほうが有意義だと最近思います。",
           skills: [
             {
               title: "<u>JavaScript</u> / TypeScript",
-              desc: "今後TSに積極的に移行したいです。",
+              desc: "今後TSに移行したいです。",
             },
             {
               title: "<u>Python</u>",
@@ -97,29 +95,24 @@ var SkillTable = Vue.component("skill", {
             {
               title: "C / C++",
               desc:
-                "大学でCは制御プログラムで、C++はOpenCVを使う際に使いました。最近は巨大ファイルの処理など速度が必要な時使います。",
+                "大学でCは制御プログラムで、C++はOpenCVを使う際に使いました。最近も巨大ファイルの処理など速度が必要な時使います。",
             },
             {
               title: "Java",
               desc:
-                "大学でImageJという画像処理ソフトのプラグインを改良するのに使いました。",
-            },
-            {
-              title: "VBA",
-              desc:
-                "エクセルのマクロで使いましたが、遅いし、行数制限はあるしでイマイチだった思い出。",
+                "研究室でImageJという画像処理ソフトのプラグインを改良するのに使いました。",
             },
           ],
         },
         {
           groupName: "開発ツール",
           groupComment:
-            "環境構築の作業にはたびたび泣かされました。なので今後はDockerとKubernetesを使いこなせるようになりたい。",
+            "今後はKubernetesを使いこなせるようになりたい。",
           skills: [
             {
               title: "OS",
               desc:
-                "<u>Ubuntu Bionic</u> / Windows / CentOS + Nginx（大学研究室のサーバ運用で使いました）",
+                "<u>Ubuntu Bionic</u> / Windows / CentOS + Nginx（大学研究室のサーバ運用）",
             },
             {
               title: "Editor",
@@ -148,7 +141,7 @@ var SkillTable = Vue.component("skill", {
             {
               title: "その他",
               desc:
-                "Wireshark（共用ネットワークで野良DHCPサーバが立ってトラブった時に使いました） / WordPress(学生団体のサイト運用で使用) ",
+                "Wireshark（野良DHCPサーバを退治した時に使用） / WordPress",
             },
           ],
         },
@@ -159,7 +152,7 @@ var SkillTable = Vue.component("skill", {
             {
               title: "Vue",
               desc:
-                "<u>Vue.js</u> / <u>Vue-Router</u> / <u>Vuex</u> / <u>Vuetify</u>（このポートフォリオサイトでも採用）",
+                "<u>Vue.js</u> / <u>Vue-Router</u> / <u>Vuex</u> / <u>Vuetify</u>",
             },
             { title: "React", desc: "React" },
             { title: "HTML / CSS", desc: "Pug / Stylus / Bootstrap" },
@@ -168,14 +161,13 @@ var SkillTable = Vue.component("skill", {
 
         {
           groupName: "バックエンド",
-          groupComment:
-            "Expressを主に触っていましたが、結局どのフレームワーク・ORMも基本の思想は共通しており、あまり違いはない気がします。",
+          groupComment: "WebフレームワークやORMはたくさんありますが、結局基本思想は共通しているように感じます。",
           skills: [
             {
               title: "Webフレームワーク",
               desc: "<u>Express.js</u> / Flask / Laravel",
             },
-            { title: "ORM", desc: "<u>TypeORM</u> / Sequelize / Eloquent" },
+            { title: "ORM", desc: "<u>TypeORM</u> / Sequelize / Eloquent / SQLAlchemy" },
             {
               title: "DB",
               desc: "<u>SQLite</u> / MySQL / PostgreSQL / MongoDB / Firebase",
@@ -191,7 +183,7 @@ var SkillTable = Vue.component("skill", {
         {
           groupName: "データ処理",
           groupComment:
-            "機械学習はMNISTの手書き文字入力や猫の画像分類のチュートリアルを動かした程度なのですが、AIは私が生きる世代の最重要技術だと思います。今後一番力を入れたい。",
+            "機械学習はMNISTの手書き文字入力や猫の画像分類のチュートリアルを動かした程度なのですが、AIは私が生きる世代の最重要技術だと思います。今後一番力を入れたい領域です。",
           skills: [
             { title: "行列処理", desc: "<u>Pandas</u> / <u>Numpy</u>" },
             {
@@ -204,7 +196,7 @@ var SkillTable = Vue.component("skill", {
             },
             {
               title: "可視化",
-              desc: "Chart.js / Three.js / Matplotlib / Leaflet.js",
+              desc: "<u>Chart.js</u> / Three.js / Matplotlib / Leaflet.js",
             },
           ],
         },
