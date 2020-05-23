@@ -81,7 +81,7 @@ var SkillTable = Vue.component("skill", {
           skills: [
             {
               title: "<u>JavaScript</u> / TypeScript",
-              desc: "今後TSに移行したいです。",
+              desc: "今後TSに移行しようと思います。",
             },
             {
               title: "<u>Python</u>",
@@ -161,7 +161,7 @@ var SkillTable = Vue.component("skill", {
 
         {
           groupName: "バックエンド",
-          groupComment: "WebフレームワークやORMはたくさんありますが、結局基本思想は共通しているように感じます。",
+          groupComment: "WebフレームワークやORMはたくさんありますが、結局基本思想にはあまり違いがない気がします。",
           skills: [
             {
               title: "Webフレームワーク",

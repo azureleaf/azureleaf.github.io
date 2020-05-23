@@ -173,6 +173,20 @@ var ProjectTable = Vue.component("project", {
       projectIds: [],
       projects: [
         {
+          name: "寮運営システム",
+          identifier: "dorm",
+          desc:
+            "学生寮の<u>業務自動化ツール</u>。ログイン機能・会計処理機能・当番割振機能をもっており、最も実用的なプロジェクトです。",
+          demourl: "",
+          githuburl: "",
+          frameworks: ["js", "php", "laravel", "vue"],
+          backends: ["Laravel + Eloquent + Postgres"],
+          funcs: [],
+          funcImg: "",
+          techs: ["Cypressによるテスト自動化"],
+          achvs: [],
+        },
+        {
           name: "仙台高齢化地域の可視化",
           identifier: "ageing",
           desc:
@@ -201,20 +215,6 @@ var ProjectTable = Vue.component("project", {
           ],
         },
         {
-          name: "寮運営システム",
-          identifier: "dorm",
-          desc:
-            "学生寮の<u>業務自動化ツール</u>。ログイン機能・会計処理機能・当番割振機能をもっており、最も実用的なプロジェクトです。",
-          demourl: "",
-          githuburl: "",
-          frameworks: ["js", "php", "laravel", "vue"],
-          backends: ["Laravel + Eloquent + Postgres"],
-          funcs: [],
-          funcImg: "",
-          techs: ["Cypressによるテスト自動化"],
-          achvs: [],
-        },
-        {
           name: "激強五目並べ",
           identifier: "gomoku",
           desc:
@@ -238,12 +238,20 @@ var ProjectTable = Vue.component("project", {
           githuburl: "https://github.com/azureleaf/canvas/",
           frameworks: ["js"],
           backends: [],
-          funcs: [],
+          funcs: [
+            "Canvas内部で３点をクリックすると、五心（重心・外心・内心・垂心・傍心）の図形を補助線とともに描画します。",
+            "三角形の自動生成機能や、五心それぞれの表示を切り替えるチェックボックスにより、表示内容を様々にカスタマイズできます。",
+            "ウィンドウのサイズなどを検知し、見やすい最適なレイアウトで表示します。",
+          ],
           funcImg: "",
-          techs: [],
+          techs: [
+            "Vue.jsを使わない、<u>生のJavaScriptでのDOM処理</u>を行っています。",
+            "DOM要素のうち繰り返し処理が必要な箇所は、<u>document.createElement()</u>などを使って一括で生成。",
+            "UI要素やGridレイアウトによるBreakpoint指定に<u>Bootstrap</u>を活用。"
+          ],
           achvs: [
-            "<u>HTML Canvas</u>でのクリックイベント処理、<u>Bootstrap</u>によるレイアウトがわかりました。",
-            "<u>JSDoc</u>などコーディングフォーマットを知りました。",
+            "<u>HTML Canvas</u>のイベント処理、Bootstrapの使い方がわかりました。",
+            "<u>JSDoc</u>などコーディング規約を知りました。",
             ".forEach()やオブジェクト指向を使って可読性を向上させることを勉強しました。",
           ],
         },
@@ -281,7 +289,7 @@ var ProjectTable = Vue.component("project", {
           name: "WiFiストーカー",
           identifier: "stalker",
           desc:
-            "LANを自動スキャンし、接続中デバイスのMACアドレスから各個人を追跡する、いやらしいプログラムです。<u>ネットワーク</u>を勉強する助けとして作成。",
+            "LANを自動スキャンし、接続中デバイスのMACアドレスから各個人を追跡する、性格の悪いプログラムです。<u>ネットワーク</u>を勉強する助けとして作成。",
           demourl: "",
           githuburl: "https://github.com/azureleaf/lan-device-stalker",
           frameworks: ["js", "py"],
@@ -362,36 +370,36 @@ var ProjectTable = Vue.component("project", {
           techs: [],
           achvs: [],
         },
-        {
-          name: "ファイルマネージャー",
-          identifier: "filemanager",
-          desc:
-            "パソコン内に文書ファイルが大量にあり収拾がつかないので、それらをタグ付けなどで整理するツール。<u>フレームワーク抜きの純粋なPHPに慣れる</u>ために作成しました。",
-          demourl: "",
-          githuburl: "",
-          frameworks: ["php", "js"],
-          backends: ["SQLite"],
-          funcs: [],
-          funcImg: "",
-          techs: [],
-          achvs: [],
-        },
-        {
-          name: "IT学習ノート",
-          identifier: "notes",
-          desc:
-            "プログラミングの膨大な勉強メモをまとめたものです。<u>学習モチベーションを保ち、マークダウン記法に慣れる</u>のが主眼でした。",
-          demourl: "",
-          githuburl: "https://github.com/azureleaf/study-notes",
-          frameworks: ["md"],
-          backends: [],
-          funcs: [
-            "特に<a href='https://github.com/azureleaf/study-notes/blob/master/js/promise.md'>Promiseについて</a>は結構まとめました。",
-          ],
-          funcImg: "",
-          techs: [],
-          achvs: [],
-        },
+        // {
+        //   name: "ファイルマネージャー",
+        //   identifier: "filemanager",
+        //   desc:
+        //     "パソコン内に文書ファイルが大量にあり収拾がつかないので、それらをタグ付けなどで整理するツール。<u>フレームワーク抜きの純粋なPHPに慣れる</u>ために作成しました。",
+        //   demourl: "",
+        //   githuburl: "",
+        //   frameworks: ["php", "js"],
+        //   backends: ["SQLite"],
+        //   funcs: [],
+        //   funcImg: "",
+        //   techs: [],
+        //   achvs: [],
+        // },
+        // {
+        //   name: "IT学習ノート",
+        //   identifier: "notes",
+        //   desc:
+        //     "プログラミングの膨大な勉強メモをまとめたものです。<u>学習モチベーションを保ち、マークダウン記法に慣れる</u>のが主眼でした。",
+        //   demourl: "",
+        //   githuburl: "https://github.com/azureleaf/study-notes",
+        //   frameworks: ["md"],
+        //   backends: [],
+        //   funcs: [
+        //     "特に<a href='https://github.com/azureleaf/study-notes/blob/master/js/promise.md'>Promiseについて</a>は結構まとめました。",
+        //   ],
+        //   funcImg: "",
+        //   techs: [],
+        //   achvs: [],
+        // },
         // {
         //   name: "ログイン機能を自作する",
         //   identifier: "user_login",
@@ -406,34 +414,34 @@ var ProjectTable = Vue.component("project", {
         //   techs: [],
         //   achvs: ["<u>非同期通信</u>、ORM、Bcryptによるハッシュ化、トークンの保存、Cypressでの自動テストなどを、"],
         // },
-        {
-          name: "ポートフォリオサイト",
-          identifier: "portfolio",
-          desc:
-            "このサイトそのもの。<u>マテリアルデザイン・CDN・Webpack</u>によるVue.jsのサイトをNode.jsなしで実現しました。",
-          demourl: "",
-          githuburl: "https://github.com/azureleaf/azureleaf.github.io",
-          frameworks: ["vue"],
-          backends: [],
-          funcs: [
-            "私のプロジェクトを見てくださる方に対して、その<u>コードの背景にある私の発想</u>まで伝わるよう表現を推敲しました。",
-            "マテリアルデザインやアイコンを使うことで、シンプルでありながら見やすく統一感があります。",
-            "<u>SPA（Single Page Application）</u>により、通信回数が少なく表示が高速です。（このページはもともと通信量は極小ですが）",
-          ],
-          funcImg: "",
-          techs: [
-            "<u>Vuetify</u>によるマテリアルデザインと、<u>Font Awesome</u>のアイコンセット。",
-            "私はLinuxユーザーですので、動画の編集圧縮に<u>ffmpeg</u>を多用しました。",
-            "GitHubの静的ページではNode.jsを動かせないため、<u>CDN (Contents Delivery Network)</u>によりVueを導入。",
-            "<u>Webpack</u>を使用することで、CDNのページでありつつも効率的にコーディングできるようにしました。",
-            // "Vueは本来は複雑にコンパイルされるライブラリなので、これをCDNから使う場合は制約が多く結構苦労しました。",
-          ],
-          achvs: [
-            "<u>CDNによるVue / Vue Router / Vuetify</u>の書き方がわかりました。Nuxtを使えばもっと楽だった気もします。",
-            "<u>Vue Routerでのスクロール位置の制御</u>がわかりました。",
-            "GitHubでの個人ページのホスティング機能を理解しました。",
-          ],
-        },
+        // {
+        //   name: "ポートフォリオサイト",
+        //   identifier: "portfolio",
+        //   desc:
+        //     "このサイトそのもの。<u>マテリアルデザイン・CDN・Webpack</u>によるVue.jsのサイトをNode.jsなしで実現しました。",
+        //   demourl: "",
+        //   githuburl: "https://github.com/azureleaf/azureleaf.github.io",
+        //   frameworks: ["vue"],
+        //   backends: [],
+        //   funcs: [
+        //     "私のプロジェクトを見てくださる方に対して、その<u>コードの背景にある私の発想</u>まで伝わるよう表現を推敲しました。",
+        //     "マテリアルデザインやアイコンを使うことで、シンプルでありながら見やすく統一感があります。",
+        //     "<u>SPA（Single Page Application）</u>により、通信回数が少なく表示が高速です。（このページはもともと通信量は極小ですが）",
+        //   ],
+        //   funcImg: "",
+        //   techs: [
+        //     "<u>Vuetify</u>によるマテリアルデザインと、<u>Font Awesome</u>のアイコンセット。",
+        //     "私はLinuxユーザーですので、動画の編集圧縮に<u>ffmpeg</u>を多用しました。",
+        //     "GitHubの静的ページではNode.jsを動かせないため、<u>CDN (Contents Delivery Network)</u>によりVueを導入。",
+        //     "<u>Webpack</u>を使用することで、CDNのページでありつつも効率的にコーディングできるようにしました。",
+        //     // "Vueは本来は複雑にコンパイルされるライブラリなので、これをCDNから使う場合は制約が多く結構苦労しました。",
+        //   ],
+        //   achvs: [
+        //     "<u>CDNによるVue / Vue Router / Vuetify</u>の書き方がわかりました。Nuxtを使えばもっと楽だった気もします。",
+        //     "<u>Vue Routerでのスクロール位置の制御</u>がわかりました。",
+        //     "GitHubでの個人ページのホスティング機能を理解しました。",
+        //   ],
+        // },
       ],
       projectHeaders: [
         {
