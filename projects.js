@@ -8,7 +8,7 @@ var ProjectTable = Vue.component("project", {
         <v-card elevation="10" class="mt-10">
           <v-card-title class="headline font-weight-bold pb-8">プロジェクト一覧</v-card-title>
             <v-card-subtitle class="subtitle-1">
-            ポートフォリオサイトへのご訪問ありがとうございます！最近の私の制作物をご紹介いたします。<br>
+            ポートフォリオサイトへのご訪問ありがとうございます。最近の私の制作物をご紹介いたします。<br>
             デモページもぜひご覧ください。各プロジェクトのGitHubページでは、ここよりも更に詳しく説明しています。
           </v-card-subtitle>            
         </v-card>
@@ -176,7 +176,7 @@ var ProjectTable = Vue.component("project", {
           name: "寮運営システム",
           identifier: "dorm",
           desc:
-            "学生寮の<u>業務自動化ツール</u>。ログイン機能・会計処理機能・当番割振機能をもっており、最も実用的なプロジェクトです。",
+            "学生寮の<u>業務自動化ツール</u>。寮生管理、会計処理、居室管理、当番割振、文書編集などの機能をもっており、最も実用的なプロジェクトです。",
           demourl: "",
           githuburl: "",
           frameworks: ["js", "php", "laravel", "vue"],
@@ -227,33 +227,6 @@ var ProjectTable = Vue.component("project", {
           funcImg: "",
           techs: [],
           achvs: [],
-        },
-        {
-          name: "三角形の五心",
-          identifier: "triangle",
-          desc:
-            "マウスで三角形を描くと、三角形の重心などを補助線付きで自動描画します。<u>EdTech（ITによる教育の効率化）</u>を意識したツールです。",
-          demourl:
-            "https://azureleaf.github.io/canvas/triangle/triangle_centers.html",
-          githuburl: "https://github.com/azureleaf/canvas/",
-          frameworks: ["js"],
-          backends: [],
-          funcs: [
-            "Canvas内部で３点をクリックすると、五心（重心・外心・内心・垂心・傍心）の図形を補助線とともに描画します。",
-            "三角形の自動生成機能や、五心それぞれの表示を切り替えるチェックボックスにより、表示内容を様々にカスタマイズできます。",
-            "ウィンドウのサイズなどを検知し、見やすい最適なレイアウトで表示します。",
-          ],
-          funcImg: "",
-          techs: [
-            "Vue.jsを使わない、<u>生のJavaScriptでのDOM処理</u>を行っています。",
-            "DOM要素のうち繰り返し処理が必要な箇所は、<u>document.createElement()</u>などを使って一括で生成。",
-            "UI要素やGridレイアウトによるBreakpoint指定に<u>Bootstrap</u>を活用。"
-          ],
-          achvs: [
-            "<u>HTML Canvas</u>のイベント処理、Bootstrapの使い方がわかりました。",
-            "<u>JSDoc</u>などコーディング規約を知りました。",
-            ".forEach()やオブジェクト指向を使って可読性を向上させることを勉強しました。",
-          ],
         },
         {
           name: "仙台地下鉄検索Bot",
@@ -346,18 +319,45 @@ var ProjectTable = Vue.component("project", {
         //   name: "チヤツトワーク",
         //   identifier: "chat",
         //   desc:
-        //     "<u>socket.ioによるリアルタイム通信</u>を勉強するために、既存のチャットツールを模倣したツールを作ってみました。",
+        //     "<u>socket.ioによるリアルタイム通信</u>を勉強するために、既存のチャットツールを模倣したツールを作ってみました。ローカルLAN内部での即時チャットが可能。",
         //   demourl: "",
         //   githuburl: "",
         //   frameworks: ["js", "vue"],
-        //   backends: ["Firebase"],
+        //   backends: ["Flask + Firebase"],
         //   funcs: [""],
         //   funcImg: "",
         //   techs: [],
         //   achvs: [],
         // },
         {
-          name: "フラクタルを描こう！",
+          name: "三角形の五心",
+          identifier: "triangle",
+          desc:
+            "マウスで三角形を描くと、三角形の重心などを補助線付きで自動描画します。<u>EdTech（ITによる教育の効率化）</u>を意識したツールです。",
+          demourl:
+            "https://azureleaf.github.io/canvas/triangle/triangle_centers.html",
+          githuburl: "https://github.com/azureleaf/canvas/",
+          frameworks: ["js"],
+          backends: [],
+          funcs: [
+            "Canvas内部で３点をクリックすると、五心（重心・外心・内心・垂心・傍心）の図形を補助線とともに描画します。",
+            "三角形の自動生成機能や、五心それぞれの表示を切り替えるチェックボックスにより、表示内容を様々にカスタマイズできます。",
+            "ウィンドウのサイズなどを検知し、見やすい最適なレイアウトで表示します。",
+          ],
+          funcImg: "",
+          techs: [
+            "Vue.jsを使わない、<u>生のJavaScriptでのDOM処理</u>を行っています。",
+            "DOM要素のうち繰り返し処理が必要な箇所は、<u>document.createElement()</u>などを使って一括で生成。",
+            "UI要素やGridレイアウトによるBreakpoint指定に<u>Bootstrap</u>を活用。",
+          ],
+          achvs: [
+            "<u>HTML Canvas</u>のイベント処理、Bootstrapの使い方がわかりました。",
+            "<u>JSDoc</u>などコーディング規約を知りました。",
+            ".forEach()やオブジェクト指向を使って可読性を向上させることを勉強しました。",
+          ],
+        },
+        {
+          name: "フラクタルを描こう",
           identifier: "fractal",
           desc:
             "<u>HTML Canvasに再帰関数を使う</u>ことで、きれいで複雑な図形を描画します。このような芸術手法を「ジェネラティブ・アート」というそうです。",
@@ -385,7 +385,7 @@ var ProjectTable = Vue.component("project", {
         //   achvs: [],
         // },
         // {
-        //   name: "IT学習ノート",
+        //   name: "IT学習スライド",
         //   identifier: "notes",
         //   desc:
         //     "プログラミングの膨大な勉強メモをまとめたものです。<u>学習モチベーションを保ち、マークダウン記法に慣れる</u>のが主眼でした。",
@@ -394,6 +394,7 @@ var ProjectTable = Vue.component("project", {
         //   frameworks: ["md"],
         //   backends: [],
         //   funcs: [
+        //     "<u>Reveal.js</u>によるプレゼンテーション",
         //     "特に<a href='https://github.com/azureleaf/study-notes/blob/master/js/promise.md'>Promiseについて</a>は結構まとめました。",
         //   ],
         //   funcImg: "",
@@ -414,34 +415,35 @@ var ProjectTable = Vue.component("project", {
         //   techs: [],
         //   achvs: ["<u>非同期通信</u>、ORM、Bcryptによるハッシュ化、トークンの保存、Cypressでの自動テストなどを、"],
         // },
-        // {
-        //   name: "ポートフォリオサイト",
-        //   identifier: "portfolio",
-        //   desc:
-        //     "このサイトそのもの。<u>マテリアルデザイン・CDN・Webpack</u>によるVue.jsのサイトをNode.jsなしで実現しました。",
-        //   demourl: "",
-        //   githuburl: "https://github.com/azureleaf/azureleaf.github.io",
-        //   frameworks: ["vue"],
-        //   backends: [],
-        //   funcs: [
-        //     "私のプロジェクトを見てくださる方に対して、その<u>コードの背景にある私の発想</u>まで伝わるよう表現を推敲しました。",
-        //     "マテリアルデザインやアイコンを使うことで、シンプルでありながら見やすく統一感があります。",
-        //     "<u>SPA（Single Page Application）</u>により、通信回数が少なく表示が高速です。（このページはもともと通信量は極小ですが）",
-        //   ],
-        //   funcImg: "",
-        //   techs: [
-        //     "<u>Vuetify</u>によるマテリアルデザインと、<u>Font Awesome</u>のアイコンセット。",
-        //     "私はLinuxユーザーですので、動画の編集圧縮に<u>ffmpeg</u>を多用しました。",
-        //     "GitHubの静的ページではNode.jsを動かせないため、<u>CDN (Contents Delivery Network)</u>によりVueを導入。",
-        //     "<u>Webpack</u>を使用することで、CDNのページでありつつも効率的にコーディングできるようにしました。",
-        //     // "Vueは本来は複雑にコンパイルされるライブラリなので、これをCDNから使う場合は制約が多く結構苦労しました。",
-        //   ],
-        //   achvs: [
-        //     "<u>CDNによるVue / Vue Router / Vuetify</u>の書き方がわかりました。Nuxtを使えばもっと楽だった気もします。",
-        //     "<u>Vue Routerでのスクロール位置の制御</u>がわかりました。",
-        //     "GitHubでの個人ページのホスティング機能を理解しました。",
-        //   ],
-        // },
+        {
+          name: "ポートフォリオサイト",
+          identifier: "portfolio",
+          desc:
+            "このサイトそのもの。<u>マテリアルデザイン・CDN・Webpack</u>によるVue.jsのサイトをNode.jsなしで実現しました。",
+          demourl: "",
+          githuburl: "https://github.com/azureleaf/azureleaf.github.io",
+          frameworks: ["vue"],
+          backends: [],
+          funcs: [
+            "私のプロジェクトを見てくださる方に対して、その<u>コードの背景にある私の発想</u>まで伝わるよう表現を推敲しました。",
+            "マテリアルデザインやアイコンを使うことで、シンプルでありながら見やすく統一感があります。",
+            "<u>SPA（Single Page Application）</u>により、通信回数が少なく表示が高速です。（このページはもともと通信量は極小ですが）",
+          ],
+          funcImg: "",
+          techs: [
+            "<u>Vuetify</u>によるマテリアルデザインと、<u>Font Awesome</u>のアイコンセット。",
+            "私はLinuxユーザーですので、動画の編集圧縮に<u>ffmpeg</u>を多用しました。",
+            "GitHubの静的ページではNode.jsを動かせないため、<u>CDN (Contents Delivery Network)</u>によりVueを導入。",
+            "<u>Webpack</u>を使用することで、CDNのページでありつつも効率的にコーディングできるようにしました。",
+            "<u>Reveal.js</u>による、軽量なプレゼンテーション。",
+            // "Vueは本来は複雑にコンパイルされるライブラリなので、これをCDNから使う場合は制約が多く結構苦労しました。",
+          ],
+          achvs: [
+            "<u>CDNによるVue / Vue Router / Vuetify</u>の書き方がわかりました。Nuxtを使えばもっと楽だった気もします。",
+            "<u>Vue Routerでのスクロール位置の制御</u>がわかりました。",
+            "GitHubでの個人ページのホスティング機能を理解しました。",
+          ],
+        },
       ],
       projectHeaders: [
         {

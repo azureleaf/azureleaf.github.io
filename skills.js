@@ -7,7 +7,7 @@ var SkillTable = Vue.component("skill", {
             >スキル</v-card-title
           >
           <v-card-subtitle class="subtitle-1"
-            >私が今までに使ったツールです。下線を引いたツールは、特に頻繁に使っているものです。
+            >私が今までに使ったツールです。下線を引いたのは特に頻繁に使っているものです。
           </v-card-subtitle>
         </v-card>
         <v-card v-for="(group, index) in groups" :key="index" elevation="10" class="my-8" >
@@ -47,12 +47,12 @@ var SkillTable = Vue.component("skill", {
             {
               title: "プログラミング",
               desc:
-                "始めたのは大学入学後ですが、プログラミングは自分の性分によく合っていると感じます。今後の開発プランはいくつもありますが、勉強すべきことも本当に多いとつくづく実感させられます。",
+                "始めたのは大学入学以降ですが、プログラミングは自分の性分にとても合っていると感じます。今後の開発プランはいくつもありますが、勉強すべきことの膨大さを毎日痛感させられます。",
             },
             {
               title: "外国語学習",
               desc:
-                "語学は私の一番の趣味で、英語の日常会話には問題ありません。プログラマの世界はStackOverflowをはじめ英文だらけなので、趣味と実益双方を兼ねています。中国語の資料でも情報収集できます。",
+                "語学は私の一番の趣味で、英語の日常会話には問題ありません。プログラマの世界はStackOverflowもドキュメンテーションも英文だらけなので、趣味と実益双方を兼ねています。中国語の資料でも情報収集できます。",
             },
             {
               title: "性格",
@@ -62,12 +62,12 @@ var SkillTable = Vue.component("skill", {
             {
               title: "コミュニケーション能力",
               desc:
-                "世の中にはコミュ力の非常に高い人間がいて圧倒されます。とはいえ私もプログラミングを勉強する人たちに私から声をかけて毎週勉強会をやったり、仙台のIT勉強会にあちこち首を突っ込むくらいの行動力はあります。「陽キャじゃないけど説明力が高い」とは私に対するある人の評。",
+                "世の中にはコミュ力の非常に高い人間がいて圧倒されます。とはいえ周囲に私から声をかけて定期的にプログラミングの勉強会をやったり、仙台のIT勉強会にあちこち首を突っ込む程度には行動力はあります。説明が丁寧で上手いと褒められることも。",
             },
             {
               title: "体力",
               desc:
-                "仙台周辺の市街地や山を毎日歩いており、タフな方だと思います。散歩の習慣は私の精神衛生上かなり役立っています。普段は一日１万歩程度、最長だと秋保温泉まで一日45km歩きました。愛子の蕃山がお気に入りです。",
+                "仙台周辺の市街地や山を毎日歩いており、タフな方だと思います。散歩の習慣は私の精神衛生上かなり役立っています。現時点での一日の最長歩行記録は、柴田町船岡までの往復60km。",
             },
             {
               title: "犬派",
@@ -78,6 +78,8 @@ var SkillTable = Vue.component("skill", {
         },
         {
           groupName: "言語",
+          groupComment:
+          "流行に乗ってRustとGoを勉強したい。",
           skills: [
             {
               title: "<u>JavaScript</u> / TypeScript",
@@ -170,14 +172,14 @@ var SkillTable = Vue.component("skill", {
             { title: "ORM", desc: "<u>TypeORM</u> / Sequelize / Eloquent / SQLAlchemy" },
             {
               title: "DB",
-              desc: "<u>SQLite</u> / MySQL / PostgreSQL / MongoDB / Firebase",
+              desc: "SQLite / MySQL / PostgreSQL / MongoDB / Firebase / Redis",
             },
             {
               title: "Node.js",
               desc:
                 "<u>axios</u> / bcrypt / Passport.js / socket.io / Babel / gulp / Webpack",
             },
-            { title: "その他", desc: "Heroku / LINE API / OpenWeather API" },
+            { title: "その他", desc: "AWS EC2 / AWS CloudWatch / Fluentd / Elastic Search / Kibana / Heroku / LINE API / OpenWeather API" },
           ],
         },
         {
