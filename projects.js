@@ -166,7 +166,7 @@ var ProjectTable = Vue.component("project", {
         </v-card>
       </v-container>
     </v-content>`,
-  data: function () {
+  data: function() {
     return {
       // List of all the project id strings
       // Will be set on mounted
@@ -184,7 +184,7 @@ var ProjectTable = Vue.component("project", {
           funcs: [],
           funcImg: "",
           techs: ["Cypressによるテスト自動化"],
-          achvs: [],
+          achvs: []
         },
         {
           name: "仙台高齢化地域の可視化",
@@ -198,7 +198,7 @@ var ProjectTable = Vue.component("project", {
           funcs: [
             "高齢化率を地区ごとに色分けしているので一目瞭然です。",
             "地図上でインタラクティブに操作できます。",
-            "クリックすると詳細情報がポップアップで表示できます",
+            "クリックすると詳細情報がポップアップで表示できます"
           ],
           funcImg: "img/ageing_heatmap_screenshot.jpg",
           techs: [
@@ -207,12 +207,12 @@ var ProjectTable = Vue.component("project", {
             "<u>カラーマッピング</u>（どの値をどの色に対応させれば見やすいのか？）の有名な計算手段を<a href='https://azureleaf.github.io/ageing-sendai/colormap.html'>いくつか検討しました</a>。",
             "「町別の年齢人口分布統計のExcelファイル」「町別の緯度経度情報のExcelファイル」など<u>複数の表をうまくJOINできるようデータを整形</u>しました。",
             "「重複データを発見して取り除く」「４丁目と四丁目の表記のゆれを統一する」「データ区分ごとの集計」などは全てコーディングで処理します。",
-            "以下に詳しいデータ分析を述べます",
+            "以下に詳しいデータ分析を述べます"
           ],
           achvs: [
             "地図を使った可視化の勉強になりました。<u>色鮮やかでインタラクティブなUI</u>は、やはりインパクトがあります。",
-            "<u>分析前の生データの質</u>がどれほど重要か、身にしみました。「苦労してデータ処理したら、後から元データの不備が判明してそこまでの苦労が水の泡」が何度もありました。",
-          ],
+            "<u>分析前の生データの質</u>がどれほど重要か、身にしみました。「苦労してデータ処理したら、後から元データの不備が判明してそこまでの苦労が水の泡」が何度もありました。"
+          ]
         },
         {
           name: "激強五目並べ",
@@ -226,7 +226,7 @@ var ProjectTable = Vue.component("project", {
           funcs: [],
           funcImg: "",
           techs: [],
-          achvs: [],
+          achvs: []
         },
         {
           name: "仙台地下鉄検索Bot",
@@ -240,7 +240,7 @@ var ProjectTable = Vue.component("project", {
           funcs: [
             "テキストでメッセージを投げると、仙台の現在の天気情報と３時間毎の予報をダイジェストで教えてくれます。",
             "現在地の GPS 情報を伝えると、そこから近い地下鉄駅の名前と直線距離、および直近の発車時刻を教えてくれます。",
-            "現在地の GPS 情報を伝えると、そこから近いバス停の名前と直線距離を教えてくれます。",
+            "現在地の GPS 情報を伝えると、そこから近いバス停の名前と直線距離を教えてくれます。"
           ],
           funcImg: "",
           techs: [
@@ -248,15 +248,15 @@ var ProjectTable = Vue.component("project", {
             "バス停と地下鉄駅の緯度経度情報は、国交省サイトから入手してデータ整形。<u>Element Tree</u>でXMLを解析するのに手こずりました。",
             "地下鉄時刻表は、<u>仙台市交通局ウェブサイトからウェブスクレイピング。</u>",
             "<u>球面三角法</u>により緯度経度の差分からメートル距離を算出。",
-            "市営バスの時刻表データが手に入らないので、このBotでは「バスがいつ発車するのか」がわかりません。<u>結局は情報の入手難度が、データ分析のネックになるんですね…</u>",
+            "市営バスの時刻表データが手に入らないので、このBotでは「バスがいつ発車するのか」がわかりません。<u>結局は情報の入手難度が、データ分析のネックになるんですね…</u>"
           ],
           achvs: [
             "<u>LINE Messaging API</u>と<u>Herokuへのデプロイ</u>を学びました。Herokuサーバーがアメリカにあるせいで時間の処理が狂い、面食らったことも。",
             "<u>GPS位置情報</u>の処理に触れました。",
             "<u>Shell ScriptとFFMPEG</u>で動画を効率的に編集しました。",
             "<u>Ngrok</u>の使いかたがわかりました。ただなぜかサーバーが反応しないときもあって苦労させられました。",
-            "プログラミングを勉強するにしても、身近に役に立つツールを作れると達成感もひとしおです。",
-          ],
+            "プログラミングを勉強するにしても、身近に役に立つツールを作れると達成感もひとしおです。"
+          ]
         },
         {
           name: "WiFiストーカー",
@@ -270,7 +270,7 @@ var ProjectTable = Vue.component("project", {
           funcs: [],
           funcImg: "",
           techs: ["SQLAlchemy"],
-          achvs: [],
+          achvs: []
         },
         {
           name: "通院アシスタント",
@@ -285,11 +285,11 @@ var ProjectTable = Vue.component("project", {
           funcImg: "",
           techs: [
             "Socket.ioによるリアルタイム情報更新",
-            "Node.jsからPythonを実行",
+            "Node.jsからPythonを実行"
           ],
           achvs: [
-            "この病院は人気が高く、予約を取るのが先着順の凄まじい競争になっていました。自動化でとても楽になりました。",
-          ],
+            "この病院は人気が高く、予約を取るのが先着順の凄まじい競争になっていました。自動化でとても楽になりました。"
+          ]
         },
         {
           name: "仙台の気候は住みやすいのか？",
@@ -303,17 +303,17 @@ var ProjectTable = Vue.component("project", {
           funcs: [
             "各都市の真夏日、降水量、平均気温など基本的な気候統計を可視化します。",
             "ユーザーの重視する属性（暑いのが好き？寒いのは平気？など）によって、各都市のオススメ度を計算し推薦します。",
-            "仙台で温暖化が進行しているといえるのか、統計的に判断できるか解説ページを提供します。",
+            "仙台で温暖化が進行しているといえるのか、統計的に判断できるか解説ページを提供します。"
           ],
           funcImg: "",
           techs: [
             "ダウンロードしてきたデータはそのままでは利用できないので、不要な列の削除や列名の変更などをPythonで自動処理しました。",
-            "ややマジメな話ですが、時系列解析について詳しくご説明します。",
+            "ややマジメな話ですが、時系列解析について詳しくご説明します。"
           ],
           achvs: [
             "<u>Chart.js</u>によるグラフ描写ができるようになりました。",
-            "時系列解析を学校で習った時はあやふやな理解だったのが、実際に作業することで実感がわきました。",
-          ],
+            "時系列解析を学校で習った時はあやふやな理解だったのが、実際に作業することで実感がわきました。"
+          ]
         },
         // {
         //   name: "チヤツトワーク",
@@ -342,19 +342,19 @@ var ProjectTable = Vue.component("project", {
           funcs: [
             "Canvas内部で３点をクリックすると、五心（重心・外心・内心・垂心・傍心）の図形を補助線とともに描画します。",
             "三角形の自動生成機能や、五心それぞれの表示を切り替えるチェックボックスにより、表示内容を様々にカスタマイズできます。",
-            "ウィンドウのサイズなどを検知し、見やすい最適なレイアウトで表示します。",
+            "ウィンドウのサイズなどを検知し、見やすい最適なレイアウトで表示します。"
           ],
           funcImg: "",
           techs: [
             "Vue.jsを使わない、<u>生のJavaScriptでのDOM処理</u>を行っています。",
             "DOM要素のうち繰り返し処理が必要な箇所は、<u>document.createElement()</u>などを使って一括で生成。",
-            "UI要素やGridレイアウトによるBreakpoint指定に<u>Bootstrap</u>を活用。",
+            "UI要素やGridレイアウトによるBreakpoint指定に<u>Bootstrap</u>を活用。"
           ],
           achvs: [
             "<u>HTML Canvas</u>のイベント処理、Bootstrapの使い方がわかりました。",
             "<u>JSDoc</u>などコーディング規約を知りました。",
-            ".forEach()やオブジェクト指向を使って可読性を向上させることを勉強しました。",
-          ],
+            ".forEach()やオブジェクト指向を使って可読性を向上させることを勉強しました。"
+          ]
         },
         {
           name: "フラクタルを描こう",
@@ -368,7 +368,7 @@ var ProjectTable = Vue.component("project", {
           funcs: [],
           funcImg: "",
           techs: [],
-          achvs: [],
+          achvs: []
         },
         // {
         //   name: "ファイルマネージャー",
@@ -427,7 +427,7 @@ var ProjectTable = Vue.component("project", {
           funcs: [
             "私のプロジェクトを見てくださる方に対して、その<u>コードの背景にある私の発想</u>まで伝わるよう表現を推敲しました。",
             "マテリアルデザインやアイコンを使うことで、シンプルでありながら見やすく統一感があります。",
-            "<u>SPA（Single Page Application）</u>により、通信回数が少なく表示が高速です。（このページはもともと通信量は極小ですが）",
+            "<u>SPA（Single Page Application）</u>により、通信回数が少なく表示が高速です。（このページはもともと通信量は極小ですが）"
           ],
           funcImg: "",
           techs: [
@@ -435,31 +435,31 @@ var ProjectTable = Vue.component("project", {
             "私はLinuxユーザーですので、動画の編集圧縮に<u>ffmpeg</u>を多用しました。",
             "GitHubの静的ページではNode.jsを動かせないため、<u>CDN (Contents Delivery Network)</u>によりVueを導入。",
             "<u>Webpack</u>を使用することで、CDNのページでありつつも効率的にコーディングできるようにしました。",
-            "<u>Reveal.js</u>による、軽量なプレゼンテーション。",
+            "<u>Reveal.js</u>による、軽量なプレゼンテーション。"
             // "Vueは本来は複雑にコンパイルされるライブラリなので、これをCDNから使う場合は制約が多く結構苦労しました。",
           ],
           achvs: [
             "<u>CDNによるVue / Vue Router / Vuetify</u>の書き方がわかりました。Nuxtを使えばもっと楽だった気もします。",
             "<u>Vue Routerでのスクロール位置の制御</u>がわかりました。",
-            "GitHubでの個人ページのホスティング機能を理解しました。",
-          ],
-        },
+            "GitHubでの個人ページのホスティング機能を理解しました。"
+          ]
+        }
       ],
       projectHeaders: [
         {
           text: "#",
           sortable: false,
-          value: "projIndex",
+          value: "projIndex"
         },
         {
           text: "ページ内リンク",
           sortable: false,
-          value: "name",
+          value: "name"
         },
         {
           text: "デモ",
           sortable: false,
-          value: "demourl",
+          value: "demourl"
         },
         // {
         //   text: "GitHub",
@@ -470,33 +470,33 @@ var ProjectTable = Vue.component("project", {
           text: "概要",
           sortable: false,
           value: "desc",
-          width: "40%",
+          width: "40%"
         },
         {
           text: "Framework",
           sortable: false,
-          value: "frameworks",
+          value: "frameworks"
         },
         {
           text: "Backend",
           sortable: false,
-          value: "backends",
-        },
+          value: "backends"
+        }
       ],
-      bgColors: ["red darken-4", "green darken-4", "blue darken-4"],
+      bgColors: ["red darken-4", "green darken-4", "blue darken-4"]
     };
   },
   methods: {
-    isUsing: function (frameworks, framework) {
+    isUsing: function(frameworks, framework) {
       return frameworks.includes(framework);
     },
-    addSharp: function (str) {
+    addSharp: function(str) {
       return "#" + str;
-    },
+    }
   },
-  created: function () {
-    this.projects.map((project) => {
+  created: function() {
+    this.projects.map(project => {
       this.projectIds.push(project.identifier);
     });
-  },
+  }
 });
