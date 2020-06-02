@@ -1,14 +1,21 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home";
+// import Home from "../views/Home";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home
+    name: "Projects",
+    component: () =>
+      import(/* webpackChunkName: "projects" */ "../views/Projects.vue")
+  },
+  {
+    path: "/skills",
+    name: "Skills",
+    component: () =>
+      import(/* webpackChunkName: "skills" */ "../views/Skills.vue")
   },
   {
     path: "/about",
@@ -22,7 +29,19 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    } else if (to.hash) {
+      return {
+        selector: to.hash,
+        offset: { x: 0, y: 70 }
+      };
+    } else {
+      return { x: 0, y: 0 };
+    }
+  }
 });
 
 export default router;
