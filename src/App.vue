@@ -11,42 +11,38 @@
           width="40"
         />
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
+        <span>Azureleaf's Project</span>
       </div>
 
       <v-spacer></v-spacer>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+      <v-toolbar-items id="tb-items">
+        <v-divider vertical></v-divider>
+        <v-btn text to="/" class="px-5"> Projects</v-btn>
+        <v-divider vertical></v-divider>
+        <v-btn text to="/skill" class="px-6"> Skills</v-btn>
+        <v-divider vertical></v-divider>
+        <v-btn text href="https://github.com/azureleaf"
+          ><v-icon>mdi-github</v-icon>GitHub</v-btn
+        >
+        <v-divider vertical></v-divider>
+      </v-toolbar-items>
     </v-app-bar>
 
     <v-content>
-      <HelloWorld />
+      <ProjectPageTitle />
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
+import ProjectPageTitle from "./components/ProjectPageTitle";
 
 export default {
   name: "App",
 
   components: {
-    HelloWorld
+    ProjectPageTitle
   },
 
   data: () => ({
