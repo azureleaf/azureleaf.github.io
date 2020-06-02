@@ -33,9 +33,12 @@
             <p class="my-3"><span v-html="item.desc"></span></p>
           </template>
           <template v-slot:item.demourl="{ item }">
-            <a v-if="item.demourl.length != 0" :href="item.demourl"
-              ><i class="fas fa-external-link-alt fa-2x"></i
-            ></a>
+            <a
+              v-if="item.demourl.length != 0"
+              :href="item.demourl"
+              style="text-decoration: none;"
+              ><v-icon large color="blue darken-1">mdi-open-in-new</v-icon></a
+            >
           </template>
           <template v-slot:item.githuburl="{ item }">
             <a v-if="item.githuburl.length != 0" :href="item.githuburl">
@@ -173,7 +176,7 @@
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: "Projects",
   data: function() {
     return {
       // List of all the project id strings
@@ -208,7 +211,7 @@ export default {
             "地図上でインタラクティブに操作できます。",
             "クリックすると詳細情報がポップアップで表示できます"
           ],
-          funcImg: "img/ageing_heatmap_screenshot.jpg",
+          funcImg: "../assets/ageing_heatmap_screenshot.jpg",
           techs: [
             "<u>Leaflet.js</u>で、OpenStreetMapの地図上に描画します。",
             "Pythonの<u>Pandas</u>やC言語でデータを加工します。",
