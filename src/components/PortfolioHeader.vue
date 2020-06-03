@@ -1,18 +1,6 @@
 <template>
   <v-container>
-    <v-app-bar
-      app
-      color="indigo darken-4"
-      src="../assets/rubber_ducky_material.png"
-      dark
-      dense
-    >
-      <template v-slot:img="{ props }">
-        <v-img
-          v-bind="props"
-          gradient="to right, rgba(00,00,180,.6), rgba(00,00,150,1)"
-        ></v-img>
-      </template>
+    <v-app-bar app color="grey darken-3" dark dense>
       <div class="d-flex align-center">
         <!-- <v-img
           alt="Vuetify Logo"
@@ -38,7 +26,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-toolbar-items id="tb-items" class="d-none d-md-flex">
+      <v-toolbar-items class="d-none d-md-flex">
         <v-divider vertical></v-divider>
         <v-btn text to="/" class="px-5">Projects</v-btn>
         <v-divider vertical></v-divider>
@@ -49,21 +37,21 @@
         >
         <v-divider vertical></v-divider>
       </v-toolbar-items>
-      <v-menu v-model="isNavOpen" :offsetY="true">
+      <v-menu :offsetY="true">
         <template v-slot:activator="{ on }">
           <v-app-bar-nav-icon
             v-on="on"
             class="d-flex d-md-none"
           ></v-app-bar-nav-icon>
         </template>
-        <v-list>
-          <v-list-item to="/">
+        <v-list color="grey darken-3" dark>
+          <v-list-item to="/" class="px-5">
             <v-list-item-title>Projects</v-list-item-title>
           </v-list-item>
-          <v-list-item to="/skills">
+          <v-list-item to="/skills" class="px-5">
             <v-list-item-title>Skills</v-list-item-title>
           </v-list-item>
-          <v-list-item href="https://github.com/azureleaf">
+          <v-list-item href="https://github.com/azureleaf" class="px-5">
             <v-list-item-title>GitHub</v-list-item-title>
           </v-list-item>
         </v-list>

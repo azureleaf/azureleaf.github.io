@@ -1,13 +1,12 @@
 <template>
   <v-container>
-    <v-card elevation="10" class="mt-10">
+    <v-card elevation="10">
       <v-card-title class="headline font-weight-bold pb-8"
         >プロジェクト一覧</v-card-title
       >
       <v-card-subtitle class="subtitle-1">
         ポートフォリオサイトへのご訪問ありがとうございます。最近の私の制作物をご紹介いたします。<br />
         デモページもぜひご覧ください。各プロジェクトのGitHubページでは、ここよりも更に詳しく説明しています。
-        <router-link to="/skill">LINK</router-link>
       </v-card-subtitle>
     </v-card>
     <v-card elevation="10" class="my-8">
@@ -125,7 +124,7 @@
           :href="project.githuburl"
           class="px-3 font-weight-bold subtitle-1"
         >
-          <v-icon class="mr-1" large>mdi-github</v-icon>GitHub
+          <v-icon class="mr-1" large>mdi-github</v-icon>Open GitHub
         </v-btn>
       </v-toolbar>
       <v-card-text>
@@ -187,7 +186,7 @@ export default {
           name: "寮運営システム",
           identifier: "dorm",
           desc:
-            "学生寮の<u>業務自動化ツール</u>。寮生管理、会計処理、居室管理、当番割振、文書編集などの機能をもっており、最も実用的なプロジェクトです。",
+            "学生寮の<u>業務自動化ツール</u>。寮生情報管理、会計処理、居室状態管理などの機能をもっており、最も実用的なプロジェクトです。",
           demourl: "",
           githuburl: "",
           frameworks: ["js", "php", "laravel", "vue"],
@@ -201,7 +200,7 @@ export default {
           name: "仙台高齢化地域の可視化",
           identifier: "ageing",
           desc:
-            "町ごとの高齢人口比率を、地図の上にヒートマップで描画します。私も一住民として興味がある内容なのでおもしろかったです。<u>Pythonでのデータ処理と可視化</u>の練習台。",
+            "町ごとの高齢人口比率を、地図の上にヒートマップで描画します。私が一市民として興味のある内容でした。<u>Pythonでのデータ処理と可視化</u>の練習台。",
           demourl: "https://azureleaf.github.io/ageing-sendai/",
           githuburl: "https://github.com/azureleaf/ageing-sendai",
           frameworks: ["py", "js", "c"],
@@ -233,14 +232,22 @@ export default {
           demourl: "",
           githuburl: "",
           frameworks: ["vue", "react"],
-          backends: ["Firebase"],
-          funcs: [],
+          backends: [],
+          funcs: [
+            "人間側が盤面に石を置くと、COM側が独自のアルゴリズムで盤面を評価し最善手（と思われる手）を返してきます。",
+            "「待った」の機能や、盤面サイズ変更などの操作機能があります。",
+            "盤面動作にアニメーションを使い、ゲーム性を高めています。"
+          ],
           funcImg: "",
-          techs: [],
+          techs: [
+            "VuetifyとCDNのフォント、CSSのカスタマイズによるポップなデザインを工夫しました。",
+            "Vuexによる状態管理を多用しています。",
+            "SVG Pathアニメーション"
+          ],
           achvs: []
         },
         {
-          name: "仙台地下鉄検索Bot",
+          name: "仙台おでかけアシスタントBot",
           identifier: "line",
           desc:
             "<u>Heroku上で動くLINEボット</u>。GPSの現在位置を投げると、近くの地下鉄駅、バス停、仙台の天気を教えてくれます。",
@@ -273,7 +280,7 @@ export default {
           name: "WiFiストーカー",
           identifier: "stalker",
           desc:
-            "LANを自動スキャンし、接続中デバイスのMACアドレスから各個人を追跡する、性格の悪いプログラムです。<u>ネットワーク</u>を勉強する助けとして作成。",
+            "LANを自動スキャンし、<u>接続中デバイスのMACアドレスから各個人を追跡</u>しようとする、性格の悪いプログラムです。ネットワーク勉強の助けとして作成。",
           demourl: "",
           githuburl: "https://github.com/azureleaf/lan-device-stalker",
           frameworks: ["js", "py"],

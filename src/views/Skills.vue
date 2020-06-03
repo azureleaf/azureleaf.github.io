@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-card elevation="20" class="mt-10">
+    <v-card elevation="20">
       <v-card-title class="headline font-weight-bold pb-8">スキル</v-card-title>
       <v-card-subtitle class="subtitle-1"
         >私が今までに使ったツールです。下線を引いたのは特に頻繁に使っているものです。
@@ -55,12 +55,12 @@ export default {
             {
               title: "プログラミング",
               desc:
-                "始めたのは大学入学以降ですが、プログラミングは自分の性分にとても合っていると感じます。今後の開発プランはいくつもありますが、勉強すべきことの膨大さを毎日痛感させられます。"
+                "自分の性分にとても合っていると感じます。今後作りたいものはいくつもありますが、勉強すべきことの膨大さを毎日痛感させられます。"
             },
             {
               title: "外国語学習",
               desc:
-                "語学は私の一番の趣味で、英語の日常会話には問題ありません。プログラマの世界はStackOverflowもドキュメンテーションも英文だらけなので、趣味と実益双方を兼ねています。中国語の資料でも情報収集できます。"
+                "語学は私の趣味ですが、プログラマの世界はStackOverflowをはじめ英文だらけなので実益も兼ねています。英語の日常会話には問題なく、中国語の資料でも情報収集できます。"
             },
             {
               title: "性格",
@@ -70,12 +70,12 @@ export default {
             {
               title: "コミュニケーション能力",
               desc:
-                "世の中にはコミュ力の非常に高い人間がいて圧倒されます。とはいえ周囲に私から声をかけて定期的にプログラミングの勉強会をやったり、仙台のIT勉強会にあちこち首を突っ込む程度には行動力はあります。説明が丁寧で上手いと褒められることも。"
+                "世間にいるコミュ力がずば抜けた人々には及ぶべくもありませんが、私から声をかけて仲間内で定期的にプログラミングの進捗報告をしたり、仙台のIT勉強会にあちこち首を突っ込む程度には活動力はあります。説明が丁寧で上手いといわれることも。"
             },
             {
               title: "体力",
               desc:
-                "仙台周辺の市街地や山を毎日歩いており、タフな方だと思います。散歩の習慣は私の精神衛生上かなり役立っています。現時点での一日の最長歩行記録は、柴田町船岡までの往復60km。"
+                "仙台周辺の町や山を毎日歩いており、タフな方だと思います。散歩の習慣は私の精神衛生上かなり役立ちます。現時点での一日の最長歩行記録は、柴田町船岡までの往復60km。"
             },
             {
               title: "犬派",
@@ -168,7 +168,7 @@ export default {
         {
           groupName: "バックエンド",
           groupComment:
-            "WebフレームワークやORMはたくさんありますが、結局基本思想にはあまり違いがない気がします。",
+            "WebフレームワークやORMにいくつか触りましたが、基本思想にはあまり違いがない気がします。",
           skills: [
             {
               title: "Webフレームワーク",
@@ -188,9 +188,13 @@ export default {
                 "<u>axios</u> / bcrypt / Passport.js / socket.io / Babel / gulp / Webpack"
             },
             {
-              title: "その他",
+              title: "クラウド関係",
               desc:
-                "AWS EC2 / AWS CloudWatch / Fluentd / Elastic Search / Kibana / Heroku / LINE API / OpenWeather API"
+                "AWS EC2 / AWS CloudWatch / Fluentd / Elastic Search / Kibana / Heroku"
+            },
+            {
+              title: "その他",
+              desc: "LINE API / OpenWeather API"
             }
           ]
         },
