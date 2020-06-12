@@ -19,7 +19,7 @@
             contain
           ></v-img>
         </v-avatar>
-        <v-toolbar-title class="font-regular setFont"
+        <v-toolbar-title style="font-weight: bold;"
           >Rubberducky's Portfolio</v-toolbar-title
         >
       </div>
@@ -71,9 +71,9 @@ export default {
 };
 </script>
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 
 .setFont {
   font-family: "Fredoka One", cursive !important;
-}
+} */
 </style>

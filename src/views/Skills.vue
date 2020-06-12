@@ -86,7 +86,6 @@ export default {
         },
         {
           groupName: "言語",
-          groupComment: "流行に乗ってRustとGoを勉強したい。",
           skills: [
             {
               title: "<u>JavaScript</u> / TypeScript",
@@ -104,7 +103,7 @@ export default {
             {
               title: "C / C++",
               desc:
-                "大学でCは制御プログラムで、C++はOpenCVを使う際に使いました。最近も巨大ファイルの処理など速度が必要な時使います。"
+                "大学でCは制御プログラムで、C++はOpenCVを使う際に使いました。最近も巨大ファイルの処理など速度が必要な時使います。が、この言語はあまりに覚えることが多く、Rustとか新しい言語を使うほうが人生の貴重な時間を浪費することなく安全なプログラムを書ける気がします。"
             },
             {
               title: "Java",
@@ -168,7 +167,7 @@ export default {
         {
           groupName: "バックエンド",
           groupComment:
-            "WebフレームワークやORMにいくつか触りましたが、基本思想にはあまり違いがない気がします。",
+            "WebフレームワークやORMにいろいろ手を出しましたが、基本思想にはあまり違いがない気がします。一つだけに専念して極めればやっていけそうです。",
           skills: [
             {
               title: "Webフレームワーク",
@@ -188,20 +187,15 @@ export default {
                 "<u>axios</u> / bcrypt / Passport.js / socket.io / Babel / gulp / Webpack"
             },
             {
-              title: "クラウド関係",
-              desc:
-                "AWS EC2 / AWS CloudWatch / Fluentd / Elastic Search / Kibana / Heroku"
-            },
-            {
-              title: "その他",
-              desc: "LINE API / OpenWeather API"
+              title: "Web API等",
+              desc: "AWS EC2 / Heroku / LINE API / OpenWeather API"
             }
           ]
         },
         {
           groupName: "データ処理",
           groupComment:
-            "機械学習はMNISTの手書き文字入力や猫の画像分類のチュートリアルを動かした程度なのですが、AIは私が生きる世代の最重要技術だと思います。今後一番力を入れたい領域です。",
+            "機械学習は現時点ではMNISTの手書き文字入力や猫の画像分類のチュートリアルを動かした程度なのですが、AIは私が生きる世代の最重要技術だと思います。今後一番力を入れたい領域です。",
           skills: [
             { title: "行列処理", desc: "<u>Pandas</u> / <u>Numpy</u>" },
             {
