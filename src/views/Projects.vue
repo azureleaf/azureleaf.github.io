@@ -303,7 +303,7 @@ export default {
           name: "LANストーカー",
           identifier: "stalker",
           desc:
-            "LANを自動スキャンし、<u>接続中デバイスのMACアドレスから各個人を追跡</u>しようとする、性格の悪いプログラムです。身近な機器からどんな情報をとれるのか興味があったので、ネットワークの基礎を勉強する題材として作りました。",
+            "LANを自動スキャンし、<u>接続中デバイスのMACアドレスから各個人を追跡</u>しようとする、性格の悪いプログラムです。ネットワークを勉強する際に、身近なネットワーク機器で何か遊べないか興味が湧いたので。",
           demourl: "https://azureleaf.github.io/lan-device-stalker/",
           githuburl: "https://github.com/azureleaf/lan-device-stalker",
           frameworks: ["js", "py"],
@@ -327,14 +327,14 @@ export default {
           ]
         },
         {
-          name: "通院アシスタント",
+          name: "病院自動予約君",
           identifier: "hospital",
           desc:
-            "私のかかりつけ病院のウェブサイトに自動アクセスしてリアルタイムの混雑状況を取得し、受診のオンライン予約まで自動でやってくれます。私にとって実生活で一番役立っています。<u>ウェブスクレイピング</u>を勉強する題材でした。",
+            "私のかかりつけ病院のオンライン受診予約を自動でやり、またリアルタイムの混雑状況を定時自動取得してくれます。実生活でとても役立っているプログラムです。<u>ウェブスクレイピング</u>を勉強する題材でした。",
           demourl: "",
           githuburl: "https://github.com/azureleaf/hospital_latency",
           frameworks: ["py", "vue", "js"],
-          backends: ["Express + TypeORM + MySQL + Firebase"],
+          backends: ["Localhost (Termux) + SQLite"],
           funcs: [],
           funcImg: "",
           techs: [
