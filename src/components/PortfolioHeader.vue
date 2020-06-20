@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-app-bar app color="grey darken-3" dark dense>
+    <v-app-bar app color="pink darken-4" dark dense>
       <div class="d-flex align-center">
         <!-- <v-img
           alt="Vuetify Logo"
@@ -19,9 +19,7 @@
             contain
           ></v-img>
         </v-avatar>
-        <v-toolbar-title style="font-weight: bold;"
-          >Rubberducky's Portfolio</v-toolbar-title
-        >
+        <v-toolbar-title class="setFont">小黄鴨軟件工作室</v-toolbar-title>
       </div>
 
       <v-spacer></v-spacer>
@@ -71,9 +69,12 @@ export default {
 };
 </script>
 <style scoped>
-/* @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&display=swap"); */
 
 .setFont {
-  font-family: "Fredoka One", cursive !important;
-} */
+  font-family: "Noto Serif JP", serif !important;
+  /* font-family: "Noto Sans JP", sans-serif !important; */
+  letter-spacing: 3px !important;
+}
 </style>
