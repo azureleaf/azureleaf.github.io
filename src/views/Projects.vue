@@ -5,7 +5,7 @@
         >プロジェクト一覧</v-card-title
       >
       <v-card-subtitle class="subtitle-1">
-        ポートフォリオサイトへのご訪問ありがとうございます。最近の私の制作物をご紹介いたします。<br />
+        ポートフォリオサイトへのご訪問ありがとうございます！最近の私の制作物をご紹介いたします。<br />
         デモページもぜひご覧ください。各プロジェクトのGitHubページでは、ここよりも更に詳しく説明しています。
       </v-card-subtitle>
     </v-card>
@@ -183,10 +183,10 @@ export default {
       projectIds: [],
       projects: [
         {
-          name: "寮運営システム",
+          name: "学生寮会計システム",
           identifier: "dorm",
           desc:
-            "学生寮の<u>業務自動化ツール</u>。寮生情報管理、会計処理、居室状態管理などの機能をもっており、最も実用的なプロジェクトです。実装を始めてからは楽しかったのですが、環境設定までが辛かった。",
+            "学生寮の<u>業務自動化ツール</u>。寮生情報管理、会計処理、居室状態管理などの機能をもっており、最も実用的なプロジェクトです。",
           demourl: "",
           githuburl: "https://github.com/azureleaf/dorm-management-app",
           frameworks: ["js", "php", "laravel", "vue"],
@@ -346,10 +346,10 @@ export default {
           ]
         },
         {
-          name: "仙台の気候は住みやすいのか？",
+          name: "仙台の気候指標を図解する",
           identifier: "climate",
           desc:
-            "日本７大都市の気候を比較します。仙台の気候の良さは日本有数だと私は信じていますが、それを検証したかったのです。<u>Chart.jsによるデータ可視化</u>の練習台。",
+            "日本７大都市の気候を比較します。仙台の気候の良さは日本有数だと私は信じていますが、それを確かめたかったのです。<u>Chart.jsによるデータ可視化</u>の練習台。",
           demourl: "https://azureleaf.github.io/japan-city-climate/",
           githuburl: "https://github.com/azureleaf/japan-city-climate",
           frameworks: ["js", "py"],
@@ -364,7 +364,7 @@ export default {
           achvs: ["<u>Chart.js</u>によるグラフ描写ができるようになりました。"]
         },
         {
-          name: "三角形の五心",
+          name: "三角形の五心を描こう！",
           identifier: "triangle",
           desc:
             "マウスで三角形を描くと、その重心などを補助線付きで図解します。私が関心を持っている分野のひとつ、<u>EdTech（ITによる教育の効率化）</u>を意識したツールです。",
@@ -394,7 +394,7 @@ export default {
           name: "フラクタルを描こう！",
           identifier: "fractal",
           desc:
-            "<u>HTML Canvasに再帰関数を使う</u>ことで、きれいで複雑な図形を描画します。このような芸術手法を「ジェネラティブ・アート」というそうです。",
+            "<u>HTML Canvasに再帰関数を使う</u>ことで、きれいで複雑な図形を描画します。「ジェネラティブ・アート」という、プログラミングを使った芸術手法です。",
           demourl: "https://azureleaf.github.io/canvas/fractal/canvastree.html",
           githuburl: "https://github.com/azureleaf/canvas/",
           frameworks: ["js"],
