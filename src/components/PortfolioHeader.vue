@@ -1,15 +1,7 @@
 <template>
   <v-container>
-    <v-app-bar app color="black" dark dense>
+    <v-app-bar app color="black" dark dense src="../assets/header.jpg">
       <div class="d-flex align-center">
-        <!-- <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        /> -->
         <v-avatar class="mr-2">
           <v-img
             src="../assets/rubber_ducky_material.png"
@@ -19,7 +11,7 @@
             contain
           ></v-img>
         </v-avatar>
-        <v-toolbar-title class="setFont">小黄鴨軟件工作室</v-toolbar-title>
+        <v-toolbar-title class="setFont">azureleaf.github.io</v-toolbar-title>
       </div>
 
       <v-spacer></v-spacer>
@@ -69,12 +61,9 @@ export default {
 };
 </script>
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&display=swap");
-/* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap");
 
 .setFont {
-  font-family: "Noto Serif JP", serif !important;
-  /* font-family: "Noto Sans JP", sans-serif !important; */
-  letter-spacing: 2px !important;
+  font-family: "Noto Serif", serif !important;
 }
 </style>
