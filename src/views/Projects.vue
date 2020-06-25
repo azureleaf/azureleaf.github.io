@@ -7,10 +7,10 @@
       <v-card-subtitle class="subtitle-1">
         <ul>
           <li>
-            ポートフォリオサイトへのご訪問ありがとうございます。
+            ポートフォリオサイトへのご訪問ありがとうございます！
           </li>
           <li>
-            プログラミング勉強の題材として私がつくったものを、一部ご紹介します。「自分が実際に使いたいツールを制作しよう」を主眼に置きました。
+            プログラミング独学の題材として制作したものを、一部ご紹介します。題材を決めるに当たっては「自分が実際に使いたいツールを作ろう」を主眼に置きました。
           </li>
           <li>
             制作物それぞれにデモページを設けましたので、ぜひご覧ください。なお、各プロジェクトのGitHubページに更に詳しい説明があります。
@@ -119,21 +119,21 @@
           v-if="project.demourl.length != 0"
           outlined
           large
-          tile
           :href="project.demourl"
-          class="px-6 mr-3 font-weight-bold subtitle-1"
+          class="px-3 mr-2 font-weight-bold subtitle-1"
         >
-          <v-icon class="mr-1" large>mdi-open-in-new</v-icon>Open Demo</v-btn
+          <v-icon class="mr-1" large>mdi-open-in-new</v-icon
+          ><span class="d-none d-md-flex">Open Demo</span></v-btn
         >
         <v-btn
           v-if="project.githuburl.length != 0"
           outlined
           large
-          tile
           :href="project.githuburl"
           class="px-3 font-weight-bold subtitle-1"
         >
-          <v-icon class="mr-1" large>mdi-github</v-icon>Open GitHub
+          <v-icon class="mr-1" large>mdi-github</v-icon>
+          <span class="d-none d-md-flex">Open GitHub</span>
         </v-btn>
       </v-toolbar>
       <v-card-text>
@@ -152,7 +152,7 @@
           </v-card-text>
         </v-card>
         <v-card outlined class="my-2">
-          <v-card-title>技術ポイント</v-card-title>
+          <v-card-title>技術面</v-card-title>
           <v-card-text>
             <ul>
               <li
@@ -190,7 +190,7 @@ export default {
       projectIds: [],
       projects: [
         {
-          name: "学生寮会計システム",
+          name: "寮会計システム",
           identifier: "dorm",
           desc:
             "学生寮の<u>業務自動化ツール</u>。寮生の個人情報や寮施設の情報管理や会計処理の機能をもっており、最も実用的なプロジェクトです。",
@@ -210,17 +210,18 @@ export default {
           ],
           funcImg: "",
           techs: [
-            "<u>Vue.js</u> (Frontend)",
+            "<u>Vue.js + Vue Router</u>",
             "<u>Laravel</u>: Migration, Model, Seeding, Resource Controller, Blade, Relationship, Auth, Guard",
             "sessionStorage",
-            "Postgres: Eloquent ORMからのアクセス",
+            "<u>Postgres</u>: Eloquent ORMからのアクセス。Foreign Key, one-to-manyなどのrelationships, $appendsアクセサによるカラム値の自動生成などを使っています。",
             "Cypressによるテスト自動化",
             "<u>AWSへの展開</u>"
           ],
           achvs: [
             "初めての本格的なWeb App構築でした。DBの設定からフロントエンドとバックエンドの連携まで、本当に多くの新しい知見を得ました。",
-            "Vueコンポーネントが増えてくると、要素同士の疎結合の重要さや、命名規則の大切さが身にしみます。",
-            "ドキュメンテーションを整備しました。自分にとってはわかりきっている機能やコードの構造も、他人に説明しようとするのは想像以上に大変でした。",
+            "Axiosによって頻繁にDBにアクセスするため、<u>async/awaitはもちろん、v-ifやcomputedなども使ったデータの非同期処理</u>が重要になり、かなり苦労させられました。",
+            "Vueコンポーネントが増えてくると、<u>要素同士の疎結合や、命名規則の一貫性</u>がきちんとしているかどうかが死活問題となってきて、その大切さが身にしみました。センスのない命名をしてしまうとDBのカラム名を後から変更しなければならない羽目になり、コードをあちこち変更しないといけないので頭が痛くなります。",
+            "<u>ドキュメンテーション</u>を整備しました。自分にとってはわかりきっている機能やコードの構造も、他人に説明しようとするのは想像以上に大変でした。",
             "業界でデファクトスタンダードになっているAWSにようやく触れ、本格的なエンジニアになるために一歩近づけたと思います。"
           ]
         },
@@ -256,7 +257,7 @@ export default {
           name: "激強五目並べ",
           identifier: "gomoku",
           desc:
-            "コンピュータを相手に戦う五目並べです。強すぎてほぼ勝てません。<a href='https://github.com/azureleaf/gomoku'>React版もあります</a>。私が最初につくったプログラムなので思い入れが深いです。<u>Vueのイベント処理</u>の練習台。",
+            "コンピュータを相手に戦う五目並べです。強すぎてほぼ勝てません。<a href='https://github.com/azureleaf/gomoku'>React版</a>もあり、これは私が最初につくったWebアプリなので思い入れが深いです。<u>Vue / Vuexによるイベント処理</u>の練習台でした。",
           demourl: "https://azureleaf.github.io/gomoku-vue/",
           githuburl: "https://github.com/azureleaf/gomoku-vue",
           frameworks: ["vue", "react"],
@@ -319,7 +320,7 @@ export default {
           name: "LANストーカー",
           identifier: "stalker",
           desc:
-            "LANを自動スキャンし、<u>接続中デバイスのMACアドレスから各個人を追跡</u>しようとする、性格の悪いプログラムです。ネットワークの基礎を勉強する際に、身近な機器で何か遊べないか興味が湧きつくりました。",
+            "LANを自動スキャンし、<u>接続中デバイスのMACアドレスを基に各個人を追跡する</u>性格の悪いプログラムです。ネットワークの基礎を勉強する際に、身近な機器で何か遊べないか興味が湧きつくりました。",
           demourl: "https://azureleaf.github.io/lan-device-stalker/",
           githuburl: "https://github.com/azureleaf/lan-device-stalker",
           frameworks: ["js", "py"],
@@ -347,17 +348,14 @@ export default {
           name: "通院アシスタント",
           identifier: "hospital",
           desc:
-            "私のかかりつけ病院のオンライン受診予約を自動で行います。またリアルタイムの混雑状況を定時取得してくれます。実生活でとても役立っているプログラムです。<u>ウェブスクレイピング</u>を勉強する題材でした。",
+            "私のかかりつけ病院へのオンライン受診予約を定時に自動実行します。またリアルタイムの混雑状況を定時取得します。私の実生活で一番役立っているプログラムです。<u>ウェブスクレイピング</u>を勉強する題材でした。",
           demourl: "",
           githuburl: "https://github.com/azureleaf/hospital_latency",
           frameworks: ["py", "vue", "js"],
           backends: ["Localhost (Termux) + SQLite"],
           funcs: [],
           funcImg: "",
-          techs: [
-            // "Socket.ioによるリアルタイム情報更新",
-            // "Node.jsからPythonを実行"
-          ],
+          techs: [],
           achvs: [
             "この病院は人気が高く、予約を取るのが先着順の凄まじい競争になっていました。自動化でとても楽になりました。"
           ]
