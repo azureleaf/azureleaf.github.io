@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-app-bar app color="pink darken-4" dark dense>
+    <v-app-bar app color="black" dark dense>
       <div class="d-flex align-center">
         <!-- <v-img
           alt="Vuetify Logo"
@@ -75,6 +75,6 @@ export default {
 .setFont {
   font-family: "Noto Serif JP", serif !important;
   /* font-family: "Noto Sans JP", sans-serif !important; */
-  letter-spacing: 3px !important;
+  letter-spacing: 2px !important;
 }
 </style>
