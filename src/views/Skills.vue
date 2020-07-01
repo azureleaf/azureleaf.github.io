@@ -199,7 +199,7 @@ export default {
           value: "desc"
         }
       ],
-      bgColors: ["red darken-4", "green darken-4", "blue darken-4"]
+      bgColors: ["pink darken-4", "green darken-4", "blue darken-4"]
     };
   }
 };
