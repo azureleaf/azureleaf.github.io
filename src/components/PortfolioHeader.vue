@@ -52,12 +52,7 @@
 
 <script>
 export default {
-  name: "PortfolioHeader",
-  date: function() {
-    return {
-      isNavOpen: false
-    };
-  }
+  name: "PortfolioHeader"
 };
 </script>
 <style scoped>

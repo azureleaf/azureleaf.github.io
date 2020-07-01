@@ -5,15 +5,16 @@
         >プロジェクト一覧</v-card-title
       >
       <v-card-subtitle class="subtitle-1">
+        <ImageDialog uri="./gomoku-event-flow.jpg"></ImageDialog>
         <ul>
           <li>
-            ポートフォリオサイトへのご訪問ありがとうございます！
+            ポートフォリオサイトへのご訪問ありがとうございます！プログラミング独学の題材として制作したものを、一部ご紹介します。
           </li>
           <li>
-            プログラミング独学の題材として制作したものを、一部ご紹介します。題材を決めるに当たっては「自分が実際に使いたいツールを作ろう」を主眼に置きました。
+            題材を決めるに当たっては「自分が実際に使いたいツールを作ろう」を主眼に置きました。
           </li>
           <li>
-            制作物それぞれにデモページを設けましたので、ぜひご覧ください。なお、各プロジェクトのGitHubページに更に詳しい説明があります。
+            それぞれにデモページを設けましたので、ぜひご覧ください。
           </li>
         </ul>
       </v-card-subtitle>
@@ -161,7 +162,7 @@
           </v-card-text>
         </v-card>
         <v-card outlined class="my-2">
-          <v-card-title>技術面</v-card-title>
+          <v-card-title>技術ポイント</v-card-title>
           <v-card-text>
             <ul>
               <li
@@ -174,7 +175,7 @@
           </v-card-text>
         </v-card>
         <v-card outlined>
-          <v-card-title>収穫</v-card-title>
+          <v-card-title>学んだこと</v-card-title>
           <v-card-text>
             <ul>
               <li
@@ -192,8 +193,11 @@
 </template>
 
 <script>
+import ImageDialog from "../components/ImageDialog";
+
 export default {
   name: "Projects",
+  components: { ImageDialog },
   data: function() {
     return {
       projectIds: [],
@@ -203,19 +207,19 @@ export default {
           identifier: "dorm",
           rating: 3,
           desc:
-            "学生寮の<u>業務自動化ツール</u>。寮生の個人情報や寮施設の情報管理や会計処理の機能をもっており、最も実用的なプロジェクトです。",
+            "学生寮の<u>業務自動化ツール</u>。寮生情報管理や会計処理機能があり、最も実用的なプロジェクトです。",
           demourl: "",
           githuburl: "https://github.com/azureleaf/dorm-management-app",
           frameworks: ["js", "php", "laravel", "vue"],
           backends: ["Laravel + Eloquent + Postgres"],
           funcs: [
             "私が実際に住んでいる某寮で使うことを想定した作りになっています。",
-            "<b>寮紹介：</b>　外部の入寮希望者向けに、寮の概要などを説明します。",
-            "<b>寮生情報の管理</b>： 寮生の入寮日やメールアドレスなどの個人情報を管理します。",
+            "<b>寮紹介：</b>　入寮希望者を対象にした、寮の基本情報です。",
+            "<b>寮生情報の管理</b>： 寮生個人の基本情報を管理します。",
             "<b>居室の管理</b>：　部屋ごとの空室状況や故障箇所の情報を管理します。",
-            "<b>寮費の計算</b>：　寮内で役職（委員長や会計委員など）を務めている寮生には報酬が与えられ、逆に掃除をサボるなどした寮生には罰金が課されます。この賞罰を一括で登録できます。",
-            "<b>寮費支払の記録</b>： 月々の寮費・報酬・罰金・支払結果（誰が寮費の支払いを完了したのか？誰が寮費を滞納しているのか？）を登録します。",
-            "<b>寮生の役職履歴の記録</b>：　役職者の任期を編集できます。これは寮費報酬計算に反映されます。",
+            "<b>賞罰の計算</b>：　「委員長」や「会計委員」などの寮の役職を務めた寮生には報酬を与え、逆に掃除をサボるなどした寮生には罰金を課します。",
+            "<b>寮費支払の記録</b>： 月々の寮費の支払記録（寮費の内訳は？寮費をちゃんと払ったのは誰？？寮費を滞納している不届き者は誰？）を管理します。",
+            "<b>役職履歴の記録</b>：　役職者の任期を管理し、賞罰に反映します。",
             "<b>ログイン</b>： 閲覧や情報編集の権限を管理します。"
           ],
           funcImg: "",
@@ -308,7 +312,7 @@ export default {
           identifier: "ageing",
           rating: 2,
           desc:
-            "町ごとの高齢人口の比率を、地図の上にヒートマップとして描画します。私が一市民として興味のある内容でした。<u>Pythonでのデータ処理と可視化</u>の練習台。",
+            "町ごとの高齢人口の比率を、地図の上にヒートマップとして描画します。市民の一人として興味がありました。<u>Pythonでのデータ処理と可視化</u>の練習台。",
           demourl: "https://azureleaf.github.io/ageing-sendai/",
           githuburl: "https://github.com/azureleaf/ageing-sendai",
           frameworks: ["py", "js", "c"],
@@ -336,7 +340,7 @@ export default {
           identifier: "hospital",
           rating: 2,
           desc:
-            "私のかかりつけ病院への「オンライン受診予約」と「混雑状況の定時取得」を自動化します。実生活で一番役立っているプログラムです。<u>ウェブスクレイピング</u>の題材。",
+            "私のかかりつけ病院への<u>「オンライン受診予約」と「混雑状況の定時取得」を自動化</u>します。実生活で一番役立っているプログラムです。ウェブスクレイピングの題材。",
           demourl: "",
           githuburl: "https://github.com/azureleaf/hospital_latency",
           frameworks: ["py", "vue", "js"],
