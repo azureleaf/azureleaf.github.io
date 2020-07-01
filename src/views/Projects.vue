@@ -98,6 +98,9 @@
             <v-icon v-if="isUsing(item.frameworks, 'nuxt')" large
               >mdi-nuxt</v-icon
             >
+            <v-icon v-if="isUsing(item.frameworks, 'firebase')" large
+              >mdi-firebase</v-icon
+            >
           </template>
         </v-data-table>
       </v-card-text>
@@ -238,7 +241,7 @@ export default {
           identifier: "gomoku",
           rating: 3,
           desc:
-            "コンピュータを相手に戦う五目並べです。強すぎてほぼ勝てません。<a href='https://github.com/azureleaf/gomoku'>React版</a>もあり、これは私が最初につくったWebアプリなので思い入れが深いです。<u>Vue / Vuexによるイベント処理</u>の練習台でした。",
+            "コンピュータを相手に戦う五目並べです。強すぎてほぼ勝てません。<a href='https://github.com/azureleaf/gomoku'>React版</a>は私が最初につくったWebアプリなので思い入れが深いです。<u>Vue / Vuexによるイベント処理</u>の練習台。",
           demourl: "https://azureleaf.github.io/gomoku-vue/",
           githuburl: "https://github.com/azureleaf/gomoku-vue",
           frameworks: ["vue", "react"],
@@ -273,7 +276,7 @@ export default {
           identifier: "line",
           rating: 3,
           desc:
-            "<u>Heroku上で動くLINEボット</u>。GPSの現在位置を投げると、近くの地下鉄駅、バス停、仙台の天気を教えてくれる便利なやつです。",
+            "<u>Heroku上で動くLINEボット</u>。GPSの現在位置を投げると、近くの地下鉄駅、バス停、仙台の天気を教えてくれる便利なツールです。",
           demourl: "https://azureleaf.github.io/greet_bot/",
           githuburl: "https://github.com/azureleaf/greet_bot",
           frameworks: ["py"],
@@ -313,7 +316,7 @@ export default {
             "地図上でインタラクティブに操作できます。",
             "クリックすると詳細情報がポップアップで表示できます"
           ],
-          funcImg: "../assets/ageing_heatmap_screenshot.jpg",
+          funcImg: "./ageing_heatmap_screenshot.jpg",
           techs: [
             "<u>Leaflet.js</u>で、OpenStreetMapの地図上に描画します。",
             "Pythonの<u>Pandas</u>やC言語でデータを加工します。",
@@ -332,11 +335,11 @@ export default {
           identifier: "hospital",
           rating: 2,
           desc:
-            "私のかかりつけ病院へのオンライン受診予約を定時に自動実行します。またリアルタイムの混雑状況を定時取得します。私の実生活で一番役立っているプログラムです。<u>ウェブスクレイピング</u>を勉強する題材でした。",
+            "私のかかりつけ病院への「オンライン受診予約」と「混雑状況の定時取得」を自動化します。実生活で一番役立っているプログラムです。<u>ウェブスクレイピング</u>の題材。",
           demourl: "",
           githuburl: "https://github.com/azureleaf/hospital_latency",
           frameworks: ["py", "vue", "js"],
-          backends: ["Localhost (Termux) + SQLite"],
+          backends: ["SQLite"],
           funcs: [],
           funcImg: "",
           techs: [],
@@ -345,28 +348,19 @@ export default {
           ]
         },
         {
-          name: "ChatQuack",
+          name: "チャットツール ChatQuack",
           identifier: "chat",
           rating: 2,
           desc:
-            "既存の国産チャットアプリ「Chatwork」を勉強のため模写したものです。<u>NuxtとFirebase</u>を学びました。",
+            "国産チャットアプリ「Chatwork」を勉強のため模写し、その中で<u>NuxtとFirebase</u>を使ってみました。",
           demourl: "",
           githuburl: "https://github.com/azureleaf/chat-quack/",
-          frameworks: ["nuxt"],
-          backends: [],
-          funcs: [
-            "「ある点から出発して一定の規則で枝分かれする」という非常に単純な動作を繰り返し、それを可視化することで複雑な幾何学図形を描けます。",
-            "繰り返しの回数、枝分かれの角度、長さ、配色などをユーザが自由に変更できるコントロールをつけたので、いろいろ遊ぶことができます。"
-          ],
+          frameworks: ["nuxt", "firebase"],
+          backends: ["Firebase"],
+          funcs: [""],
           funcImg: "",
-          techs: [
-            "Canvasによる描画。",
-            "Vuetifyによる各種コントロール要素（カラーピッカー、スライダー、ボタンなど）の利用。",
-            "再帰関数の活用。"
-          ],
-          achvs: [
-            "Vuetifyの便利さがとてもよくわかりました。きれいなコンポーネント要素がサクッと実装できます。こういった機能について車輪の再発明していくのは地獄ですし人生の時間を浪費することになるので、本当にありがたいです。"
-          ]
+          techs: [""],
+          achvs: []
         },
         {
           name: "三角形の五心を描こう",
