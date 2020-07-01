@@ -55,12 +55,20 @@ export default {
             {
               title: "プログラミング",
               desc:
+<<<<<<< HEAD
                 "格闘しながら細部を少しずつ少しずつ積み上げていく作業が自分の性分にとても合っていると感じます。今後作りたいもののプランはいくつもありますが、勉強すべきことの膨大さを毎日痛感させられています。"
+=======
+                "一つの課題と長時間向き合って細部を積み上げていく自分の性分にとても合っていると感じます。今後作りたいものはいくつもありますが、勉強すべきことの膨大さを毎日痛感させられます。"
+>>>>>>> a1f332842ec80d1da717744a78698d5da6c02d55
             },
             {
               title: "外国語学習",
               desc:
+<<<<<<< HEAD
                 "語学は私の一番の趣味ですが、プログラマの世界はStackOverflowをはじめ英文に触れる機会も多いので実益も兼ねています。英語の日常会話には問題なく、中国語でも情報収集できます。"
+=======
+                "語学は私の一番好きな趣味なのですが、プログラミングはドキュメントもStackOverflowも英文だらけなので趣味と実益を兼ねています。英語の日常会話には問題なく、中国語でも情報収集できます。"
+>>>>>>> a1f332842ec80d1da717744a78698d5da6c02d55
             },
             {
               title: "性格",
@@ -70,7 +78,7 @@ export default {
             {
               title: "コミュニケーション",
               desc:
-                "世間にいるコミュ力がずば抜けた人々には及ぶべくもありませんが、私から声をかけて仲間内で定期的にプログラミング勉強の進捗報告会をしたり、仙台のIT勉強会にあちこち首を突っ込むくらいには活動量があります。説明が丁寧で上手いと評価されることも。"
+                "世間にいるコミュ力がずば抜けた人々には及ぶべくもありませんが、私から声をかけて仲間内で定期的にプログラミング勉強の進捗報告会をしたり、仙台のIT勉強会にあちこち首を突っ込む程度の活動力はあります。説明が丁寧で上手いと評価されることも。"
             },
             {
               title: "体力",
@@ -80,7 +88,11 @@ export default {
             {
               title: "犬派",
               desc:
+<<<<<<< HEAD
                 "犬好きです。今一番飼いたいのは「甲斐犬」という日本の伝統犬種です。精悍な見た目、豊富な運動力、飼い主への忠実さがすばらしい。"
+=======
+                "私は犬がとても好きで、今飼いたいのは「甲斐犬」という日本の伝統犬種です。"
+>>>>>>> a1f332842ec80d1da717744a78698d5da6c02d55
             }
           ]
         },
@@ -123,8 +135,7 @@ export default {
             },
             {
               title: "Editor",
-              desc:
-                "<u>Visual Studio Code</u> / Vim / Visual Studio / PyCharm / IntelliJ IDEA"
+              desc: "<u>Visual Studio Code</u> / Vim / Visual Studio / PyCharm"
             },
             {
               title: "環境管理",
@@ -132,7 +143,7 @@ export default {
                 "<u>GitHub</u> / <u>GitLab</u> / BitBucket / Docker / VirtualBox + Vagrant / <u>pipenv</u> / virtualenv"
             },
             {
-              title: "コードフォーマット（VS Code）",
+              title: "Coding Format",
               desc:
                 "<u>Prettier</u> / <u>Vetur</u> / <u>ESLint</u> / TSLint / <u>Autopep8</u> / <u>Flake8</u> / php cs fixer / PHP Intelephense"
             },
@@ -201,7 +212,7 @@ export default {
           value: "desc"
         }
       ],
-      bgColors: ["red darken-4", "green darken-4", "blue darken-4"]
+      bgColors: ["pink darken-4", "green darken-4", "blue darken-4"]
     };
   }
 };
