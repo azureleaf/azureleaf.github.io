@@ -173,7 +173,7 @@
             </ul>
             <v-container fluid>
               <v-row>
-                <v-col v-for="(img, index) in project.techImgs" :key="index" >
+                <v-col v-for="(img, index) in project.techImgs" :key="index">
                   <ImageDialog :uri="img"></ImageDialog>
                 </v-col>
               </v-row>
