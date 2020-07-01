@@ -55,12 +55,12 @@ export default {
             {
               title: "プログラミング",
               desc:
-                "自分の性分にとても合っていると感じます。今後作りたいものはいくつもありますが、勉強すべきことの膨大さを毎日痛感させられます。"
+                "一つの課題と長時間向き合って細部を積み上げていく自分の性分にとても合っていると感じます。今後作りたいものはいくつもありますが、勉強すべきことの膨大さを毎日痛感させられます。"
             },
             {
               title: "外国語学習",
               desc:
-                "語学は私の一番の趣味です。プログラマの世界はStackOverflowをはじめ英文だらけなので実益も兼ねています。英語の日常会話には問題なく、中国語でも情報収集できます。"
+                "語学は私の一番好きな趣味なのですが、プログラミングはドキュメントもStackOverflowも英文だらけなので趣味と実益を兼ねています。英語の日常会話には問題なく、中国語でも情報収集できます。"
             },
             {
               title: "性格",
@@ -70,17 +70,17 @@ export default {
             {
               title: "コミュニケーション",
               desc:
-                "世間にいるコミュ力がずば抜けた人々には及ぶべくもありませんが、私から声をかけて仲間内で定期的にプログラミング勉強の進捗報告会をしたり、仙台のIT勉強会にあちこち首を突っ込むくらいには活動量があります。説明が丁寧で上手いと評価されることも。"
+                "世間にいるコミュ力がずば抜けた人々には及ぶべくもありませんが、私から声をかけて仲間内で定期的にプログラミング勉強の進捗報告会をしたり、仙台のIT勉強会にあちこち首を突っ込む程度の活動力はあります。説明が丁寧で上手いと評価されることも。"
             },
             {
               title: "体力",
               desc:
-                "仙台周辺の町や山を毎日歩いており、タフな方だと思います。散歩の習慣は私の精神衛生上かなり役立ちます。現時点での一日の最長歩行記録は、柴田町船岡までの往復60km。"
+                "仙台周辺の町や山を毎日歩いており、タフな方だと思います。散歩の習慣は私の精神衛生上かなり役立っています。現時点での一日の最長歩行記録は、柴田町船岡までの往復60km。"
             },
             {
               title: "犬派",
               desc:
-                "私は犬がとても好きで、今飼いたい犬種は和犬なら甲斐犬、洋犬ならボーダーコリー。"
+                "私は犬がとても好きで、今飼いたいのは「甲斐犬」という日本の伝統犬種です。"
             }
           ]
         },
@@ -121,8 +121,7 @@ export default {
             },
             {
               title: "Editor",
-              desc:
-                "<u>Visual Studio Code</u> / Vim / Visual Studio / PyCharm / IntelliJ IDEA"
+              desc: "<u>Visual Studio Code</u> / Vim / Visual Studio / PyCharm"
             },
             {
               title: "環境管理",
@@ -130,7 +129,7 @@ export default {
                 "<u>GitHub</u> / <u>GitLab</u> / BitBucket / Docker / VirtualBox + Vagrant / <u>pipenv</u> / virtualenv"
             },
             {
-              title: "コードフォーマット（VS Code）",
+              title: "Coding Format",
               desc:
                 "<u>Prettier</u> / <u>Vetur</u> / <u>ESLint</u> / TSLint / <u>Autopep8</u> / <u>Flake8</u> / php cs fixer / PHP Intelephense"
             },
@@ -138,7 +137,7 @@ export default {
             {
               title: "その他",
               desc:
-                "Wireshark（野良DHCPサーバを退治した時に使用） / WordPress / <u>Slack</u> / Chatwork / Trello"
+                "Wireshark（野良DHCPサーバを退治した時に使用） / WordPress / <u>Slack</u> / Trello"
             }
           ]
         },
