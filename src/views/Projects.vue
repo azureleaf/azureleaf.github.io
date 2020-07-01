@@ -40,6 +40,9 @@
           <template v-slot:item.desc="{ item }">
             <p class="my-3"><span v-html="item.desc"></span></p>
           </template>
+          <template v-slot:item.rating="{ item }">
+            <v-icon v-for="index in item.rating" :key="index">mdi-star</v-icon>
+          </template>
           <template v-slot:item.demourl="{ item }">
             <a
               v-if="item.demourl.length != 0"
@@ -91,6 +94,9 @@
             >
             <v-icon v-if="isUsing(item.frameworks, 'md')" large
               >mdi-language-markdown</v-icon
+            >
+            <v-icon v-if="isUsing(item.frameworks, 'nuxt')" large
+              >mdi-nuxt</v-icon
             >
           </template>
         </v-data-table>
@@ -192,6 +198,7 @@ export default {
         {
           name: "寮会計システム",
           identifier: "dorm",
+          rating: 3,
           desc:
             "学生寮の<u>業務自動化ツール</u>。寮生の個人情報や寮施設の情報管理や会計処理の機能をもっており、最も実用的なプロジェクトです。",
           demourl: "",
@@ -225,37 +232,11 @@ export default {
             "業界でデファクトスタンダードになっているAWSにようやく触れ、本格的なエンジニアになるために一歩近づけたと思います。"
           ]
         },
-        {
-          name: "仙台高齢化地域の可視化",
-          identifier: "ageing",
-          desc:
-            "町ごとの高齢人口の比率を、地図の上にヒートマップとして描画します。私が一市民として興味のある内容でした。<u>Pythonでのデータ処理と可視化</u>の練習台。",
-          demourl: "https://azureleaf.github.io/ageing-sendai/",
-          githuburl: "https://github.com/azureleaf/ageing-sendai",
-          frameworks: ["py", "js", "c"],
-          backends: [],
-          funcs: [
-            "高齢化率を地区ごとに色分けしているので、一目瞭然です。",
-            "地図上でインタラクティブに操作できます。",
-            "クリックすると詳細情報がポップアップで表示できます"
-          ],
-          funcImg: "../assets/ageing_heatmap_screenshot.jpg",
-          techs: [
-            "<u>Leaflet.js</u>で、OpenStreetMapの地図上に描画します。",
-            "Pythonの<u>Pandas</u>やC言語でデータを加工します。",
-            "<u>カラーマッピング</u>（どの値をどの色に対応させれば見やすいのか？）の有名な計算手段を<a href='https://azureleaf.github.io/ageing-sendai/colormap.html'>いくつか検討しました</a>。",
-            "「町別の年齢人口分布統計のExcelファイル」「町別の緯度経度情報のExcelファイル」など<u>複数の表をうまくJOINできるようデータを整形</u>しました。",
-            "「重複データを発見して取り除く」「４丁目と四丁目の表記のゆれを統一する」「データ区分ごとの集計」などの面倒だけど考慮しなければならない煩雑な処理は、全てコーディングで処理します。",
-            "以下に詳しいデータ分析を述べます"
-          ],
-          achvs: [
-            "地図を使った可視化の勉強になりました。<u>色鮮やかでインタラクティブなUI</u>は、やはりインパクトがあります。",
-            "<u>分析前の生データの質</u>がどれほど重要か、身にしみました。「苦労してデータ処理したら、後から元データの不備が判明してそこまでの苦労が水の泡」が何度もありました。"
-          ]
-        },
+
         {
           name: "激強五目並べ",
           identifier: "gomoku",
+          rating: 3,
           desc:
             "コンピュータを相手に戦う五目並べです。強すぎてほぼ勝てません。<a href='https://github.com/azureleaf/gomoku'>React版</a>もあり、これは私が最初につくったWebアプリなので思い入れが深いです。<u>Vue / Vuexによるイベント処理</u>の練習台でした。",
           demourl: "https://azureleaf.github.io/gomoku-vue/",
@@ -290,6 +271,7 @@ export default {
         {
           name: "仙台おでかけアシスタントBot",
           identifier: "line",
+          rating: 3,
           desc:
             "<u>Heroku上で動くLINEボット</u>。GPSの現在位置を投げると、近くの地下鉄駅、バス停、仙台の天気を教えてくれる便利なやつです。",
           demourl: "https://azureleaf.github.io/greet_bot/",
@@ -317,8 +299,127 @@ export default {
           ]
         },
         {
+          name: "仙台高齢化地域の可視化",
+          identifier: "ageing",
+          rating: 2,
+          desc:
+            "町ごとの高齢人口の比率を、地図の上にヒートマップとして描画します。私が一市民として興味のある内容でした。<u>Pythonでのデータ処理と可視化</u>の練習台。",
+          demourl: "https://azureleaf.github.io/ageing-sendai/",
+          githuburl: "https://github.com/azureleaf/ageing-sendai",
+          frameworks: ["py", "js", "c"],
+          backends: [],
+          funcs: [
+            "高齢化率を地区ごとに色分けしているので、一目瞭然です。",
+            "地図上でインタラクティブに操作できます。",
+            "クリックすると詳細情報がポップアップで表示できます"
+          ],
+          funcImg: "../assets/ageing_heatmap_screenshot.jpg",
+          techs: [
+            "<u>Leaflet.js</u>で、OpenStreetMapの地図上に描画します。",
+            "Pythonの<u>Pandas</u>やC言語でデータを加工します。",
+            "<u>カラーマッピング</u>（どの値をどの色に対応させれば見やすいのか？）の有名な計算手段を<a href='https://azureleaf.github.io/ageing-sendai/colormap.html'>いくつか検討しました</a>。",
+            "「町別の年齢人口分布統計のExcelファイル」「町別の緯度経度情報のExcelファイル」など<u>複数の表をうまくJOINできるようデータを整形</u>しました。",
+            "「重複データを発見して取り除く」「４丁目と四丁目の表記のゆれを統一する」「データ区分ごとの集計」などの面倒だけど考慮しなければならない煩雑な処理は、全てコーディングで処理します。",
+            "以下に詳しいデータ分析を述べます"
+          ],
+          achvs: [
+            "地図を使った可視化の勉強になりました。<u>色鮮やかでインタラクティブなUI</u>は、やはりインパクトがあります。",
+            "<u>分析前の生データの質</u>がどれほど重要か、身にしみました。「苦労してデータ処理したら、後から元データの不備が判明してそこまでの苦労が水の泡」が何度もありました。"
+          ]
+        },
+        {
+          name: "通院アシスタント",
+          identifier: "hospital",
+          rating: 2,
+          desc:
+            "私のかかりつけ病院へのオンライン受診予約を定時に自動実行します。またリアルタイムの混雑状況を定時取得します。私の実生活で一番役立っているプログラムです。<u>ウェブスクレイピング</u>を勉強する題材でした。",
+          demourl: "",
+          githuburl: "https://github.com/azureleaf/hospital_latency",
+          frameworks: ["py", "vue", "js"],
+          backends: ["Localhost (Termux) + SQLite"],
+          funcs: [],
+          funcImg: "",
+          techs: [],
+          achvs: [
+            "この病院は人気が高く、予約を取るのが先着順の凄まじい競争になっていました。自動化でとても楽になりました。"
+          ]
+        },
+        {
+          name: "ChatQuack",
+          identifier: "chat",
+          rating: 2,
+          desc:
+            "既存の国産チャットアプリ「Chatwork」を勉強のため模写したものです。<u>NuxtとFirebase</u>を学びました。",
+          demourl: "",
+          githuburl: "https://github.com/azureleaf/chat-quack/",
+          frameworks: ["nuxt"],
+          backends: [],
+          funcs: [
+            "「ある点から出発して一定の規則で枝分かれする」という非常に単純な動作を繰り返し、それを可視化することで複雑な幾何学図形を描けます。",
+            "繰り返しの回数、枝分かれの角度、長さ、配色などをユーザが自由に変更できるコントロールをつけたので、いろいろ遊ぶことができます。"
+          ],
+          funcImg: "",
+          techs: [
+            "Canvasによる描画。",
+            "Vuetifyによる各種コントロール要素（カラーピッカー、スライダー、ボタンなど）の利用。",
+            "再帰関数の活用。"
+          ],
+          achvs: [
+            "Vuetifyの便利さがとてもよくわかりました。きれいなコンポーネント要素がサクッと実装できます。こういった機能について車輪の再発明していくのは地獄ですし人生の時間を浪費することになるので、本当にありがたいです。"
+          ]
+        },
+        {
+          name: "三角形の五心を描こう",
+          identifier: "triangle",
+          rating: 2,
+          desc:
+            "マウスで三角形を描くと、その重心などを補助線付きで図解します。私が関心を持っている分野のひとつ、<u>EdTech（ITによる教育の効率化）</u>を意識したツールです。",
+          demourl:
+            "https://azureleaf.github.io/canvas/triangle/triangle_centers.html",
+          githuburl: "https://github.com/azureleaf/canvas/",
+          frameworks: ["js"],
+          backends: [],
+          funcs: [
+            "Canvas内部で３点をクリックすると、五心（重心・外心・内心・垂心・傍心）の図形を補助線とともに描画します。",
+            "三角形の自動生成機能や、五心それぞれの表示を切り替えるチェックボックスにより、表示内容を様々にカスタマイズできます。",
+            "ウィンドウのサイズなどを検知し、見やすい最適なレイアウトで表示します。"
+          ],
+          funcImg: "",
+          techs: [
+            "Vue.jsを使わない、<u>生のJavaScriptでのDOM処理</u>を行っています。",
+            "DOM要素のうち繰り返し処理が必要な箇所は、<u>document.createElement()</u>などを使って一括で生成。",
+            "UI要素やGridレイアウトによるBreakpoint指定に<u>Bootstrap</u>を活用。"
+          ],
+          achvs: [
+            "<u>HTML Canvas</u>のイベント処理、Bootstrapの使い方がわかりました。",
+            "<u>JSDoc</u>などコーディング規約を知りました。",
+            ".forEach()やオブジェクト指向を使って可読性を向上させることを勉強しました。"
+          ]
+        },
+        {
+          name: "仙台の気候指標を図解する",
+          identifier: "climate",
+          rating: 1,
+          desc:
+            "日本７大都市の気候を比較します。仙台の気候の良さは日本有数だと思うのですが、それを確かめたかったのです。<u>Chart.jsによるデータ可視化</u>の練習台です。",
+          demourl: "https://azureleaf.github.io/japan-city-climate/",
+          githuburl: "https://github.com/azureleaf/japan-city-climate",
+          frameworks: ["js", "py"],
+          backends: [],
+          funcs: [
+            "各都市の真夏日、降水量、平均気温など基本的な気候統計を可視化します。",
+            "表示する期間を自由に設定できます。最長だと1990年から2020年までの30年分を表示できます。"
+          ],
+          funcImg: "",
+          techs: [
+            "ダウンロードしてきたデータはそのままでは利用できないので、不要な列の削除や列名の変更などをPythonで自動処理しました。これは本当に地味ですが非常に手間のかかる処理です。"
+          ],
+          achvs: ["<u>Chart.js</u>によるグラフ描写ができるようになりました。"]
+        },
+        {
           name: "LANストーカー",
           identifier: "stalker",
+          rating: 1,
           desc:
             "LANを自動スキャンし、<u>接続中デバイスのMACアドレスを基に各個人を追跡する</u>性格の悪いプログラムです。ネットワークの基礎を勉強する際に、身近な機器で何か遊べないか興味が湧きつくりました。",
           demourl: "https://azureleaf.github.io/lan-device-stalker/",
@@ -345,70 +446,9 @@ export default {
           ]
         },
         {
-          name: "通院アシスタント",
-          identifier: "hospital",
-          desc:
-            "私のかかりつけ病院へのオンライン受診予約を定時に自動実行します。またリアルタイムの混雑状況を定時取得します。私の実生活で一番役立っているプログラムです。<u>ウェブスクレイピング</u>を勉強する題材でした。",
-          demourl: "",
-          githuburl: "https://github.com/azureleaf/hospital_latency",
-          frameworks: ["py", "vue", "js"],
-          backends: ["Localhost (Termux) + SQLite"],
-          funcs: [],
-          funcImg: "",
-          techs: [],
-          achvs: [
-            "この病院は人気が高く、予約を取るのが先着順の凄まじい競争になっていました。自動化でとても楽になりました。"
-          ]
-        },
-        {
-          name: "仙台の気候指標を図解する",
-          identifier: "climate",
-          desc:
-            "日本７大都市の気候を比較します。仙台の気候の良さは日本有数だと思うのですが、それを確かめたかったのです。<u>Chart.jsによるデータ可視化</u>の練習台です。",
-          demourl: "https://azureleaf.github.io/japan-city-climate/",
-          githuburl: "https://github.com/azureleaf/japan-city-climate",
-          frameworks: ["js", "py"],
-          backends: [],
-          funcs: [
-            "各都市の真夏日、降水量、平均気温など基本的な気候統計を可視化します。",
-            "表示する期間を自由に設定できます。最長だと1990年から2020年までの30年分を表示できます。"
-          ],
-          funcImg: "",
-          techs: [
-            "ダウンロードしてきたデータはそのままでは利用できないので、不要な列の削除や列名の変更などをPythonで自動処理しました。これは本当に地味ですが非常に手間のかかる処理です。"
-          ],
-          achvs: ["<u>Chart.js</u>によるグラフ描写ができるようになりました。"]
-        },
-        {
-          name: "三角形の五心を描こう",
-          identifier: "triangle",
-          desc:
-            "マウスで三角形を描くと、その重心などを補助線付きで図解します。私が関心を持っている分野のひとつ、<u>EdTech（ITによる教育の効率化）</u>を意識したツールです。",
-          demourl:
-            "https://azureleaf.github.io/canvas/triangle/triangle_centers.html",
-          githuburl: "https://github.com/azureleaf/canvas/",
-          frameworks: ["js"],
-          backends: [],
-          funcs: [
-            "Canvas内部で３点をクリックすると、五心（重心・外心・内心・垂心・傍心）の図形を補助線とともに描画します。",
-            "三角形の自動生成機能や、五心それぞれの表示を切り替えるチェックボックスにより、表示内容を様々にカスタマイズできます。",
-            "ウィンドウのサイズなどを検知し、見やすい最適なレイアウトで表示します。"
-          ],
-          funcImg: "",
-          techs: [
-            "Vue.jsを使わない、<u>生のJavaScriptでのDOM処理</u>を行っています。",
-            "DOM要素のうち繰り返し処理が必要な箇所は、<u>document.createElement()</u>などを使って一括で生成。",
-            "UI要素やGridレイアウトによるBreakpoint指定に<u>Bootstrap</u>を活用。"
-          ],
-          achvs: [
-            "<u>HTML Canvas</u>のイベント処理、Bootstrapの使い方がわかりました。",
-            "<u>JSDoc</u>などコーディング規約を知りました。",
-            ".forEach()やオブジェクト指向を使って可読性を向上させることを勉強しました。"
-          ]
-        },
-        {
           name: "フラクタルを描こう",
           identifier: "fractal",
+          rating: 1,
           desc:
             "<u>HTML Canvasに再帰を使う</u>ことで、きれいで複雑な図形を描画します。「ジェネラティブ・アート」という、プログラミングを使った芸術手法です。",
           demourl: "https://azureleaf.github.io/canvas/fractal/canvastree.html",
@@ -440,6 +480,11 @@ export default {
           text: "ページ内リンク",
           sortable: false,
           value: "name"
+        },
+        {
+          text: "力作度",
+          sortable: false,
+          value: "rating"
         },
         {
           text: "デモ",
