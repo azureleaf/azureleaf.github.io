@@ -119,7 +119,7 @@ export default {
             {
               title: "OS",
               desc:
-                "<u>Ubuntu Bionic</u> / Windows / CentOS + Nginx（大学研究室のサーバ運用）"
+                "<u>Ubuntu</u> / Windows / CentOS + Nginx（大学研究室のサーバ運用）"
             },
             {
               title: "Editor",
@@ -129,11 +129,6 @@ export default {
               title: "環境管理",
               desc:
                 "<u>GitHub</u> / <u>GitLab</u> / BitBucket / Docker / VirtualBox + Vagrant / <u>pipenv</u> / virtualenv"
-            },
-            {
-              title: "Coding Format",
-              desc:
-                "<u>Prettier</u> / <u>Vetur</u> / <u>ESLint</u> / TSLint / <u>Autopep8</u> / <u>Flake8</u> / php cs fixer / PHP Intelephense"
             },
             { title: "テスト系", desc: "Cypress / Jest / Postman" },
             {
