@@ -1,8 +1,11 @@
 <template>
   <v-dialog v-model="isDialogOpen" max-width="800px">
     <template v-slot:activator="{ on }">
-      <span style="color: deepskyblue;">クリックして拡大</span>
-      <v-img :src="uri" v-on="on" width="300" class="imgBorder"></v-img>
+      <span style="color: dodgerblue;"
+        ><v-icon color="blue">mdi-magnify-plus-outline</v-icon
+        >クリックして拡大</span
+      >
+      <v-img :src="uri" v-on="on" width="350" class="imgBorder"></v-img>
     </template>
     <v-img :src="uri"></v-img>
   </v-dialog>
