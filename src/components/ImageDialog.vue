@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="isDialogOpen" max-width="800px">
+  <v-dialog v-model="isDialogOpen" max-width="1000px">
     <template v-slot:activator="{ on }">
       <span style="color: dodgerblue;"
         ><v-icon color="blue">mdi-magnify-plus-outline</v-icon
