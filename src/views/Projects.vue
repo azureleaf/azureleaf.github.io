@@ -212,6 +212,35 @@ export default {
       projectIds: [],
       projects: [
         {
+          name: "激強五目並べ",
+          identifier: "gomoku",
+          rating: 3,
+          desc:
+            "コンピュータを相手に戦う五目並べです。強すぎてほぼ勝てません。<a href='https://github.com/azureleaf/gomoku'>React版</a>は私が最初につくったWebアプリなので思い入れが深いです。<u>Vue / Vuexによるイベント処理</u>の練習台。",
+          demourl: "https://azureleaf.github.io/gomoku-vue/",
+          githuburl: "https://github.com/azureleaf/gomoku-vue",
+          frameworks: ["vue", "react"],
+          backends: [],
+          funcs: [
+            "人間側が盤面に石を置くと、<u>コンピュータ側が独自のアルゴリズムで盤面を評価し、効果的な手を返してきます。</u>",
+            "<u>盤面サイズ変更や盤面リセットの機能</u>があります。",
+            "<u>SVGアニメーション</u>、最後に置かれた石の強調表示、手数の表示、勝者や引き分けの表示など細かい部分まで詰めてUIを洗練させました。"
+          ],
+          funcImg: "",
+          techImgs: [
+            "gomoku-capture.jpg",
+            "./gomoku-event-flow.jpg",
+            "./gomoku-score-matrix.jpg",
+            "./gomoku-matching-flow.jpg"
+          ],
+          techs: [],
+          achvs: [
+            "<u>Vuexによる状態管理</u>を理解しました。",
+            "Vuetifyによるマテリアルデザイン、CDNによるWebフォント、配色、CSSのカスタマイズにかなりこだわり、<u>ポップな世界観</u>をデザインしました。",
+            "<u>デザインの細かな違いが、サイト全体の印象や操作感に相当に大きな影響を与える</u>ことを実感しました。"
+          ]
+        },
+        {
           name: "寮会計システム",
           identifier: "dorm",
           rating: 3,
@@ -235,9 +264,9 @@ export default {
             "<u>Vue.js + Vue Router</u>によるSingle Page Application",
             "<u>Laravelのルーティング</u>: Blade, Resource Controller, Laravel Mix",
             "<u>LaravelのDB管理</u>: Migration, Model, Seeding",
-            "<u>sessionStorage</u>",
             "<u>Eloquent ORM + Postgres</u>: Foreign Key, one-to-manyなどのrelationships, $appendsアクセサによるカラム値の自動生成",
-            "<u>AWS EC2</u>への展開"
+            "<u>AWS EC2</u>への展開",
+            "sessionStorage"
           ],
           techImgs: ["./dorm-app-er.jpg", "./dorm-app-components.jpg"],
           achvs: [
@@ -245,35 +274,6 @@ export default {
             "Vueコンポーネントが増えてくると<u>要素同士の疎結合や、命名規則の一貫性</u>が死活問題となってきて、その大切さが身にしみました。センスのない命名をしてしまったために後から整合性がとれなくなり、DBのカラム名や変数名を変更する必要に迫られて、コードを何十箇所も修正し苦労したことも。",
             "<u>draw.ioを使った流れ図の作成など、ドキュメンテーション</u>に注力しました。他人の目線で説明するのは想像以上に大変でした。",
             "初めての本格的なWeb App構築でした。業界スタンダードになっているAWSに触れ、エンジニアに一歩近づけた気がします。"
-          ]
-        },
-
-        {
-          name: "激強五目並べ",
-          identifier: "gomoku",
-          rating: 3,
-          desc:
-            "コンピュータを相手に戦う五目並べです。強すぎてほぼ勝てません。<a href='https://github.com/azureleaf/gomoku'>React版</a>は私が最初につくったWebアプリなので思い入れが深いです。<u>Vue / Vuexによるイベント処理</u>の練習台。",
-          demourl: "https://azureleaf.github.io/gomoku-vue/",
-          githuburl: "https://github.com/azureleaf/gomoku-vue",
-          frameworks: ["vue", "react"],
-          backends: [],
-          funcs: [
-            "人間側が盤面に石を置くと、<u>COM側が独自のアルゴリズムで盤面を評価し、効果的な手を返してきます。</u>",
-            "<u>盤面サイズ変更や盤面リセットの機能</u>があります。",
-            "<u>SVGアニメーション</u>、最後の手の強調表示、手数の表示、勝者や引き分けの表示など細かい部分まで詰めてUIを洗練させました。"
-          ],
-          funcImg: "",
-          techImgs: [
-            "./gomoku-event-flow.jpg",
-            "./gomoku-score-matrix.jpg",
-            "./gomoku-matching-flow.jpg"
-          ],
-          techs: [],
-          achvs: [
-            "<u>Vuexによる状態管理</u>を理解しました。",
-            "Vuetifyによるマテリアルデザイン、CDNによるWebフォント、配色、CSSのカスタマイズにかなりこだわり、<u>ポップな世界観</u>をデザインしました。",
-            "<u>デザインの細かな違いが、サイト全体の印象や操作感に相当に大きな影響を与える</u>ことを実感しました。"
           ]
         },
         {
@@ -308,7 +308,7 @@ export default {
         {
           name: "仙台高齢化地域の可視化",
           identifier: "ageing",
-          rating: 2,
+          rating: 3,
           desc:
             "町ごとの高齢人口の比率を、地図の上にヒートマップとして描画します。市民の一人として興味がありました。<u>Pythonでのデータ処理と可視化</u>の練習台。",
           demourl: "https://azureleaf.github.io/ageing-sendai/",
@@ -354,8 +354,8 @@ export default {
           techs: [
             "自動予約の動作に、テストツールである<u>Selenium</u>",
             "ウェブサイトへの自動アクセスとウェブスクレイピングに<u>BeautifulSoup</u>モジュール",
-            "Pythonの<u>sched</u>モジュールにより予約や取得のタイマー機能を実現",
-            "グラフの可視化には<u>matplotlib</u>モジュール"
+            "Pythonの<u>sched</u>によるスクリプトのタイマー実行、<u>matplotlib</u>によるグラフ描画なども利用",
+            "自動予約の動作は以下のようになっています。（本来は自動予約作業を翌朝にスケジューリングしますが、この動画では実演のため即時実行しています）"
           ],
           achvs: [
             "この病院は人気が高く、予約を取るのが先着順なので凄まじい競争になっていました。<u>早朝に早起きしてパソコンの前で待ち構え、予約受付開始とともにできるだけ早く予約を完了する必要がありました</u>が、自動化でとても楽になりました。"
@@ -406,10 +406,36 @@ export default {
             "DOM要素のうち繰り返し処理が必要な箇所は、<u>document.createElement()</u>などを使って一括で生成。",
             "UI要素やGridレイアウトによるBreakpoint指定に<u>Bootstrap</u>を活用。"
           ],
+          techImgs: ["goshin-capture.jpg"],
           achvs: [
             "<u>HTML Canvas</u>のイベント処理、Bootstrapの使い方がわかりました。",
             "<u>JSDoc</u>などコーディング規約を知りました。",
             ".forEach()やオブジェクト指向を使って可読性を向上させることを勉強しました。"
+          ]
+        },
+        {
+          name: "フラクタルを描こう",
+          identifier: "fractal",
+          rating: 2,
+          desc:
+            "<u>HTML Canvasに再帰を使う</u>ことで、きれいで複雑な図形を描画します。「ジェネラティブ・アート」という、プログラミングを使った芸術手法です。",
+          demourl: "https://azureleaf.github.io/canvas/fractal/canvastree.html",
+          githuburl: "https://github.com/azureleaf/canvas/",
+          frameworks: ["js"],
+          backends: [],
+          funcs: [
+            "<u>「ある点から出発し、決められた角度で枝分かれする」</u>という非常に単純な動作を繰り返し、それを可視化することで複雑で美しい幾何学図形を描けます。",
+            "繰り返しの回数、枝分かれの角度、長さ、配色などを<u>ユーザが自由に変更できるコントロール</u>をつけたので、設定を変えて遊ぶことができます。"
+          ],
+          funcImg: "",
+          techs: [
+            "<u>Canvas</u>による描画。",
+            "<u>Vuetifyによる各種コントロール要素（カラーピッカー、スライダー、ボタンなど）</u>の利用。",
+            "<u>再帰</u>の活用。"
+          ],
+          techImgs: ["fractal-capture.jpg"],
+          achvs: [
+            "Vuetifyの便利さがとてもよくわかりました。きれいなコンポーネント要素がサクッと実装できます。こういった機能について車輪の再発明していくのは地獄ですし人生の時間を浪費することになるので、本当にありがたいです。"
           ]
         },
         {
@@ -430,6 +456,7 @@ export default {
           techs: [
             "ダウンロードしてきたデータはそのままでは利用できないので、不要な列の削除や列名の変更などをPythonで自動処理しました。これは本当に地味ですが非常に手間のかかる処理です。"
           ],
+          techImgs: ["climate-capture.jpg"],
           achvs: ["<u>Chart.js</u>によるグラフ描写ができるようになりました。"]
         },
         {
@@ -456,33 +483,10 @@ export default {
             "D3.jsによる可視化。",
             "Pythonのschedライブラリによるスケジューリング実行機能。"
           ],
+          techImgs: ["stalker-capture.jpg"],
           achvs: [
             "超有名な可視化ライブラリ<u>D3.js</u>の基礎がわかりました。",
             "PythonのORMに触れました。PythonのORMは初めてでした。"
-          ]
-        },
-        {
-          name: "フラクタルを描こう",
-          identifier: "fractal",
-          rating: 1,
-          desc:
-            "<u>HTML Canvasに再帰を使う</u>ことで、きれいで複雑な図形を描画します。「ジェネラティブ・アート」という、プログラミングを使った芸術手法です。",
-          demourl: "https://azureleaf.github.io/canvas/fractal/canvastree.html",
-          githuburl: "https://github.com/azureleaf/canvas/",
-          frameworks: ["js"],
-          backends: [],
-          funcs: [
-            "「ある点から出発して一定の規則で枝分かれする」という非常に単純な動作を繰り返し、それを可視化することで複雑な幾何学図形を描けます。",
-            "繰り返しの回数、枝分かれの角度、長さ、配色などをユーザが自由に変更できるコントロールをつけたので、いろいろ遊ぶことができます。"
-          ],
-          funcImg: "",
-          techs: [
-            "Canvasによる描画。",
-            "Vuetifyによる各種コントロール要素（カラーピッカー、スライダー、ボタンなど）の利用。",
-            "再帰関数の活用。"
-          ],
-          achvs: [
-            "Vuetifyの便利さがとてもよくわかりました。きれいなコンポーネント要素がサクッと実装できます。こういった機能について車輪の再発明していくのは地獄ですし人生の時間を浪費することになるので、本当にありがたいです。"
           ]
         }
       ],
