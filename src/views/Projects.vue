@@ -350,6 +350,7 @@ export default {
             "<u>混雑状況の傾向を可視化</u>: 上記のプログラムで溜めたデータを集計し、毎日どれくらいの速度で診察が進むのかをざっとグラフに図示します。"
           ],
           funcImg: "",
+          techImgs: ["./hospital_reserve.mp4"],
           techs: [
             "自動予約の動作に、テストツールである<u>Selenium</u>",
             "ウェブサイトへの自動アクセスとウェブスクレイピングに<u>BeautifulSoup</u>モジュール",

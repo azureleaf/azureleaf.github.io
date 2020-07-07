@@ -5,9 +5,21 @@
         ><v-icon color="blue">mdi-magnify-plus-outline</v-icon
         >クリックして拡大</span
       >
-      <v-img :src="uri" v-on="on" width="350" class="imgBorder"></v-img>
+      <v-img :src="thumbnail" v-on="on" width="350" class="imgBorder"></v-img>
     </template>
-    <v-img :src="uri"></v-img>
+    <video
+      v-if="isMp4"
+      id="demo"
+      width="560"
+      height="600"
+      controls
+      autoplay
+      style="margin: 0 auto; background-color: black;"
+    >
+      <source :src="uri" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <v-img v-else :src="uri"></v-img>
   </v-dialog>
 </template>
 <script>
@@ -17,6 +29,18 @@ export default {
     return {
       isDialogOpen: false
     };
+  },
+  computed: {
+    isMp4() {
+      return this.uri.endsWith(".mp4");
+    },
+    thumbnail() {
+      if (this.isMp4) {
+        return "video-thumbnail.png";
+      } else {
+        return this.uri;
+      }
+    }
   }
 };
 </script>
