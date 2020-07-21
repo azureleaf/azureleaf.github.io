@@ -9,4 +9,5 @@
 
 ## Production
 
+- Set up SSH connection between your PC and GitHub account
 - `sh deploy.sh`
