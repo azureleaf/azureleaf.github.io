@@ -7,10 +7,11 @@
       >
       <v-img :src="thumbnail" v-on="on" width="350" class="imgBorder"></v-img>
     </template>
-    <v-carousel v-if="isCarousel" height="800" :continuous="false">
+    <v-carousel v-if="isCarousel" height="800" :continuous="false" dark>
       <v-carousel-item v-for="(slide, i) in uri" :key="i" :src="slide.src">
         <v-row class="fill-height pb-12" align="end" justify="center">
           <div
+            v-if="slide.caption"
             class="headline font-weight-bold white--text pa-2"
             v-html="slide.caption"
             style="background-color: rgba(0,0,0,0.7)"
@@ -50,11 +51,8 @@ export default {
       return Array.isArray(this.uri);
     },
     thumbnail() {
-      if (this.isCarousel) {
-        // For slides, use the first slide as thumbnail
-        return this.uri[0].src;
-      } else if (this.isMp4) {
-        // For MP4 movie, use the prepared image as the thumbnail
+      if (this.isCarousel || this.isMp4) {
+        // For movie / slides, use the prepared image as the thumbnail
         return this.thumbnailUri;
       } else {
         // For a single image, use it as the thumbnail

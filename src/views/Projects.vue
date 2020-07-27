@@ -162,7 +162,7 @@
                 <v-col lg="3">
                   <ImageDialog
                     :uri="project.slides"
-                    thumbnailUri=""
+                    :thumbnailUri="project.slidesThumbnail"
                   ></ImageDialog>
                 </v-col>
               </v-row>
@@ -297,26 +297,26 @@ export default {
             {
               src: "dorm-app-slides/105_resized.png",
               caption:
-                "個人情報をフォームから入力します。<br>入居先は101号室とします。"
+                "新入寮生「上杉さん」の個人情報を入力します。<br>入居先は101号室とします。"
             },
             {
               src: "dorm-app-slides/106_resized.png",
-              caption: "上杉さんが寮生ID:31の寮生として登録されました。"
+              caption: "上杉さんは寮生IDが31番の寮生として登録されました。"
             },
             {
               src: "dorm-app-slides/107_resized.png",
               caption:
-                "新入寮生登録によりDBの居室テーブルも更新され、<br>UI上でも101号室が「使用中」となりました。"
+                "DBの居室テーブルも更新され、<br>UI上でも101号室が「使用中」となりました。"
             },
             {
               src: "dorm-app-slides/108_resized.png",
               caption:
-                "これは寮生の役職一覧です。<br>新入寮生「上杉さん」に役職を割り振ります。"
+                "これは寮生の役職一覧です。<br>上杉さんについて「役職記録の新規作成」をします。"
             },
             {
               src: "dorm-app-slides/109_resized.png",
               caption:
-                "彼を次の寮委員長予定者として登録しました。<br>任期や寮費免除率は既定値が自動入力されるので楽です。"
+                "彼を次の寮委員長の予定者として登録しました。<br>任期や寮費免除率は既定値が自動入力されるので楽です。"
             },
             {
               src: "dorm-app-slides/110_resized.png",
@@ -373,6 +373,7 @@ export default {
                 "滞納者の状況も自動計算し番付として表示します。<br>これは寮内の風紀維持に役立ちます。"
             }
           ],
+          slidesThumbnail: "dorm-app-slides/slides-thumbnail.png",
           techs: [
             "<u>Vue.js + Vue Router</u>によるSingle Page Application",
             "<u>Laravelのルーティング</u>: Blade, Resource Controller, Laravel Mix",
