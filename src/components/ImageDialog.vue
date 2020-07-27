@@ -7,8 +7,18 @@
       >
       <v-img :src="thumbnail" v-on="on" width="350" class="imgBorder"></v-img>
     </template>
+    <v-carousel v-if="isCarousel">
+      <v-carousel-item
+        v-for="(slide, i) in uri"
+        :key="i"
+        :src="slide.src"
+        reverse-transition="fade-transition"
+        transition="fade-transition"
+      >
+      </v-carousel-item>
+    </v-carousel>
     <video
-      v-if="isMp4"
+      v-else-if="isMp4"
       id="demo"
       width="560"
       height="600"
@@ -32,12 +42,22 @@ export default {
   },
   computed: {
     isMp4() {
+      if (this.isCarousel) return false;
       return this.uri.endsWith(".mp4");
     },
+    isCarousel() {
+      console.log("hello!!!", this.uri);
+      return Array.isArray(this.uri);
+    },
     thumbnail() {
-      if (this.isMp4) {
+      if (this.isCarousel) {
+        // For slides, use the first slide as thumbnail
+        return this.uri[0].src;
+      } else if (this.isMp4) {
+        // For MP4 movie, use the prepared image as the thumbnail
         return this.thumbnailUri;
       } else {
+        // For a single image, use it as the thumbnail
         return this.uri;
       }
     }

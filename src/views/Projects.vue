@@ -157,6 +157,16 @@
                 v-html="func"
               ></li>
             </ul>
+            <v-container v-if="project.slides" fluid>
+              <v-row justify="center">
+                <v-col lg="3">
+                  <ImageDialog
+                    :uri="project.slides"
+                    thumbnailUri=""
+                  ></ImageDialog>
+                </v-col>
+              </v-row>
+            </v-container>
           </v-card-text>
         </v-card>
         <v-card outlined class="my-2">
@@ -263,6 +273,18 @@ export default {
             "<u>役職履歴の記録</u>：　役職者の任期を管理し、賞罰に反映します。"
           ],
           funcImg: "",
+          slides: [
+            {
+              src: "dorm-app-slides/101_resized.png",
+              caption:
+                "既に入居済の部屋や、設備の不備などにより住めない部屋があります。\n101号室は、暖房器具が無いため住めない状態です。"
+            },
+            {
+              src: "dorm-app-slides/102_resized.png",
+              caption:
+                "暖房器具を新規購入しました。\n101号室の「編集」ボタンを押し、情報を更新します。"
+            }
+          ],
           techs: [
             "<u>Vue.js + Vue Router</u>によるSingle Page Application",
             "<u>Laravelのルーティング</u>: Blade, Resource Controller, Laravel Mix",
@@ -302,7 +324,7 @@ export default {
             "<u>球面三角法</u>によりGPSの緯度経度の差分からメートル距離を算出。",
             "このBotのバス情報には「バスがいつ発車するのか」がわからないという重大な欠点があります。市営バスの時刻表データが手に入らないのでどうしようもなく、<u>結局は情報の入手難度がデータ分析のネック</u>になるという壁にぶちあたりました。"
           ],
-          techImgs: ["./line-capture.mp4"],
+          techImgs: ["./line-capture.mp4", "line-sequence.jpg"],
           thumbnail: "./line-thumbnail.png",
           achvs: [
             "<u>LINE Messaging API</u>と<u>Herokuへのデプロイ</u>を学びました。Herokuサーバーがアメリカにあるせいで時間の処理が狂い、面食らったことも。",
@@ -355,13 +377,13 @@ export default {
             "<u>混雑状況の傾向を可視化</u>: 上記のプログラムで溜めたデータを集計し、毎日どれくらいの速度で診察が進むのかをざっとグラフに図示します。"
           ],
           funcImg: "",
-          techImgs: ["./hospital_reserve.mp4"],
+          techImgs: ["./hospital_reserve.mp4", "hospital-throughput.png"],
           thumbnail: "./hospital-thumbnail.png",
           techs: [
             "自動予約の動作に、テストツールである<u>Selenium</u>",
             "ウェブサイトへの自動アクセスとウェブスクレイピングに<u>BeautifulSoup</u>モジュール",
             "Pythonの<u>sched</u>によるスクリプトのタイマー実行、<u>matplotlib</u>によるグラフ描画なども利用",
-            "自動予約の動作は以下のようになっています。（本来は自動予約作業を翌朝にスケジューリングしますが、この動画では実演のため即時実行しています）"
+            "自動予約の動作を以下に示します。（本来は自動予約作業を翌朝にスケジューリングしますが、この動画では実演のため即時実行しています。再生速度は実際と同じです。）"
           ],
           achvs: [
             "この病院は人気が高く、予約を取るのが先着順なので凄まじい競争になっていました。<u>早朝に早起きしてパソコンの前で待ち構え、予約受付開始とともにできるだけ早く予約を完了する必要がありました</u>が、自動化でとても楽になりました。"
@@ -404,7 +426,7 @@ export default {
           frameworks: ["js"],
           backends: [],
           funcs: [
-            "Canvas内部で３点をクリックすると、五心（重心・外心・内心・垂心・傍心）の図形を補助線とともに描画します。",
+            "Canvas内部で<u>３点をクリック</u>すると、その三角形の重心・外心・内心・垂心・傍心の<u>五心を補助線とともに描画</u>します。",
             "三角形の自動生成機能や、五心それぞれの表示を切り替えるチェックボックスにより、表示内容を様々にカスタマイズできます。",
             "ウィンドウのサイズなどを検知し、見やすい最適なレイアウトで表示します。"
           ],
@@ -462,7 +484,7 @@ export default {
           ],
           funcImg: "",
           techs: [
-            "ダウンロードしてきたデータはそのままでは利用できないので、不要な列の削除や列名の変更などをPythonで自動処理しました。これは本当に地味ですが非常に手間のかかる処理です。"
+            "気象庁ウェブサイトから入手した生データはそのままでは利用できないので、不要な列の削除や列名の変更などをPythonで自動処理しました。このような処理は地味ですが本当に手間がかかります。"
           ],
           techImgs: ["climate-capture.jpg"],
           achvs: ["<u>Chart.js</u>によるグラフ描写ができるようになりました。"]
@@ -478,11 +500,11 @@ export default {
           frameworks: ["js", "py"],
           backends: ["SQLAlchemy ORM + SQLite"],
           funcs: [
-            "PythonからARPをブロードキャストで掛けて、反応があったデバイスのMACアドレスを記録します。",
+            "PythonからARPをブロードキャストで掛けて、反応があったデバイスのMACアドレスを記録します。（LANに接続していないデバイスは当然追跡できません）",
             "このプログラムを指定した時間ごとに自動でかけ、その結果をSQLiteのDBに集積していきます",
             "保存したデータを整形し、D3.jsを使って、<u>ヒートマップとして可視化</u>します。",
             "これにより、<u>「誰がいつ頃在室していたのか」「どのパソコンが頻繁に使われているのか」</u>などが推測できます。",
-            "どのMACアドレスのNICが誰の持ち物なのかは目視で判断する必要がありますが、それにより各個人の在室状況をかなり追えます。"
+            "どのMACアドレスのNICが誰の持ち物なのか、目視で判断し紐付けします。一度紐付けを済ませると、それ以降は各個人の在室状況を追えるようになります。"
           ],
           funcImg: "",
           techs: [
