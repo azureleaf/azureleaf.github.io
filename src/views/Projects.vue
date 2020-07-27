@@ -379,13 +379,14 @@ export default {
             "<u>Laravelのルーティング</u>: Blade, Resource Controller, Laravel Mix",
             "<u>LaravelのDB管理</u>: Migration, Model, Seeding",
             "<u>Eloquent ORM + Postgres</u>: Foreign Key, one-to-manyなどのrelationships, $appendsアクセサによるカラム値の自動生成",
-            "sessionStorage"
+            "sessionStorage",
+            "<u>Vuetify</u>と<u>Material Design Icon</u>アイコンセットによるマテリアルデザイン。v-date-picker, v-dialog, v-carouselなども新たに触りました。"
           ],
           techImgs: ["./dorm-app-er.jpg", "./dorm-app-components.jpg"],
           achvs: [
             "Axiosで頻繁にDBにアクセスするため、<u>async/awaitなどの非同期処理と、v-ifやcomputedによるレンダリングのタイミング管理</u>を工夫する必要がありました。",
             "Vueコンポーネントが増えてくると<u>要素同士の疎結合や、命名規則の一貫性</u>の大切さが身にしみました。センスのない命名をしてしまったために後からプロジェクト内部での変数名の整合性がとれなくなってしまい、それを直すためDBのカラム名や変数名を何十箇所も修正する必要に迫られ、ひどい目に合いました。",
-            "<u>draw.ioを使った流れ図の作成など、ドキュメンテーション</u>に注力しました。他人の目線で説明するのは想像以上に大変でした。",
+            "<u>draw.ioを使ったフローチャートやシークエンス図、ER図</u>など、ドキュメンテーションに注力しました。この作業は想像以上に大変でした。",
             "初めての本格的なWeb App構築でした。エンジニアに一歩近づけた気がします。"
           ]
         },
@@ -410,7 +411,7 @@ export default {
             "バス停と地下鉄駅の緯度経度情報は、国交省サイトから入手してデータ整形。<u>Element Tree</u>でXMLを解析するのに手こずりました。",
             "地下鉄時刻表は、<u>仙台市交通局ウェブサイトからウェブスクレイピング。</u>",
             "<u>球面三角法</u>によりGPSの緯度経度の差分からメートル距離を算出。",
-            "このBotのバス情報には「バスがいつ発車するのか」がわからないという重大な欠点があります。市営バスの時刻表データが手に入らないのでどうしようもなく、<u>結局は情報の入手難度がデータ分析のネック</u>になるという壁にぶちあたりました。"
+            "このBotのバス情報には「バスがいつ発車するのか」がわからないという重大な欠点があります。市営バスの時刻表データが手に入らないのでどうしようもなく、<u>結局は情報の入手難度がデータ分析のネック</u>になり壁にぶちあたりました。"
           ],
           techImgs: ["./line-capture.mp4", "line-sequence.jpg"],
           thumbnail: "./line-thumbnail.png",
@@ -440,7 +441,7 @@ export default {
             "Pythonの<u>Pandas</u>やC言語でデータを加工します。",
             "<u>カラーマッピング</u>（どの値をどの色に対応させれば見やすいのか？）の有名な計算手段を<a href='https://azureleaf.github.io/ageing-sendai/colormap.html'>いくつか検討しました</a>。",
             "「町別の年齢人口分布統計のExcelファイル」「町別の緯度経度情報のExcelファイル」など<u>複数の表をうまくJOINできるようデータを整形</u>しました。",
-            "「重複データを発見して取り除く」「４丁目と四丁目の表記のゆれを統一する」「データ区分ごとの集計」などの面倒だけど考慮しなければならない煩雑な処理は、全てコーディングで処理します。"
+            "「重複データを発見して取り除く」「４丁目と四丁目の表記のゆれを統一する」「データ区分ごとの集計」などの煩雑な処理は、全てコーディングで処理します。"
           ],
           techImgs: ["./ageing_heatmap_screenshot.jpg", "./ageing.jpg"],
           achvs: [
@@ -488,18 +489,21 @@ export default {
           frameworks: ["nuxt", "firebase"],
           backends: ["Firebase Hosting + Firestore"],
           funcs: [
-            "複数のメンバーの間でメッセージを送れます。グループチャットも可能です。",
-            "オンラインのFirestoreを通じ即時反映されます。（※ただしデモページで公開しているのは、Firestoreを使わない版です。チャット履歴は永続化されていません。）"
+            "メンバー間でメッセージを送れます。グループチャットも可能です。",
+            "AさんとしてログインしているときにBさんにメッセージを送り、その後Bさんのアカウントに切り替えるときちんとAさんからのメッセージが届いていることが確認できます。",
+            "オンラインのFirestoreを通じ即時反映されます。（※ただしデモページで公開しているのはFirestoreを使っていない版です。デモページは不特定多数の人に公開するため。）"
           ],
           funcImg: "",
           techs: [
-            "<u>Firestore</u>によるシンプルかつリアルタイムなチャットを実現しています。",
+            "<u>Firestore</u>によるデータ永続化。",
+            "<u>QuerySnapshot</u>によってFirestoreとVue.jsの間でリアルタイムに応答させます。",
             "<u>Nuxt.js + Vuetify</u>によるマテリアルデザイン。",
-            "<u>Firebase Hosting</u>でのデプロイ。"
+            "<u>Firebase Hosting</u>で固有URLへデプロイ。",
+            "Nuxtの<u>Dynamic Routes</u>によって、動的に多数のチャットルームを生成します。"
           ],
           techImgs: ["/chat-capture.jpg"],
           achvs: [
-            "FirebaseとNuxtに触ることができました。最低限の設定ですぐ使えるようかなり整備されているので楽でした。"
+            "FirebaseとNuxtに触ることができました。Firebase CLIやFirebaseのNodeパッケージは最低限の設定ですぐ使えるようかなり整備されており、楽でした。"
           ]
         },
         {
