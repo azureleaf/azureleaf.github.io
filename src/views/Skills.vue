@@ -90,7 +90,7 @@ export default {
             {
               title: "<u>JavaScript</u> / TypeScript",
               desc:
-                "作るプログラムがある程度長くなってくると、クラスやオブジェクトの型も複雑になりコードが書きにくくなることを実感します。今後はTSを積極的に使いたい。"
+                "プログラムが長くなってくると、クラスやオブジェクトの型も複雑になります。そのせいで最近コードが書きにくくなっているので、今後はTSを積極的に使いたい。"
             },
             {
               title: "<u>Python</u>",
@@ -134,19 +134,19 @@ export default {
             {
               title: "その他",
               desc:
-                "Wireshark（野良DHCPサーバを退治した時に使用） / WordPress / <u>Slack</u> / Trello"
+                "<u>bash</u> / Wireshark（野良DHCPサーバを退治した時に使用） / WordPress / <u>Slack</u> / Trello"
             }
           ]
         },
         {
           groupName: "ライブラリ",
           groupComment:
-            "Vue.jsが好きです。機械学習は現時点ではMNISTの手書き文字入力や猫の画像分類のチュートリアルを動かした程度なのですが、AIは私が生きる世代の最重要技術だと思います。今後一番力を入れたい領域です。",
+            "Vue.jsが好きです。機械学習は現時点ではチュートリアルを動かした程度なのですが、AIは私が生きる世代の最重要技術だと思います。今後一番力を入れたい領域です。",
           skills: [
             {
               title: "Web",
               desc:
-                "<u>Vue.js</u> / <u>Vue-Router</u> / <u>Vuex</u> / <u>Vuetify</u> / React"
+                "<u>Vue.js</u> / <u>Vue-Router</u> / <u>Vuex</u> / <u>Vuetify</u> / <u>Nuxt</u> / React"
             },
             { title: "HTML / CSS", desc: "Pug / Stylus / Bootstrap" },
             {
@@ -160,15 +160,16 @@ export default {
             },
             {
               title: "DB",
-              desc: "SQLite / MySQL / PostgreSQL / MongoDB / Firebase"
+              desc: "SQLite / MySQL / PostgreSQL / MongoDB / Firestore"
             },
             {
-              title: "Web API等",
-              desc: "AWS EC2 / Heroku / LINE API / OpenWeather API"
+              title: "Web APIなど",
+              desc: "Firebase / Heroku / LINE API / OpenWeather API"
             },
             {
               title: "機械学習系",
-              desc: "Scikit-learn / Tensorflow / PyTorch"
+              desc:
+                "Scikit-learn / Tensorflow (MNISTの手書文字認識や猫の画像分類など) / PyTorch"
             },
             {
               title: "ウェブスクレイピング",
