@@ -277,12 +277,100 @@ export default {
             {
               src: "dorm-app-slides/101_resized.png",
               caption:
-                "既に入居済の部屋や、設備の不備などにより住めない部屋があります。\n101号室は、暖房器具が無いため住めない状態です。"
+                "寮の部屋をPostgres DBから取得し一覧表示します。<br>101号室は、暖房器具がないため住めない状態です。"
             },
             {
               src: "dorm-app-slides/102_resized.png",
               caption:
-                "暖房器具を新規購入しました。\n101号室の「編集」ボタンを押し、情報を更新します。"
+                "101号室の暖房器具を新規購入したため、<br>「編集」ボタンを押して情報を更新します。"
+            },
+            {
+              src: "dorm-app-slides/103_resized.png",
+              caption:
+                "編集内容がDBに保存され、<br>UI上も101号室は「入居可」になりました。"
+            },
+            {
+              src: "dorm-app-slides/104_resized.png",
+              caption:
+                "これは現在の寮生の一覧です。検索機能もあります。<br>「新入寮生登録」ボタンから登録してみます。"
+            },
+            {
+              src: "dorm-app-slides/105_resized.png",
+              caption:
+                "個人情報をフォームから入力します。<br>入居先は101号室とします。"
+            },
+            {
+              src: "dorm-app-slides/106_resized.png",
+              caption: "上杉さんが寮生ID:31の寮生として登録されました。"
+            },
+            {
+              src: "dorm-app-slides/107_resized.png",
+              caption:
+                "新入寮生登録によりDBの居室テーブルも更新され、<br>UI上でも101号室が「使用中」となりました。"
+            },
+            {
+              src: "dorm-app-slides/108_resized.png",
+              caption:
+                "これは寮生の役職一覧です。<br>新入寮生「上杉さん」に役職を割り振ります。"
+            },
+            {
+              src: "dorm-app-slides/109_resized.png",
+              caption:
+                "彼を次の寮委員長予定者として登録しました。<br>任期や寮費免除率は既定値が自動入力されるので楽です。"
+            },
+            {
+              src: "dorm-app-slides/110_resized.png",
+              caption: "役職一覧に、上杉さんの役職が無事登録されています。"
+            },
+            {
+              src: "dorm-app-slides/301_resized.png",
+              caption:
+                "次に、月に一度の「決算」の操作を行います。<br>決算により、各寮生への毎月の請求額を確定します。"
+            },
+            {
+              src: "dorm-app-slides/302_resized.png",
+              caption:
+                "「請求原稿の新規作成」ボタンを押して、編集メニューを開きます。<br>決算日と決算期を選択。"
+            },
+            {
+              src: "dorm-app-slides/303_resized.png",
+              caption:
+                "前月の支出総額を寮生全員で頭割りする「基本金」を計算します。"
+            },
+            {
+              src: "dorm-app-slides/304_resized.png",
+              caption:
+                "６月の寮全体の支出を登録。<br>作成中の決算データは、localStorageに保存されます。"
+            },
+            {
+              src: "dorm-app-slides/305_resized.png",
+              caption:
+                "「寮生総数」や「役職があるため寮費が減免される寮生数」など<br>頭割りの実人数はDBのデータから自動で算出されます。"
+            },
+            {
+              src: "dorm-app-slides/306_resized.png",
+              caption:
+                "先月に寮費をきちんと支払った寮生を、チェックボックスで選択していきます。<br>チェックがつかなかったのは、寮費滞納者です。"
+            },
+            {
+              src: "dorm-app-slides/307_resized.png",
+              caption:
+                "掃除当番をサボった寮生に罰金を課します。<br>「請求を実行」ボタンを押すとDBに反映されます。"
+            },
+            {
+              src: "dorm-app-slides/308_resized.png",
+              caption:
+                "「納付状況」の表をみると、先ほどの６月分決算の請求が<br>各寮生それぞれの寮費履歴にきちんと追加されています。"
+            },
+            {
+              src: "dorm-app-slides/309_resized.png",
+              caption:
+                "納付状況の詳細一覧です。<br>請求額の内訳（基本金、罰金、報酬）が表示されます。"
+            },
+            {
+              src: "dorm-app-slides/310_resized.png",
+              caption:
+                "滞納者の状況も自動計算し番付として表示します。<br>これは寮内の風紀維持に役立ちます。"
             }
           ],
           techs: [
@@ -290,7 +378,6 @@ export default {
             "<u>Laravelのルーティング</u>: Blade, Resource Controller, Laravel Mix",
             "<u>LaravelのDB管理</u>: Migration, Model, Seeding",
             "<u>Eloquent ORM + Postgres</u>: Foreign Key, one-to-manyなどのrelationships, $appendsアクセサによるカラム値の自動生成",
-            "<u>AWS EC2</u>への展開",
             "sessionStorage"
           ],
           techImgs: ["./dorm-app-er.jpg", "./dorm-app-components.jpg"],
@@ -298,7 +385,7 @@ export default {
             "Axiosで頻繁にDBにアクセスするため、<u>async/awaitなどの非同期処理と、v-ifやcomputedによるレンダリングのタイミング管理</u>を工夫する必要がありました。",
             "Vueコンポーネントが増えてくると<u>要素同士の疎結合や、命名規則の一貫性</u>の大切さが身にしみました。センスのない命名をしてしまったために後からプロジェクト内部での変数名の整合性がとれなくなってしまい、それを直すためDBのカラム名や変数名を何十箇所も修正する必要に迫られ、ひどい目に合いました。",
             "<u>draw.ioを使った流れ図の作成など、ドキュメンテーション</u>に注力しました。他人の目線で説明するのは想像以上に大変でした。",
-            "初めての本格的なWeb App構築でした。業界スタンダードになっているAWSに触れ、エンジニアに一歩近づけた気がします。"
+            "初めての本格的なWeb App構築でした。エンジニアに一歩近づけた気がします。"
           ]
         },
         {
