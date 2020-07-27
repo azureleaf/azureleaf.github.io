@@ -7,14 +7,15 @@
       >
       <v-img :src="thumbnail" v-on="on" width="350" class="imgBorder"></v-img>
     </template>
-    <v-carousel v-if="isCarousel">
-      <v-carousel-item
-        v-for="(slide, i) in uri"
-        :key="i"
-        :src="slide.src"
-        reverse-transition="fade-transition"
-        transition="fade-transition"
-      >
+    <v-carousel v-if="isCarousel" height="800" :continuous="false">
+      <v-carousel-item v-for="(slide, i) in uri" :key="i" :src="slide.src">
+        <v-row class="fill-height pb-12" align="end" justify="center">
+          <div
+            class="headline font-weight-bold white--text pa-2"
+            v-html="slide.caption"
+            style="background-color: rgba(0,0,0,0.7)"
+          ></div>
+        </v-row>
       </v-carousel-item>
     </v-carousel>
     <video
@@ -46,7 +47,6 @@ export default {
       return this.uri.endsWith(".mp4");
     },
     isCarousel() {
-      console.log("hello!!!", this.uri);
       return Array.isArray(this.uri);
     },
     thumbnail() {
