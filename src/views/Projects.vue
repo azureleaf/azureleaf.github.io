@@ -177,7 +177,10 @@
                   :key="index"
                   lg="3"
                 >
-                  <ImageDialog :uri="img"></ImageDialog>
+                  <ImageDialog
+                    :uri="img"
+                    :thumbnailUri="project.thumbnail"
+                  ></ImageDialog>
                 </v-col>
               </v-row>
             </v-container>
@@ -299,6 +302,8 @@ export default {
             "<u>球面三角法</u>によりGPSの緯度経度の差分からメートル距離を算出。",
             "このBotのバス情報には「バスがいつ発車するのか」がわからないという重大な欠点があります。市営バスの時刻表データが手に入らないのでどうしようもなく、<u>結局は情報の入手難度がデータ分析のネック</u>になるという壁にぶちあたりました。"
           ],
+          techImgs: ["./line-capture.mp4"],
+          thumbnail: "./line-thumbnail.png",
           achvs: [
             "<u>LINE Messaging API</u>と<u>Herokuへのデプロイ</u>を学びました。Herokuサーバーがアメリカにあるせいで時間の処理が狂い、面食らったことも。",
             "<u>Shell ScriptとFFMPEG</u>で動画を効率的に編集しました。",
@@ -351,6 +356,7 @@ export default {
           ],
           funcImg: "",
           techImgs: ["./hospital_reserve.mp4"],
+          thumbnail: "./hospital-thumbnail.png",
           techs: [
             "自動予約の動作に、テストツールである<u>Selenium</u>",
             "ウェブサイトへの自動アクセスとウェブスクレイピングに<u>BeautifulSoup</u>モジュール",
@@ -367,19 +373,21 @@ export default {
           rating: 2,
           desc:
             "国産チャットアプリ「Chatwork」を勉強のため模写し、その中で<u>NuxtとFirebase</u>を使ってみました。",
-          demourl: "",
+          demourl: "https://vue-auth-test-ff8ed.web.app/",
           githuburl: "https://github.com/azureleaf/chat-quack/",
           frameworks: ["nuxt", "firebase"],
-          backends: ["Firebase"],
+          backends: ["Firebase Hosting + Firestore"],
           funcs: [
             "複数のメンバーの間でメッセージを送れます。グループチャットも可能です。",
-            "レイアウト配置、配色、ボタン、編集機能までUIをかなり忠実にコピーしました。"
+            "オンラインのFirestoreを通じ即時反映されます。（※ただしデモページで公開しているのは、Firestoreを使わない版です。チャット履歴は永続化されていません。）"
           ],
           funcImg: "",
           techs: [
-            "<u>Firebase</u>によるシンプルかつリアルタイムなチャットを実現しています。",
-            "<u>Nuxt.js + Vuetify</u>によるマテリアルデザイン。"
+            "<u>Firestore</u>によるシンプルかつリアルタイムなチャットを実現しています。",
+            "<u>Nuxt.js + Vuetify</u>によるマテリアルデザイン。",
+            "<u>Firebase Hosting</u>でのデプロイ。"
           ],
+          techImgs: ["/chat-capture.jpg"],
           achvs: [
             "FirebaseとNuxtに触ることができました。最低限の設定ですぐ使えるようかなり整備されているので楽でした。"
           ]

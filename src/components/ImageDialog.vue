@@ -24,7 +24,7 @@
 </template>
 <script>
 export default {
-  props: ["uri"],
+  props: ["uri", "thumbnailUri"],
   data: function() {
     return {
       isDialogOpen: false
@@ -36,7 +36,7 @@ export default {
     },
     thumbnail() {
       if (this.isMp4) {
-        return "video-thumbnail.png";
+        return this.thumbnailUri;
       } else {
         return this.uri;
       }
