@@ -46,7 +46,7 @@
 <script>
 export default {
   name: "Skills",
-  data: function() {
+  data: function () {
     return {
       groups: [
         {
