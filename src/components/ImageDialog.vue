@@ -7,14 +7,14 @@
       >
       <v-img :src="thumbnail" v-on="on" width="350" class="imgBorder"></v-img>
     </template>
-    <v-carousel v-if="isCarousel" height="800" :continuous="false" dark>
+    <v-carousel v-if="isCarousel" height="700" :continuous="false" dark>
       <v-carousel-item v-for="(slide, i) in uri" :key="i" :src="slide.src">
-        <v-row class="fill-height pb-12" align="end" justify="center">
+        <v-row class="pt-1" align="top" justify="center">
           <div
             v-if="slide.caption"
             class="headline font-weight-bold white--text pa-2"
             v-html="slide.caption"
-            style="background-color: rgba(0,0,0,0.7)"
+            style="background-color: rgba(0, 0, 0, 0.7);"
           ></div>
         </v-row>
       </v-carousel-item>
@@ -37,7 +37,7 @@
 <script>
 export default {
   props: ["uri", "thumbnailUri"],
-  data: function() {
+  data: function () {
     return {
       isDialogOpen: false
     };
