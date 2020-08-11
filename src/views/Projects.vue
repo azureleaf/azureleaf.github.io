@@ -259,7 +259,8 @@ export default {
           rating: 3,
           desc:
             "男子寮の<u>業務自動化ツール</u>。寮生情報管理や会計処理機能があり、最も実用的なプロジェクトです。",
-          demourl: "",
+          demourl:
+            "http://dormapp-env.eba-rxwxackn.ap-northeast-1.elasticbeanstalk.com/#/introduction",
           githuburl: "https://github.com/azureleaf/dorm-management-app",
           frameworks: ["js", "php", "laravel", "vue"],
           backends: ["Laravel + Eloquent + Postgres"],
@@ -380,14 +381,15 @@ export default {
             "<u>LaravelのDB管理</u>: Migration, Model, Seeding",
             "<u>Eloquent ORM + Postgres</u>: Foreign Key, one-to-manyなどのrelationships, $appendsアクセサによるカラム値の自動生成",
             "sessionStorage",
-            "<u>Vuetify</u>と<u>Material Design Icon</u>アイコンセットによるマテリアルデザイン。v-date-picker, v-dialog, v-carouselなども新たに触りました。"
+            "<u>Vuetify</u>と<u>Material Design Icon</u>アイコンセットによるマテリアルデザイン。v-date-picker, v-dialog, v-carouselなども新たに触りました。",
+            "<u>AWS Elastic Beanstalk</u>によるデプロイ。"
           ],
           techImgs: ["./dorm-app-er.jpg", "./dorm-app-components.jpg"],
           achvs: [
             "Axiosで頻繁にDBにアクセスするため、<u>async/awaitなどの非同期処理と、v-ifやcomputedによるレンダリングのタイミング管理</u>を工夫する必要がありました。",
             "Vueコンポーネントが増えてくると<u>要素同士の疎結合や、命名規則の一貫性</u>の大切さが身にしみました。センスのない命名をしてしまったために後からプロジェクト内部での変数名の整合性がとれなくなってしまい、それを直すためDBのカラム名や変数名を何十箇所も修正する必要に迫られ、ひどい目に合いました。",
             "<u>draw.ioを使ったフローチャートやシークエンス図、ER図</u>など、ドキュメンテーションに注力しました。この作業は想像以上に大変でした。",
-            "初めての本格的なWeb App構築でした。エンジニアに一歩近づけた気がします。"
+            "初めての本格的なWeb App構築でした。AWSも使い、エンジニアに一歩近づけた気がします。"
           ]
         },
         {
